@@ -177,7 +177,7 @@ class Test():
         self.all_substitutions = [] 
         for e in self.equations:
             self.all_substitutions += e.calculate_substitutions(self.equations)
-        self.current_substitutions = [] # list of substitutions currently cosidered as a quadratizatino
+        self.current_substitutions = [] # list of substitutions currently cosidered as a quadratization
         self.optimal_solution = [y for y in self.all_substitutions]
         self.min_length = len(self.optimal_solution)
         
