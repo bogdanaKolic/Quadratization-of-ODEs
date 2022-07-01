@@ -10,13 +10,18 @@ max_length = 7 # maximal number of monomials a generated equation can have
 class Monomial:
     """ Monomials are represented with a coefficient, number of variables, 
     and a tuple of the powers of each variable """
-    def __init__(self, n = 0):
+    def __init__(self, n = 0, c = 1, var = tuple()):
+        self.width = n # number of variables
+        self.coefficient = c
+        self.variables = var
+            
+    def set_random_data(self, n = 0):
         self.width = n # number of variables
         self.coefficient = random.randint(1, max_coeff)
         self.variables = tuple()
         for i in range(n):
             self.variables += (random.randint(0, max_power), )
-    
+        
     def copy(self):
         mono = Monomial()
         mono.coefficient = self.coefficient
@@ -47,7 +52,8 @@ class Monomial:
             if deg != 0:
                 mono = self.copy()
                 mono.change_degree(i)
-                poly.add_polynomial(Polynomial.multiply(equations[i], mono))
+                medjuproizvod = Polynomial.multiply(equations[i], mono)
+                poly.add_polynomial(medjuproizvod)
         poly.shrink()
         return poly
     
@@ -55,10 +61,7 @@ class Monomial:
         """ Multiplies two given monomials and return a resulting polynomial"""
         coeff = monom_1.coefficient * monom_2.coefficient
         product_variables = tuple([x + y for (x, y) in zip(monom_1.variables, monom_2.variables)])
-        product = Monomial()
-        product.coefficient = coeff
-        product.width = monom_1.width
-        product.variables = product_variables
+        product = Monomial(monom_1.width, coeff, product_variables)
         return product
     
     def __hash__(self):
@@ -71,21 +74,19 @@ class Laurent(Monomial):
     """Laurent monomials in addition have the index of the variable by which 
     they are divided and a pre-calculated derivative"""
     def __init__(self, monomial, index, equations):
-        Monomial.__init__(self)
+        Monomial.__init__(self, monomial.width, monomial.coefficient)
         for i, deg in enumerate(monomial.variables):
             if i == index:
                 self.variables += (monomial.variables[i] - 1, )
             else:
                 self.variables += (monomial.variables[i], )
-        self.coefficient = monomial.coefficient
-        self.width = monomial.width
         self.derivative = self.calculate_derivative(equations)
         self.index = index
     
     
     def multiply_x(self, i):
         """Multiplies Laurent monomial by xi"""
-        product  = Monomial(self.width)
+        product  = Monomial(self.width, self.coefficient)
         l = [x for x in self.variables]
         l[i] += 1
         product.variables = tuple(l)
@@ -98,12 +99,22 @@ class Laurent(Monomial):
 
 class Polynomial:
     
-    def __init__(self, n = 0, m = 0):
+    def __init__(self, n = 0, m = 0, monomials =[]):
+        self.width = n #number of variables in a monomial
+        self.length = m # number of monomials in a polynomial
+        self.monomials = monomials.copy()
+        if len(self.monomials) != m:
+            for i in range(m - len(self.monomials)):
+                mono = Monomial(n)
+                self.monomials.append(mono)
+    
+    def set_random_data(self, n = 0, m = 0):
         self.width = n #number of variables in a monomial
         self.length = m # number of monomials in a polynomial
         self.monomials = []
         for i in range(m):
-            mono = Monomial(n)
+            mono = Monomial()
+            mono.set_random_data(n)
             self.monomials.append(mono)
     
     def add_monomial(self, mono):
@@ -114,7 +125,7 @@ class Polynomial:
             self.width = mono.width
     
     def add_polynomial(self, poly):
-        """ Adds a polynomial to a monomial """
+        """ Adds a polynomial to a polynomial """
         for mono in poly.monomials:
             self.add_monomial(mono)
     
@@ -151,11 +162,16 @@ class Polynomial:
 class Equation(Polynomial):
     """ A class for representing given differential equations (derivatives of
     the x variables) """
-    def __init__(self, index, n = 0):
-        m = random.randint(1, max_length)
-        Polynomial.__init__(self, n, m)
+    def __init__(self, index, n = 0, m = 0, monomials = []):
+        Polynomial.__init__(self, n, m, monomials)
         self.index = index # corresponds to the variable being differentiated
     
+    def set_random(self, n = 0):
+        self.width = n
+        m = random.randint(1, max_length)
+        self.length = m
+        self.set_random_data(n, m)
+        
     def calculate_substitutions(self, equations):
         """ Calculates all the Laurent monomials that are obtained from one 
         equation """
@@ -169,11 +185,55 @@ class Equation(Polynomial):
         return s
     
 class Test():
-    """ Class for performing single test - generates a set of equations and tries
-    to minimize the number of Laurent monomials used in quadratization """
+    """ Class for performing single test - either on a benchmark set or 
+    generates a random set of equations and tries to minimize the number of 
+    Laurent monomials used in quadratization """
     def __init__(self):
+        self.width = 0
+        self.equations = []
+        self.all_substitutions = []
+        self.current_substitutions = [] # list of substitutions currently cosidered as a quadratization
+        self.optimal_solution = []
+        self.min_length = 0
+    
+    
+    def random_test(self):
         self.width = random.randint(1, max_width)
-        self.equations = [Equation(i, self.width) for i in range(self.width)]
+        self.equations = []
+        for i in range(self.width):
+            eq = Equation(i, self.width)
+            eq.set_random(self.width)
+            self.equations.append(eq)
+        self.all_substitutions = [] 
+        for e in self.equations:
+            self.all_substitutions += e.calculate_substitutions(self.equations)
+        self.current_substitutions = [] # list of substitutions currently cosidered as a quadratization
+        self.optimal_solution = [y for y in self.all_substitutions]
+        self.min_length = len(self.optimal_solution)
+    
+    def load_from_file(self, filename):
+        with open(filename) as infile:
+            index  = 0
+            self.width = int(infile.readline())
+            for line in infile:
+                monomials = line.split('+')
+                eq = []
+                for m in monomials:
+                    index_of_star = m.find('*')
+                    if index_of_star != -1:
+                        coef = int(m[: index_of_star])
+                        var = m[index_of_star + 1: ]
+                    else:
+                        coef = 1
+                        var = m
+                    variables = tuple()
+                    var = var.strip('( )\n')
+                    var = var.split(',')
+                    for power in var:
+                        variables += (int(power), )
+                    eq.append(Monomial(self.width, coef, variables))
+                self.equations.append(Equation(index, self.width, len(eq), eq))
+                index += 1
         self.all_substitutions = [] 
         for e in self.equations:
             self.all_substitutions += e.calculate_substitutions(self.equations)
@@ -235,11 +295,11 @@ class Test():
     
     def run(self):
         """ Search for the quadratization """
-        #print(self)
+        print(self)
         self.reduce(0)
-        #print('Solution:')
-        #for laurent in solution:
-        #   print(laurent.variables)
+        print('Solution:')
+        for laurent in self.optimal_solution:
+           print(laurent.variables)
         print('optimal number of substitutions: ', self.min_length)
         print('number of all substitutions: ', len(self.all_substitutions), '\n')
         
@@ -253,10 +313,17 @@ class Test():
             s += str(a) + '\n'
         return s
         
-def main():
+def main_random():
     """ Simulate quadratizing a set of equations """
     for _ in range(10):
         t = Test()
+        t.random_test()
         t.run()
+    
+def main_from_file():
+    t = Test()
+    t.load_from_file('test.txt')
+    print(t)
+    t.run()
         
     
