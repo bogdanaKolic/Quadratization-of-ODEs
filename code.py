@@ -331,8 +331,8 @@ def main_from_file():
 def generate_circular_test():
     """Create an instance of class Test that represents a circular system 
     of ODEs"""
-    width = random.randint(1, 15)
-    degree = random.randint(1, 50)
+    width = random.randint(1, 15) # n
+    degree = random.randint(1, 50) # k
     equations = []
     l = [0]*width
     for i in range(width):
@@ -346,14 +346,13 @@ def generate_circular_test():
 def circular_benchmark_tests(repeat):
     """Perform a series of tests on circular systems of ODEs, for a given
     number of repetitions"""
-    with open('circular_benchmark_tests.txt', 'w') as outfile:
+    with open('circular_benchmark_tests.txt', 'a') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1}:\n')
             test = generate_circular_test()
             outfile.write(str(test))
             test.run()
-            outfile.write('\n')
-            outfile.write('Soultion:\n')
+            outfile.write('\nSoultion:\n')
             for laurent in test.optimal_solution:
                 outfile.write(str(laurent.variables))
                 outfile.write('\n')
@@ -362,5 +361,37 @@ def circular_benchmark_tests(repeat):
             outfile.write('\nnumber of all substitutions: ')
             outfile.write(str(len(test.all_substitutions))) 
             outfile.write('\n\n')
-        
+            
+def generate_hardk_test():
+    """Create an instance of class Test that represents a hardk system 
+    of ODEs, return it and the degree k of the system"""
+    width = 3 # variables A(index 0), B(index 1) and C(index 2)
+    degree = random.randint(1, 50) # k
+    monomials_of_A = [Monomial(width, 1, (0, 0, degree)), Monomial(width, 1, (2, 2, degree - 1))]
+    eqA = Equation(0, width, 2, monomials_of_A)
+    monomials_of_B = [Monomial(width, 1, (2, 0, 0))]
+    eqB = Equation(1, width, 1, monomials_of_B)
+    monomials_of_C = [Monomial(width, 1, (0, 2, 0))]
+    eqC = Equation(2, width, 1, monomials_of_C)
+    return Test(width, [eqA, eqB, eqC]), degree
+
+def hardk_benchmark_tests(repeat):
+    """Perform a series of tests on hardk systems of ODEs, for a given
+    number of repetitions"""
+    with open('hardk_benchmark_tests.txt', 'a') as outfile:
+        for i in range(repeat):
+            outfile.write(f'Test {i + 1}:\n')
+            test, k = generate_hardk_test()
+            outfile.write(f'Degree k: {k}\n')
+            outfile.write(str(test))
+            test.run()
+            outfile.write('\nSolution:\n')
+            for laurent in test.optimal_solution:
+                outfile.write(str(laurent.variables))
+                outfile.write('\n')
+            outfile.write('optimal number of substitutions: ')
+            outfile.write(str(test.min_length))
+            outfile.write('\nnumber of all substitutions: ')
+            outfile.write(str(len(test.all_substitutions))) 
+            outfile.write('\n\n')
     
