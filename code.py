@@ -426,3 +426,58 @@ def monomn_benchmark_tests(repeat):
             outfile.write('\nnumber of all substitutions: ')
             outfile.write(str(len(test.all_substitutions))) 
             outfile.write('\n\n')
+def generate_hilln_tests():
+    """Create two instances of class Test that represent hill systems
+    of ODEs, one with 3, and one with 4 variables; return them and their order"""
+    order = random.randint(1, 100) # n
+    width = 3 # variables H(index 0), I(index 1) and T(index 2)
+    monom_H_3 = Monomial(width, order, (0, 2, order - 1))
+    monom_I_3 = Monomial(width, - order, (0, 2, order - 1))
+    monom_T_3 = Monomial(width, 1, (0, 0, 0))
+    equation_H_3 = Equation(0, width, 1, [monom_H_3])
+    equation_I_3 = Equation(1, width, 1, [monom_I_3])
+    equation_T_3 = Equation(2, width, 1, [monom_T_3])
+    test_3 = Test(width, [equation_H_3, equation_I_3, equation_T_3])
+    width = 4 # variables H(index 0), I(index 1) and T(index 2) and X(index 4)
+    monom_H_4 = Monomial(width, order, (0, 2, order - 1, 1))
+    monom_I_4 = Monomial(width, - order, (0, 2, order - 1, 1))
+    monom_T_4 = Monomial(width, 1, (0, 0, 0, 1))
+    monom_X_4 = Monomial(width, -1, (0, 0, 0, 1))
+    equation_H_4 = Equation(0, width, 1, [monom_H_4])
+    equation_I_4 = Equation(1, width, 1, [monom_I_4])
+    equation_T_4 = Equation(2, width, 1, [monom_T_4])
+    equation_X_4 = Equation(3, width, 1, [monom_X_4])
+    test_4 = Test(width, [equation_H_4, equation_I_4, equation_T_4, equation_X_4])
+    return test_3, test_4, order
+
+def hilln_benchmark_tests(repeat):
+    """Perform a series of tests on hilln systems of ODEs (with both 3 and 4
+    variables), for a given number of repetitions"""
+    with open('hilln_benchmark_tests.txt', 'a') as outfile:
+        for i in range(repeat):
+            outfile.write(f'Test {i + 1}:\n')
+            test_3, test_4, order = generate_hilln_tests()
+            outfile.write(f'Order n: {order}\n')
+            outfile.write('\nWith 3 variables:\n')
+            outfile.write(str(test_3))
+            test_3.run()
+            outfile.write('\nSolution:\n')
+            for laurent in test_3.optimal_solution:
+                outfile.write(str(laurent.variables))
+                outfile.write('\n')
+            outfile.write('optimal number of substitutions: ')
+            outfile.write(str(test_3.min_length))
+            outfile.write('\nnumber of all substitutions: ')
+            outfile.write(str(len(test_3.all_substitutions)))
+            outfile.write('\n\nWith 4 variables:\n')
+            outfile.write(str(test_4))
+            test_4.run()
+            outfile.write('\nSolution:\n')
+            for laurent in test_4.optimal_solution:
+                outfile.write(str(laurent.variables))
+                outfile.write('\n')
+            outfile.write('optimal number of substitutions: ')
+            outfile.write(str(test_4.min_length))
+            outfile.write('\nnumber of all substitutions: ')
+            outfile.write(str(len(test_4.all_substitutions))) 
+            outfile.write('\n\n')
