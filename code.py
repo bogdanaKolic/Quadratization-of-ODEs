@@ -188,13 +188,15 @@ class Test():
     """ Class for performing single test - either on a benchmark set or 
     generates a random set of equations and tries to minimize the number of 
     Laurent monomials used in quadratization """
-    def __init__(self):
-        self.width = 0
-        self.equations = []
+    def __init__(self, width = 0, equations = []):
+        self.width = width
+        self.equations = equations.copy()
         self.all_substitutions = []
+        for e in self.equations:
+            self.all_substitutions += e.calculate_substitutions(self.equations)
         self.current_substitutions = [] # list of substitutions currently cosidered as a quadratization
-        self.optimal_solution = []
-        self.min_length = 0
+        self.optimal_solution = [y for y in self.all_substitutions]
+        self.min_length = len(self.optimal_solution)
     
     
     def random_test(self):
@@ -308,9 +310,9 @@ class Test():
         s += 'original differential equations:\n'
         for e in self.equations:
             s += str(e) + '\n'
-        s += 'substitutions:\n'
-        for a in self.all_substitutions:
-            s += str(a) + '\n'
+        #s += 'substitutions:\n'
+        #for a in self.all_substitutions:
+        #    s += str(a) + '\n'
         return s
         
 def main_random():
@@ -321,9 +323,44 @@ def main_random():
         t.run()
     
 def main_from_file():
+    """ Perform a test on the system stored in a file"""
     t = Test()
-    t.load_from_file('test.txt')
-    print(t)
+    t.load_from_file('cubic_bicycle(8).txt')
     t.run()
+
+def generate_circular_test():
+    """Create an instance of class Test that represents a circular system 
+    of ODEs"""
+    width = random.randint(1, 15)
+    degree = random.randint(1, 50)
+    equations = []
+    l = [0]*width
+    for i in range(width):
+        l[(i + 1) % width] = degree
+        monom = Monomial(width, 1, tuple(l))
+        equations.append(Equation(i, width, 1, [monom]))
+        l[(i + 1) % width] = 0
+    return Test(width, equations)
+    
+
+def circular_benchmark_tests(repeat):
+    """Perform a series of tests on circular systems of ODEs, for a given
+    number of repetitions"""
+    with open('circular_benchmark_tests.txt', 'w') as outfile:
+        for i in range(repeat):
+            outfile.write(f'Test {i + 1}:\n')
+            test = generate_circular_test()
+            outfile.write(str(test))
+            test.run()
+            outfile.write('\n')
+            outfile.write('Soultion:\n')
+            for laurent in test.optimal_solution:
+                outfile.write(str(laurent.variables))
+                outfile.write('\n')
+            outfile.write('optimal number of substitutions: ')
+            outfile.write(str(test.min_length))
+            outfile.write('\nnumber of all substitutions: ')
+            outfile.write(str(len(test.all_substitutions))) 
+            outfile.write('\n\n')
         
     
