@@ -481,3 +481,34 @@ def hilln_benchmark_tests(repeat):
             outfile.write('\nnumber of all substitutions: ')
             outfile.write(str(len(test_4.all_substitutions))) 
             outfile.write('\n\n')
+def generate_selkov_test():
+    """Create an instance of class Test that represents a selkov system 
+    of ODEs, return it and the parameters a and b of the system"""
+    width = 2 # two variables X(index 0) and Y(index 1)
+    a = random.randint(-100, 100)
+    b = random.randint(-100, 100)
+    monomials_X = [Monomial(width, -1, (1, 0)), Monomial(width, a, (0, 1)), Monomial(width, 1, (2, 1))]
+    monomials_Y = [Monomial(width, b, (0, 0)), Monomial(width, - a, (0, 1)), Monomial(width, -1, (2, 1))]
+    eqX = Equation(0, width, 3, monomials_X)
+    eqY = Equation(1, width, 3, monomials_Y)
+    return Test(width, [eqX, eqY]), a, b
+
+def selkov_benchmark_tests(repeat):
+    """Perform a series of tests on selkov system of ODEs, for a given number
+    of repetitions"""
+    with open('selkov_benchmark_tests.txt', 'a') as outfile:
+        for i in range(repeat):
+            outfile.write(f'Test {i + 1}:\n')
+            test, a, b = generate_selkov_test()
+            outfile.write(f'parameters: a = {a}, b = {b}\n')
+            outfile.write(str(test))
+            test.run()
+            outfile.write('\nSoultion:\n')
+            for laurent in test.optimal_solution:
+                outfile.write(str(laurent.variables))
+                outfile.write('\n')
+            outfile.write('optimal number of substitutions: ')
+            outfile.write(str(test.min_length))
+            outfile.write('\nnumber of all substitutions: ')
+            outfile.write(str(len(test.all_substitutions))) 
+            outfile.write('\n\n')
