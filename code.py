@@ -394,4 +394,35 @@ def hardk_benchmark_tests(repeat):
             outfile.write('\nnumber of all substitutions: ')
             outfile.write(str(len(test.all_substitutions))) 
             outfile.write('\n\n')
-    
+def generate_monomn_test():
+    """Create an instance of class Test that represents a monomn system 
+    of ODEs"""
+    width = random.randint(1, 9)
+    equations = []
+    common_monomial = Monomial(width, 1, (2, ) * width)
+    l = [0] * width
+    for i in range(width):
+        l[(i + 1) % width] = 2
+        monom = Monomial(width, 1, tuple(l))
+        l[(i + 1) % width] = 0
+        equations.append(Equation(i, width, 2, [common_monomial, monom]))
+    return Test(width, equations)
+
+def monomn_benchmark_tests(repeat):
+    """Perform a series of tests on monomn systems of ODEs, for a given
+    number of repetitions"""
+    with open('monom_benchmatk_tests.txt', 'a') as outfile:
+        for i in range(repeat):
+            outfile.write(f'Test {i + 1}:\n')
+            test = generate_monomn_test()
+            outfile.write(str(test))
+            test.run()
+            outfile.write('\nSolution:\n')
+            for laurent in test.optimal_solution:
+                outfile.write(str(laurent.variables))
+                outfile.write('\n')
+            outfile.write('optimal number of substitutions: ')
+            outfile.write(str(test.min_length))
+            outfile.write('\nnumber of all substitutions: ')
+            outfile.write(str(len(test.all_substitutions))) 
+            outfile.write('\n\n')
