@@ -411,7 +411,7 @@ def generate_monomn_test():
 def monomn_benchmark_tests(repeat):
     """Perform a series of tests on monomn systems of ODEs, for a given
     number of repetitions"""
-    with open('monom_benchmatk_tests.txt', 'a') as outfile:
+    with open('monom_benchmark_tests.txt', 'a') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1}:\n')
             test = generate_monomn_test()
