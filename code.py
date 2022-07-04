@@ -494,7 +494,7 @@ def generate_selkov_test():
     return Test(width, [eqX, eqY]), a, b
 
 def selkov_benchmark_tests(repeat):
-    """Perform a series of tests on selkov system of ODEs, for a given number
+    """Perform a series of tests on selkov systems of ODEs, for a given number
     of repetitions"""
     with open('selkov_benchmark_tests.txt', 'a') as outfile:
         for i in range(repeat):
@@ -512,3 +512,71 @@ def selkov_benchmark_tests(repeat):
             outfile.write('\nnumber of all substitutions: ')
             outfile.write(str(len(test.all_substitutions))) 
             outfile.write('\n\n')
+        
+def generate_cubic_cycle_test():
+    """Create an instance of class Test that represents a cubic cycle system 
+    of ODEs"""
+    width = random.randint(1, 15)
+    equations = []
+    l = [0] * width
+    for i in range(width):
+        l[(i + 1) % width] = 3
+        monom = Monomial(width, 1, tuple(l))
+        l[(i + 1) % width] = 0
+        equations.append(Equation(i, width, 1, [monom]))
+    return Test(width, equations)
+
+def cubic_cycle_benchmark_tests(repeat):
+    """Perform a series of tests on cubic cycle systems of ODEs, for a given 
+    number of repetitions"""
+    with open('cubic_cycle_benchmark_tests.txt', 'a') as outfile:
+        for i in range(repeat):
+            outfile.write(f'Test {i + 1}:\n')
+            test = generate_cubic_cycle_test()
+            outfile.write(str(test))
+            test.run()
+            outfile.write('\nSoultion:\n')
+            for laurent in test.optimal_solution:
+                outfile.write(str(laurent.variables))
+                outfile.write('\n')
+            outfile.write('optimal number of substitutions: ')
+            outfile.write(str(test.min_length))
+            outfile.write('\nnumber of all substitutions: ')
+            outfile.write(str(len(test.all_substitutions))) 
+            outfile.write('\n\n')
+            
+def generate_cubic_bicycle_test():
+    """Create an instance of class Test that represents a cubic bicycle system 
+    of ODEs"""
+    width = random.randint(1, 10)
+    equations = []
+    l = [0] * width
+    for i in range(width):
+        l[i - 1] = 3
+        monom_left = Monomial(width, 1, tuple(l))
+        l[i - 1] = 0
+        l[(i + 1) % width] = 3
+        monom_right = Monomial(width, 1, tuple(l))
+        l[(i + 1) % width] = 0
+        equations.append(Equation(i, width, 2, [monom_left, monom_right]))
+    return Test(width, equations)
+
+def cubic_bicycle_benchmark_tests(repeat):
+    """Perform a series of tests on cubic bicycle systems of ODEs, for a given 
+    number of repetitions"""
+    with open('cubic_bicycle_benchmark_tests.txt', 'a') as outfile:
+        for i in range(repeat):
+            outfile.write(f'Test {i + 1}:\n')
+            test = generate_cubic_bicycle_test()
+            outfile.write(str(test))
+            test.run()
+            outfile.write('\nSoultion:\n')
+            for laurent in test.optimal_solution:
+                outfile.write(str(laurent.variables))
+                outfile.write('\n')
+            outfile.write('optimal number of substitutions: ')
+            outfile.write(str(test.min_length))
+            outfile.write('\nnumber of all substitutions: ')
+            outfile.write(str(len(test.all_substitutions))) 
+            outfile.write('\n\n')
+    
