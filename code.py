@@ -149,7 +149,7 @@ class Polynomial:
             mono.coefficient = monomials_dictionary[mono]
             if mono.coefficient != 0:
                 monomials.append(mono)
-        self.monomials = monomials
+        self.monomials = monomials.copy()
     
     def __str__(self):
         s = ''
@@ -265,17 +265,16 @@ class Test():
         for monom in self.current_substitutions:
             for i in range(self.width):
                 search_space.add((monom.multiply_x(i)).variables)
-        # compute the list of all monomials in the derivateives
-        derivatives = []
+        # check if all monomials in the derivateives can be represented in 
+        # the quadratized form
         for poly in self.equations:
             for mono in poly.monomials:
-                derivatives.append(mono.variables)
+                if mono.variables not in search_space:
+                    return False
         for substitution in self.current_substitutions:
             for monom in substitution.derivative.monomials:
-                derivatives.append(monom.variables)
-        for derivative in derivatives:
-            if derivative not in search_space:
-                return False
+                if monom.variables not in search_space:
+                    return False
         return True
     
 
@@ -325,7 +324,7 @@ def main_random():
 def main_from_file():
     """ Perform a test on the system stored in a file"""
     t = Test()
-    t.load_from_file('cubic_bicycle(8).txt')
+    t.load_from_file('cubic_bicycle(7).txt')
     t.run()
 
 def generate_circular_test():
@@ -394,6 +393,7 @@ def hardk_benchmark_tests(repeat):
             outfile.write('\nnumber of all substitutions: ')
             outfile.write(str(len(test.all_substitutions))) 
             outfile.write('\n\n')
+            
 def generate_monomn_test():
     """Create an instance of class Test that represents a monomn system 
     of ODEs"""
@@ -426,6 +426,7 @@ def monomn_benchmark_tests(repeat):
             outfile.write('\nnumber of all substitutions: ')
             outfile.write(str(len(test.all_substitutions))) 
             outfile.write('\n\n')
+
 def generate_hilln_tests():
     """Create two instances of class Test that represent hill systems
     of ODEs, one with 3, and one with 4 variables; return them and their order"""
@@ -481,6 +482,7 @@ def hilln_benchmark_tests(repeat):
             outfile.write('\nnumber of all substitutions: ')
             outfile.write(str(len(test_4.all_substitutions))) 
             outfile.write('\n\n')
+    
 def generate_selkov_test():
     """Create an instance of class Test that represents a selkov system 
     of ODEs, return it and the parameters a and b of the system"""
