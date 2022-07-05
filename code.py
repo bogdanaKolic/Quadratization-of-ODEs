@@ -10,11 +10,14 @@ max_length = 7 # maximal number of monomials a generated equation can have
 class Monomial:
     """ Monomials are represented with a coefficient, number of variables, 
     and a tuple of the powers of each variable """
-    def __init__(self, n = 0, c = 1, var = tuple()):
+    def __init__(self, n = 0, c = 1, var = tuple(), parent_eq = None):
         self.width = n # number of variables
         self.coefficient = c
         self.variables = var
-            
+        self.is_present = False # does this monomial appear in the system
+                                # or in the considered substitutions
+        self.parent_equation = parent_eq
+        
     def set_random_data(self, n = 0):
         self.width = n # number of variables
         self.coefficient = random.randint(1, max_coeff)
@@ -64,6 +67,20 @@ class Monomial:
         product = Monomial(monom_1.width, coeff, product_variables)
         return product
     
+    def __add__(self, other):
+        if self.parent_equation != None:
+            self.is_present = self.parent_equation.is_present
+        if other.parent_equation != None:
+            other.is_present = other.parent_equation.is_present
+        return self.is_present or other.is_present
+    
+    def __mul__(self, other):
+        if self.parent_equation != None:
+            self.is_present = self.parent_equation.is_present
+        if other.parent_equation != None:
+            other.is_present = other.parent_equation.is_present
+        return self.is_present and other.is_present
+    
     def __hash__(self):
         return hash(self.variables)
     
@@ -73,8 +90,8 @@ class Monomial:
 class Laurent(Monomial):
     """Laurent monomials in addition have the index of the variable by which 
     they are divided and a pre-calculated derivative"""
-    def __init__(self, monomial, index, equations):
-        Monomial.__init__(self, monomial.width, monomial.coefficient)
+    def __init__(self, monomial, index, equations, parent):
+        Monomial.__init__(self, monomial.width, monomial.coefficient, tuple(), equations[index])
         for i, deg in enumerate(monomial.variables):
             if i == index:
                 self.variables += (monomial.variables[i] - 1, )
@@ -165,7 +182,9 @@ class Equation(Polynomial):
     def __init__(self, index, n = 0, m = 0, monomials = []):
         Polynomial.__init__(self, n, m, monomials)
         self.index = index # corresponds to the variable being differentiated
-    
+        self.is_present = True
+        self.must_be_present = False
+        
     def set_random(self, n = 0):
         self.width = n
         m = random.randint(1, max_length)
@@ -192,13 +211,88 @@ class Test():
         self.width = width
         self.equations = equations.copy()
         self.all_substitutions = []
+        self.optimal_solution = []
+        self.min_length = 0
+        self.at_most_quadratic_monomials = {} # the set monomials that can be quadratized
+        self.product_results = {} # the inverse dictionary of at_most_quadratic_monomials
+        self.precompute()
+        self.find_must_have_equations()
+        
+    def precompute(self):
         for e in self.equations:
             self.all_substitutions += e.calculate_substitutions(self.equations)
-        self.current_substitutions = [] # list of substitutions currently cosidered as a quadratization
         self.optimal_solution = [y for y in self.all_substitutions]
         self.min_length = len(self.optimal_solution)
+        # pre-compute the dictionaries of at most quadratic monomials and the
+        # products they represent
+        search_space_deg1 = {}
+        # add 'a constant'
+        constant_monom = Monomial(self.width, 1, (0, ) * self.width)
+        constant_monom.is_present = True
+        search_space_deg1.add(constant_monom)
+        # add variables xi
+        l = [0] * self.width
+        for i in range(self.width):
+            l[i] = 1
+            monom_x = Monomial(self.width, 1, tuple(l))
+            monom_x.is_present = True
+            search_space_deg1.add(monom_x)
+            l[i] = 0
+        # add substitution variables
+        for substitution in self.all_substitutions:
+            search_space_deg1.add(substitution)
+        search_space_deg1 = list(search_space_deg1)
+        # compute the set of monomials appearing in the derivatives
+        monomials_in_derivatives = {}
+        for e in self.equations:
+            for monom in e:
+                monomials_in_derivatives.add(monom)
+        for substitution in self.all_substitutions:
+            for monom in substitution:
+                monomials_in_derivatives.add(monom)
+        # compute the at most quadratic monomials
+        for i in range(len(search_space_deg1)):
+            for j in range(i, len(search_space_deg1)):
+                first_monom = search_space_deg1[i]
+                second_monom = search_space_deg1[j]
+                product = Monomial.multiply(first_monom, second_monom)
+                if product in monomials_in_derivatives:
+                    if self.at_most_quadratic_monomials[first_monom] == None:
+                        self.at_most_quadratic_monomials[first_monom] = {product}
+                    else:
+                        self.at_most_quadratic_monomials[first_monom].add(product)
+                    if self.at_most_quadratic_monomials[second_monom] == None:
+                        self.at_most_quadratic_monomials[second_monom] = {product}
+                    else:
+                        self.at_most_quadratic_monomials[second_monom].add(product)
+                    if self.product_results[product] == None:
+                        self.product_results[product] = {(first_monom, second_monom)}
+                    else:
+                        self.product_results[product].add((first_monom, second_monom))
     
-    
+    def find_must_have_equations(self):
+        for eq in self.equations:
+            eq.must_be_present = True
+        changed = 0
+        for monom_in_xs in self.product_results:
+            if monom_in_xs.parent_equation.must_be_present:
+                if len(self.product_results[monom_in_xs]) == 1:
+                    if self.product_results[monom_in_xs][0].parent_equation != None:
+                        self.product_results[monom_in_xs][0].parent_equation.must_be_present = True
+                        changed = 1
+                    if self.product_results[monom_in_xs][1].parent_equation != None:
+                        self.product_results[monom_in_xs][1].parent_equation.must_be_present = True
+                        changed = 1
+        while changed == 1:
+            changed = 0
+            for monom in self.product_results:
+                if monom.parent_equation.must_be_present:
+                    if len(self.product_results[monom]) == 1:
+                        if self.product_results[monom][0].parent_equation != None:
+                            self.product_results[monom][0].parent_equation.must_be_present = True
+                        if self.product_results[monom][1].parent_equation != None:
+                            self.product_results[monom][1].parent_equation.must_be_present = True
+        
     def random_test(self):
         self.width = random.randint(1, max_width)
         self.equations = []
@@ -209,9 +303,10 @@ class Test():
         self.all_substitutions = [] 
         for e in self.equations:
             self.all_substitutions += e.calculate_substitutions(self.equations)
-        self.current_substitutions = [] # list of substitutions currently cosidered as a quadratization
         self.optimal_solution = [y for y in self.all_substitutions]
         self.min_length = len(self.optimal_solution)
+        self.precompute()
+        self.find_must_have_equations()
     
     def load_from_file(self, filename):
         with open(filename) as infile:
@@ -239,43 +334,14 @@ class Test():
         self.all_substitutions = [] 
         for e in self.equations:
             self.all_substitutions += e.calculate_substitutions(self.equations)
-        self.current_substitutions = [] # list of substitutions currently cosidered as a quadratization
         self.optimal_solution = [y for y in self.all_substitutions]
         self.min_length = len(self.optimal_solution)
+        self.precompute()
+        self.find_must_have_equations()
         
     def is_quadratization(self):
         """ Checks if the set of current_substitutions works as a quadratization """
-        search_space = set()
-        # add 'a constant'
-        search_space.add((0, ) * self.width)
-        # add variables xi and xi^2
-        l = [0] * self.width
-        for i in range(self.width):
-            l[i] = 1
-            search_space.add(tuple(l))
-            l[i] = 2
-            search_space.add(tuple(l))
-            l[i] = 0
-        # add substitution variables and their products
-        for first in self.current_substitutions:
-            search_space.add(first.variables)
-            for second in self.current_substitutions:
-                search_space.add((Monomial.multiply(first, second)).variables)
-        # add original variables multiplied by Laurent monomials
-        for monom in self.current_substitutions:
-            for i in range(self.width):
-                search_space.add((monom.multiply_x(i)).variables)
-        # check if all monomials in the derivateives can be represented in 
-        # the quadratized form
-        for poly in self.equations:
-            for mono in poly.monomials:
-                if mono.variables not in search_space:
-                    return False
-        for substitution in self.current_substitutions:
-            for monom in substitution.derivative.monomials:
-                if monom.variables not in search_space:
-                    return False
-        return True
+        pass
     
 
     def reduce(self, position):
@@ -284,15 +350,19 @@ class Test():
         at a given position"""
         if position == len(self.all_substitutions):
             if len(self.current_substitutions) < self.min_length and self.is_quadratization():
-                self.min_length = len(self.current_substitutions)
-                self.optimal_solution = [y for y in self.current_substitutions]
-        elif len(self.current_substitutions) >= self.min_length:
+                self.optimal_solution = [y for y in self.all_substitutions if y.is_present]
+                self.min_length = len(self.optimal_solution)
+        elif len([y for y in self.all_substitutions if y.is_present]) >= self.min_length:
             return None
         else:
-            self.reduce(position + 1)
-            self.current_substitutions.append(self.all_substitutions[position])
-            self.reduce(position + 1)
-            self.current_substitutions.remove(self.all_substitutions[position])
+            if self.all_substitutions[position].must_be_present:
+                self.all_substitutions[position].is_present = True
+                self.reduce(position + 1)
+            else:
+                self.all_substitutions[position].is_present = False
+                self.reduce(position + 1)
+                self.all_substitutions[position].is_present = True
+                self.reduce(position + 1)
     
     def run(self):
         """ Search for the quadratization """
@@ -581,4 +651,5 @@ def cubic_bicycle_benchmark_tests(repeat):
             outfile.write('\nnumber of all substitutions: ')
             outfile.write(str(len(test.all_substitutions))) 
             outfile.write('\n\n')
+    
     
