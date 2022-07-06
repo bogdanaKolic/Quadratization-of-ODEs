@@ -343,14 +343,20 @@ class Test():
                 result = False
                 for factors in self.product_results[monom]:
                     result = result or factors[0] * factors[1]
+                    if result:
+                        break
                 if not result:
                     return False
         # check whether all the substitutions used can be quadratized
         for substitution in self.all_substitutions:
             for monom_derivative in substitution.derivative.monomials:
                 result = not substitution.is_currently_present
+                if result:
+                    continue
                 for factors in self.product_results[monom_derivative]:
                     result = result or factors[0] * factors[1]
+                    if result:
+                        break
                 if not result:
                     return False
         return True
