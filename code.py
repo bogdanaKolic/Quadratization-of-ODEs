@@ -4,9 +4,9 @@ import random
 import math
 
 max_coeff = 100 # maximal generated coefficient of a monomial
-max_power = 30 # maximal generated power of a variable in a monomial
-max_width = 3 # maximal number of original variables
-max_length = 7 # maximal number of monomials a generated equation can have
+max_power = 100 # maximal generated power of a variable in a monomial
+max_width = 100 # maximal number of original variables
+max_length = 50 # maximal number of monomials a generated equation can have
 
 class Monomial:
     """ Monomials are represented with a coefficient, number of variables, 
@@ -20,9 +20,11 @@ class Monomial:
                                           # substitutions
         self.is_always_present = False # is this monomial a part of the
                                        # original system
-        self.origin = origin # if None, the monomial is a part of the original
-                             # system, otherwise it is a part of the Laurent
-                             # monomial substitution
+        self.origin = origin # if origin is None, the monomial is not a part of 
+                             # a derivative or it belongs to the original system
+                             # of ODEs, otherwise the origin is equal to the
+                             # Laurent monomial substituion whose derivative 
+                             # this monomial belongs to
         
     def set_random_data(self, n = 0):
         self.width = n # number of variables
@@ -61,8 +63,7 @@ class Monomial:
             if deg != 0:
                 mono = self.copy()
                 mono.change_degree(i)
-                medjuproizvod = Polynomial.multiply(equations[i], mono)
-                poly.add_polynomial(medjuproizvod)
+                poly.add_polynomial(Polynomial.multiply(equations[i], mono))
         poly.shrink()
         return poly
     
@@ -217,6 +218,7 @@ class Test():
         self.width = width
         self.equations = equations.copy()
         self.all_substitutions = []
+        self.optional_substitutions = []
         self.optimal_solution = []
         self.current_length = 0
         self.min_length = math.inf
@@ -230,8 +232,8 @@ class Test():
             self.all_substitutions += e.calculate_substitutions(self.equations)
         self.optimal_solution = [y for y in self.all_substitutions]
         self.min_length = len(self.optimal_solution)
-        # pre-compute the dictionaries of at most quadratic monomials and the
-        # products they represent
+        # pre-compute the dictionary of products represented as at most quadratic
+        # monomials appearing in the system with all the substitutions
         search_space_deg1 = set()
         # add 'a constant'
         constant_monom = Monomial(self.width, 1, (0, ) * self.width)
@@ -279,7 +281,8 @@ class Test():
                             self.product_results[p].append((first_monom, second_monom))
     
     def find_must_have_substitutions(self):
-        """ Find out which substitutions have to be present in the system """
+        """ Find out which substitutions have to be present in the system 
+        and compute the list of optional substitutions"""
         check = {monom for monom in self.product_results if monom.origin == None}
         newly_found_substitutions = set()
         while len(check) != 0:
@@ -297,9 +300,15 @@ class Test():
                     monom_2.is_always_present = True
             check = newly_found_substitutions.copy()
             newly_found_substitutions.clear()
+        for substitution in self.all_substitutions:
+            if substitution.is_always_present:
+                self.current_length += 1
+            else:
+                self.optional_substitutions.append(substitution)
             
     def random_test(self):
         self.width = random.randint(1, max_width)
+        print('width: ', self.width)
         self.equations = []
         for i in range(self.width):
             eq = Equation(i, self.width)
@@ -363,30 +372,32 @@ class Test():
 
     def reduce(self, position):
         """ Find out how many Laurent monomials can be neglected by using 
-        a recursion on a set of all substitutions and considering the monomial 
-        at a given position"""
-        if position == len(self.all_substitutions):
+        a recursion on a set of optional substitutions and considering the 
+        monomial at a given position"""
+        if position == len(self.optional_substitutions):
             if self.current_length < self.min_length and self.is_quadratization():
                 self.min_length = self.current_length
-                self.optimal_solution = [y for y in self.all_substitutions if y.is_currently_present]
+                self.optimal_solution = [y for y in self.optional_substitutions if y.is_currently_present]
         elif self.current_length >= self.min_length:
             return None
         else:
-            if not self.all_substitutions[position].is_always_present:
-                self.all_substitutions[position].is_currently_present = False
-                self.reduce(position + 1)
-            self.all_substitutions[position].is_currently_present = True
+            self.optional_substitutions[position].is_currently_present = False
+            self.reduce(position + 1)
+            self.optional_substitutions[position].is_currently_present = True
             self.current_length += 1
             self.reduce(position + 1)
             self.current_length -= 1
     
     def run(self):
         """ Search for the quadratization """
-        print(self)
+        #print(self)
         self.reduce(0)
-        print('Solution:')
-        for laurent in self.optimal_solution:
-           print(laurent.variables)
+        for substitution in self.all_substitutions:
+            if substitution.is_always_present:
+                self.optimal_solution.append(substitution)
+        #print('Solution:')
+        #for laurent in self.optimal_solution:
+        #   print(laurent.variables)
         print('optimal number of substitutions: ', self.min_length)
         print('number of all substitutions: ', len(self.all_substitutions), '\n')
         
@@ -398,15 +409,17 @@ class Test():
         #s += 'substitutions:\n'
         #for a in self.all_substitutions:
         #    s += str(a) + '\n'
-        return s
-        
+        return s       
+
 def main_random():
-    """ Simulate quadratizing a set of equations """
+    """ Simulate quadratizing a set of randomly generated equations """
     for _ in range(10):
         t = Test()
         t.random_test()
         t.run()
-    
+
+# following functions were used for testing the first algorithm     
+
 def main_from_file():
     """ Perform a test on the system stored in a file"""
     t = Test()
@@ -636,7 +649,7 @@ def cubic_cycle_benchmark_tests(repeat):
 def generate_cubic_bicycle_test():
     """Create an instance of class Test that represents a cubic bicycle system 
     of ODEs"""
-    width = random.randint(1, 10)
+    width = random.randint(1, 20)
     equations = []
     l = [0] * width
     for i in range(width):
@@ -667,7 +680,4 @@ def cubic_bicycle_benchmark_tests(repeat):
             outfile.write('\nnumber of all substitutions: ')
             outfile.write(str(len(test.all_substitutions))) 
             outfile.write('\n\n')
-    
-    
-
-    
+      
