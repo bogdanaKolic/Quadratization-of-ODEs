@@ -230,6 +230,7 @@ class Test():
     def precompute(self):
         for e in self.equations:
             self.all_substitutions += e.calculate_substitutions(self.equations)
+        self.all_substitutions = list(set(self.all_substitutions))
         self.optimal_solution = [y for y in self.all_substitutions]
         self.min_length = len(self.optimal_solution)
         # pre-compute the dictionary of products represented as at most quadratic
@@ -343,10 +344,9 @@ class Test():
         self.precompute()
         self.find_must_have_substitutions()
         
-    def is_quadratization(self):
-        """ Checks if the set of currently present substitutions works as 
-        a quadratization """
-        # check whether all the original equations can be quadratized
+    def precompute_non_quadratized(self):
+        non_quadratized = set()
+        # add the monomials from the original equations that aren't quadratized
         for eq in self.equations:
             for monom in eq.monomials:
                 result = False
@@ -355,49 +355,74 @@ class Test():
                     if result:
                         break
                 if not result:
-                    return False
-        # check whether all the substitutions used can be quadratized
+                    non_quadratized.add(monom)
+        # add the monomials from the must-have substitutions
         for substitution in self.all_substitutions:
-            for monom_derivative in substitution.derivative.monomials:
-                result = not substitution.is_currently_present
+            if substitution.is_currently_present:
+                for monom_derivative in substitution.derivative.monomials:
+                    result = False
+                    for factors in self.product_results[monom_derivative]:
+                        result = result or factors[0] * factors[1]
+                        if result:
+                            break
+                    if not result:
+                        non_quadratized.add(monom_derivative)
+        return non_quadratized
+    
+    def quadratizes(self, substitution, non_quadratized):
+        """Given a substitution and a set of non_quadratized monomials in the
+        system without the substitution, computes a new set of non_quadratized
+        monomials in a system with the substitution"""
+        still_not_quadratized = set()
+        for monom in non_quadratized:
+            result = False
+            for factors in self.product_results[monom]:
+                result = result or factors[0] * factors[1]
                 if result:
-                    continue
-                for factors in self.product_results[monom_derivative]:
-                    result = result or factors[0] * factors[1]
-                    if result:
-                        break
-                if not result:
-                    return False
-        return True
-
-    def reduce(self, position):
+                    break
+            if not result:
+                still_not_quadratized.add(monom)
+        for monom_derivative in substitution.derivative.monomials:
+            result = False
+            for factors in self.product_results[monom_derivative]:
+                result = result or factors[0] * factors[1]
+                if result:
+                    break
+            if not result:
+                still_not_quadratized.add(monom_derivative)
+        return still_not_quadratized
+    
+    def reduce(self, position, non_quadratized):
         """ Find out how many Laurent monomials can be neglected by using 
-        a recursion on a set of optional substitutions and considering the 
-        monomial at a given position"""
-        if position == len(self.optional_substitutions):
-            if self.current_length < self.min_length and self.is_quadratization():
+        a recursion on a set of optional substitutions and considering how the 
+        substitution at a given position changes the system"""
+        if len(non_quadratized) == 0:
+            if self.current_length < self.min_length:
                 self.min_length = self.current_length
                 self.optimal_solution = [y for y in self.optional_substitutions if y.is_currently_present]
-        elif self.current_length >= self.min_length:
+        elif self.current_length >= self.min_length or position == len(self.optional_substitutions):
             return None
         else:
             self.optional_substitutions[position].is_currently_present = False
-            self.reduce(position + 1)
+            self.reduce(position + 1, non_quadratized)
             self.optional_substitutions[position].is_currently_present = True
             self.current_length += 1
-            self.reduce(position + 1)
+            new_set = self.quadratizes(self.optional_substitutions[position], non_quadratized)
+            self.reduce(position + 1, new_set)
+            self.optional_substitutions[position].is_currently_present = False
             self.current_length -= 1
     
     def run(self):
         """ Search for the quadratization """
         #print(self)
-        self.reduce(0)
+        non_quadratized = self.precompute_non_quadratized() # non-quadratized monomials
+        self.reduce(0, non_quadratized)
         for substitution in self.all_substitutions:
             if substitution.is_always_present:
                 self.optimal_solution.append(substitution)
-        #print('Solution:')
-        #for laurent in self.optimal_solution:
-        #   print(laurent.variables)
+        # print('Solution:')
+        # for laurent in self.optimal_solution:
+        #    print(laurent.variables)
         print('optimal number of substitutions: ', self.min_length)
         print('number of all substitutions: ', len(self.all_substitutions), '\n')
         
@@ -423,7 +448,7 @@ def main_random():
 def main_from_file():
     """ Perform a test on the system stored in a file"""
     t = Test()
-    t.load_from_file('monom3.txt')
+    t.load_from_file('cubic_bicycle(7).txt')
     t.run()
 
 def generate_circular_test():
@@ -680,4 +705,8 @@ def cubic_bicycle_benchmark_tests(repeat):
             outfile.write('\nnumber of all substitutions: ')
             outfile.write(str(len(test.all_substitutions))) 
             outfile.write('\n\n')
+    
+    
+
+    
       
