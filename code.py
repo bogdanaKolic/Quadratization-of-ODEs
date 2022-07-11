@@ -209,7 +209,8 @@ class Equation(Polynomial):
     def __str__(self):
         s = f'x{self.index} = ' + super().__str__()
         return s
-    
+
+# Maybe rename to QuadratizationProblem
 class Test():
     """ Class for performing single test - either on a benchmark set or 
     generates a random set of equations and tries to minimize the number of 
@@ -284,21 +285,17 @@ class Test():
     def find_must_have_substitutions(self):
         """ Find out which substitutions have to be present in the system 
         and compute the list of optional substitutions"""
-        check = {monom for monom in self.product_results if monom.origin == None}
+        check = {monom for monom in self.product_results if monom.origin is None}
         newly_found_substitutions = set()
+        # Exercise: have just while-loop by using collections.Deque or list
         while len(check) != 0:
             for monom in check:
                 if len(self.product_results[monom]) == 1:
-                    monom_1 = self.product_results[monom][0][0]
-                    monom_2 = self.product_results[monom][0][1]
-                    if not monom_1.is_always_present and monom_1.origin != None:
-                        newly_found_substitutions.add(monom_1)
-                    if not monom_2.is_always_present and monom_2.origin != None:
-                        newly_found_substitutions.add(monom_2)
-                    monom_1.is_currently_present = True
-                    monom_1.is_always_present = True
-                    monom_2.is_currently_present = True
-                    monom_2.is_always_present = True
+                    for m in self.product_results[monom][0]:
+                        if not m.is_always_present and m.origin is not None:
+                            newly_found_substitutions.add(m)
+                        m.is_currently_present = True
+                        m.is_always_present = True
             check = newly_found_substitutions.copy()
             newly_found_substitutions.clear()
         for substitution in self.all_substitutions:
@@ -450,6 +447,8 @@ def main_from_file():
     t = Test()
     t.load_from_file('cubic_bicycle(7).txt')
     t.run()
+
+# TODO: put into "examples.py" or "benchmarks.py" file
 
 def generate_circular_test():
     """Create an instance of class Test that represents a circular system 
