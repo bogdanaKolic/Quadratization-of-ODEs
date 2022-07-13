@@ -113,20 +113,23 @@ class Monomial:
             s = '1'
         return s
     
-class Laurent(Monomial):
-    """Laurent monomials in addition have the index of the variable by which 
-    they are divided and a pre-calculated derivative"""
-    def __init__(self, monomial, index, equations):
-        Monomial.__init__(self, monomial.width, monomial.coefficient, tuple())
-        for i, deg in enumerate(monomial.variables):
-            if i == index:
-                self.variables += (monomial.variables[i] - 1, )
-            else:
-                self.variables += (monomial.variables[i], )
+class Substitution(Monomial):
+    """Substituion monomials in addition have a pre-calculated derivative and 
+    they have allowed negative powers(Laurent monomials)"""
+    def __init__(self, monomial, equations, index = -1):
+        if index == -1:
+            Monomial.__init__(self, len(monomial), 1, monomial)
+        else:
+            Monomial.__init__(self, monomial.width, monomial.coefficient, tuple())
+            for i, deg in enumerate(monomial.variables):
+                if i == index:
+                    self.variables += (monomial.variables[i] - 1, )
+                else:
+                    self.variables += (monomial.variables[i], )
         self.derivative = self.calculate_derivative(equations)
         for monom_derivative in self.derivative.monomials:
             monom_derivative.origin = self
-        self.index = index
+        #self.index = index
     
     
     def multiply_x(self, i):
@@ -222,7 +225,7 @@ class Equation(Polynomial):
         equation """
         substitutions = []
         for m in self.monomials:
-            substitutions.append(Laurent(m, self.index, equations))
+            substitutions.append(Substitution(m, equations, self.index))
         return substitutions
     
     def __str__(self):
@@ -233,7 +236,7 @@ class QuadratizationProblem():
     """ Class for performing single test - either on a benchmark set or 
     generates a random set of equations and tries to minimize the number of 
     Laurent monomials used in quadratization """
-    def __init__(self, width = 0, equations = []):
+    def __init__(self, width = 0, equations = [], additional_sub = []):
         self.width = width
         self.equations = equations.copy()
         self.all_substitutions = []
@@ -243,6 +246,7 @@ class QuadratizationProblem():
         self.min_length = math.inf
         self.product_results = {} # the dictionary connecting the factors to
                                   # their products
+        self.additional_substitutions = additional_sub.copy()
         self.precompute()
         self.find_must_have_substitutions()
         
@@ -250,6 +254,18 @@ class QuadratizationProblem():
         for e in self.equations:
             self.all_substitutions += e.calculate_substitutions(self.equations)
         self.all_substitutions = list(set(self.all_substitutions))
+        for s in self.additional_substitutions:
+            self.all_substitutions.append(s)
+        self.additional_substitutions.clear()
+        set_of_all = set()
+        for a in self.all_substitutions:
+            powers = sum([abs(x) for x in a.variables])
+            if powers > 1:
+                set_of_all.add(a)
+            if powers == 1:
+                if sum(a.variables) == -1:
+                    set_of_all.add(a)
+        self.all_substitutions = list(set_of_all)
         # pre-compute the dictionary of products represented as at most quadratic
         # monomials appearing in the system with all the substitutions
         search_space_deg1 = set()
@@ -458,5 +474,8 @@ def main_random():
 def main_from_file():
     """ Perform a test on the system stored in a file"""
     t = QuadratizationProblem()
-    t.load_from_file('cubic_bicycle(7).txt')
+    t.load_from_file('input_files/hill5.txt')
     t.run()
+    print(t.min_length)
+    for laurent in t.optimal_solution:
+        print(laurent.variables)
