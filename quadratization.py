@@ -140,6 +140,12 @@ class Substitution(Monomial):
         product.variables = tuple(l)
         return product
     
+    def __eq__(self, other):
+        return self.variables == other.variables
+    
+    def __hash__(self):
+        return hash(self.variables)
+    
     def __str__(self):
         s = super().__str__(False)
         #s += '\nderivative: ' + str(self.derivative) + '\nindex: ' + str(self.index)
@@ -223,9 +229,9 @@ class Equation(Polynomial):
     def calculate_substitutions(self, equations):
         """ Calculates all the Laurent monomials that are obtained from one 
         equation """
-        substitutions = []
+        substitutions = set()
         for m in self.monomials:
-            substitutions.append(Substitution(m, equations, self.index))
+            substitutions.add(Substitution(m, equations, self.index))
         return substitutions
     
     def __str__(self):
@@ -236,27 +242,36 @@ class QuadratizationProblem():
     """ Class for performing single test - either on a benchmark set or 
     generates a random set of equations and tries to minimize the number of 
     Laurent monomials used in quadratization """
-    def __init__(self, width = 0, equations = [], additional_sub = []):
+    def __init__(self, width = 0, equations = [], additional_sub = set()):
         self.width = width
         self.equations = equations.copy()
-        self.all_substitutions = []
+        self.all_substitutions = set()
         self.optional_substitutions = []
+        self.original_substitutions = set()
         self.optimal_solution = []
         self.current_length = 0
         self.min_length = math.inf
         self.product_results = {} # the dictionary connecting the factors to
                                   # their products
+        self.at_most_quadratic_monomials = {} # the inverse dictionary
         self.additional_substitutions = additional_sub.copy()
         self.precompute()
+        self.remove_impossible_substitutions()
         self.find_must_have_substitutions()
         
     def precompute(self):
         for e in self.equations:
-            self.all_substitutions += e.calculate_substitutions(self.equations)
-        self.all_substitutions = list(set(self.all_substitutions))
-        for s in self.additional_substitutions:
-            self.all_substitutions.append(s)
-        self.additional_substitutions.clear()
+            self.original_substitutions = self.original_substitutions.union(e.calculate_substitutions(self.equations))
+        set_of_original = set()
+        for o in self.original_substitutions:
+            powers = sum([abs(x) for x in o.variables])
+            if powers > 1:
+                set_of_original.add(o)
+            if powers == 1:
+                if sum(o.variables) == -1:
+                    set_of_original.add(o)
+        self.original_substitutions = set_of_original.copy()
+        self.all_substitutions = self.original_substitutions.union(self.additional_substitutions)
         set_of_all = set()
         for a in self.all_substitutions:
             powers = sum([abs(x) for x in a.variables])
@@ -265,7 +280,7 @@ class QuadratizationProblem():
             if powers == 1:
                 if sum(a.variables) == -1:
                     set_of_all.add(a)
-        self.all_substitutions = list(set_of_all)
+        self.all_substitutions = set_of_all.copy()
         # pre-compute the dictionary of products represented as at most quadratic
         # monomials appearing in the system with all the substitutions
         search_space_deg1 = set()
@@ -284,8 +299,7 @@ class QuadratizationProblem():
             search_space_deg1.add(monom_x)
             l[i] = 0
         # add substitution variables
-        for substitution in self.all_substitutions:
-            search_space_deg1.add(substitution)
+        search_space_deg1 = search_space_deg1.union(self.all_substitutions)
         search_space_deg1 = list(search_space_deg1)
         # compute the set of monomials appearing in the derivatives
         monomials_in_derivatives = {}
@@ -309,10 +323,18 @@ class QuadratizationProblem():
                 product = Monomial.multiply(first_monom, second_monom)
                 if product.variables in monomials_in_derivatives:
                     for p in monomials_in_derivatives[product.variables]:
-                        if p not in self.product_results:
-                            self.product_results[p] = [(first_monom, second_monom)]
+                        if first_monom not in self.at_most_quadratic_monomials:
+                            self.at_most_quadratic_monomials[first_monom] = {p}
                         else:
-                            self.product_results[p].append((first_monom, second_monom))
+                            self.at_most_quadratic_monomials[first_monom].add(p)
+                        if second_monom not in self.at_most_quadratic_monomials:
+                            self.at_most_quadratic_monomials[second_monom] = {p}
+                        else:
+                            self.at_most_quadratic_monomials[second_monom].add(p)
+                        if p not in self.product_results:
+                            self.product_results[p] = {(first_monom, second_monom)}
+                        else:
+                            self.product_results[p].add((first_monom, second_monom))
     
     def find_must_have_substitutions(self):
         """ Find out which substitutions have to be present in the system 
@@ -334,7 +356,29 @@ class QuadratizationProblem():
                 self.current_length += 1
             else:
                 self.optional_substitutions.append(substitution)
-            
+
+    def remove_impossible_substitutions(self):
+        """ Find out which substitutions cannot be present in the system"""
+        while(True):
+            to_remove = set()
+            for substitution in self.additional_substitutions:
+                if substitution not in self.at_most_quadratic_monomials or len(self.at_most_quadratic_monomials[substitution]) == 0:
+                    to_remove.add(substitution)
+                    continue
+                for monom in substitution.derivative.monomials:
+                    if monom not in self.product_results or len(self.product_results[monom]) == 0:
+                        to_remove.add(substitution)
+                        break
+            self.all_substitutions = self.all_substitutions.difference(to_remove)
+            for substitution in to_remove:
+                if substitution in self.at_most_quadratic_monomials:
+                    for product in self.at_most_quadratic_monomials[substitution]:
+                        self.product_results[product] = {factors for factors in self.product_results[product] if (factors[0] != substitution and factors[1] != substitution)}
+                self.additional_substitutions.remove(substitution)
+            if len(to_remove) == 0:
+                self.all_substitutions = self.all_substitutions.union(self.original_substitutions)
+                return
+        
     def random_test(self):
         self.width = random.randint(1, max_width)
         print('width: ', self.width)
@@ -344,6 +388,7 @@ class QuadratizationProblem():
             eq.set_random(self.width)
             self.equations.append(eq)
         self.precompute()
+        self.remove_impossible_substitutions()
         self.find_must_have_substitutions()
     
     def load_from_file(self, filename):
@@ -370,6 +415,7 @@ class QuadratizationProblem():
                 self.equations.append(Equation(index, self.width, len(eq), eq))
                 index += 1
         self.precompute()
+        self.remove_impossible_substitutions()
         self.find_must_have_substitutions()
         
     def precompute_non_quadratized(self):
@@ -452,8 +498,9 @@ class QuadratizationProblem():
         # for laurent in self.optimal_solution:
         #    print(laurent)
         print('optimal number of substitutions: ', self.min_length)
+        print('number of original substitutions: ', len(self.original_substitutions))
         print('number of all substitutions: ', len(self.all_substitutions), '\n')
-        
+       
     def __str__(self):
         s = 'width = ' + str(self.width) + '\n'
         s += 'original differential equations:\n'
@@ -479,3 +526,4 @@ def main_from_file():
     print(t.min_length)
     for laurent in t.optimal_solution:
         print(laurent.variables)
+
