@@ -89,6 +89,9 @@ class Monomial:
             other.is_currently_present = other.origin.is_currently_present
         return self.is_currently_present and other.is_currently_present
     
+    def __eq__(self, other):
+        return self.variables == other.variables
+    
     def __hash__(self):
         return hash(self.variables)
     
@@ -139,12 +142,6 @@ class Substitution(Monomial):
         l[i] += 1
         product.variables = tuple(l)
         return product
-    
-    """def __eq__(self, other):
-        return self.variables == other.variables
-    
-    def __hash__(self):
-        return hash(self.variables)"""
     
     def __str__(self):
         s = super().__str__(False)
@@ -260,27 +257,27 @@ class QuadratizationProblem():
         self.find_must_have_substitutions()
         
     def precompute(self):
+        # compute the set Laurent monomials from the proposition
         for e in self.equations:
             self.original_substitutions = self.original_substitutions.union(e.calculate_substitutions(self.equations))
+        # remove unnecessary substitutions
         set_of_original = set()
         for o in self.original_substitutions:
             powers = sum([abs(x) for x in o.variables])
             if powers > 1:
                 set_of_original.add(o)
-            if powers == 1:
-                if sum(o.variables) == -1:
-                    set_of_original.add(o)
+            if sum(o.variables) == -1:
+                set_of_original.add(o)
         self.original_substitutions = set_of_original.copy()
-        self.all_substitutions = self.original_substitutions.union(self.additional_substitutions)
-        set_of_all = set()
-        for a in self.all_substitutions:
+        set_of_additional = set()
+        for a in self.additional_substitutions:
             powers = sum([abs(x) for x in a.variables])
             if powers > 1:
-                set_of_all.add(a)
-            if powers == 1:
-                if sum(a.variables) == -1:
-                    set_of_all.add(a)
-        self.all_substitutions = set_of_all.copy()
+                set_of_additional.add(a)
+            if sum(a.variables) == -1:
+                    set_of_additional.add(a)
+        self.additional_substitutions = set_of_additional.copy()
+        self.all_substitutions = self.original_substitutions.union(self.additional_substitutions)
         # pre-compute the dictionary of products represented as at most quadratic
         # monomials appearing in the system with all the substitutions
         search_space_deg1 = set()
@@ -335,7 +332,7 @@ class QuadratizationProblem():
                             self.product_results[p] = {(first_monom, second_monom)}
                         else:
                             self.product_results[p].add((first_monom, second_monom))
-    
+        
     def find_must_have_substitutions(self):
         """ Find out which substitutions have to be present in the system 
         and compute the list of optional substitutions"""
@@ -365,20 +362,27 @@ class QuadratizationProblem():
             for substitution in self.additional_substitutions:
                 if substitution not in self.at_most_quadratic_monomials or len(self.at_most_quadratic_monomials[substitution]) == 0:
                     to_remove.add(substitution)
+                    print('not producing:')
+                    print(substitution)
                     continue
                 for monom in substitution.derivative.monomials:
-                    if monom not in self.product_results or len(self.product_results[monom]) == 0:
+                    if (monom not in self.product_results) or len(self.product_results[monom]) == 0:
                         to_remove.add(substitution)
+                        if monom not in self.product_results:
+                            print(self.at_most_quadratic_monomials[substitution])
+                            print(monom)
                         break
             for substitution in to_remove:
                 if substitution not in self.original_substitutions:
                     if substitution in self.at_most_quadratic_monomials:
                         for product in self.at_most_quadratic_monomials[substitution]:
-                            self.product_results[product] = {factors for factors in self.product_results[product] if (factors[0].variables != substitution.variables and factors[1].variables != substitution.variables)}
+                            self.product_results[product] = {factors for factors in self.product_results[product] if (factors[0] != substitution and factors[1] != substitution)}
                     self.additional_substitutions.remove(substitution)
                     self.all_substitutions.remove(substitution)
-                else:
+                """else:
                     print('mistake')
+                    print(substitution)
+                    raise TypeError"""
             if len(to_remove) == 0:
                 return
         
