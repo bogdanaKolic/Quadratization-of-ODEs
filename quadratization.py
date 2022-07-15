@@ -269,6 +269,8 @@ class QuadratizationProblem():
             if sum(o.variables) == -1:
                 set_of_original.add(o)
         self.original_substitutions = set_of_original.copy()
+        self.min_length = len(self.original_substitutions)
+        self.optimal_solution = [y for y in self.original_substitutions]
         set_of_additional = set()
         for a in self.additional_substitutions:
             powers = sum([abs(x) for x in a.variables])
@@ -528,7 +530,7 @@ def main_random():
 def main_from_file():
     """ Perform a test on the system stored in a file"""
     t = QuadratizationProblem()
-    t.load_from_file('input_files/hill5.txt')
+    t.load_from_file('input_files/monom2.txt')
     t.run()
     print(t.min_length)
     for laurent in t.optimal_solution:
