@@ -326,7 +326,7 @@ def circular_benchmark_tests(repeat):
             outfile.write(str(len(test.all_substitutions))) 
             outfile.write('\ntime of execution : ')
             outfile.write(format_time(t1 - t0))
-            outfile.write(str(test))
+            outfile.write('\n' + str(test))
             outfile.write('\nSolution :\n')
             for j, laurent in enumerate(test.optimal_solution):
                 outfile.write(f'y{j} = ')
@@ -358,7 +358,7 @@ def hardk_benchmark_tests(repeat):
             outfile.write(str(len(test.all_substitutions))) 
             outfile.write('\ntime of execution : ')
             outfile.write(format_time(t1 - t0))
-            outfile.write(str(test))
+            outfile.write('\n' + str(test))
             outfile.write('\nSolution :\n')
             for j, laurent in enumerate(test.optimal_solution):
                 outfile.write(f'y{j} = ')
@@ -404,7 +404,7 @@ def monomn_benchmark_tests(repeat):
             outfile.write(str(len(test.all_substitutions))) 
             outfile.write('\ntime of execution : ')
             outfile.write(format_time(t1 - t0))
-            outfile.write(str(test))
+            outfile.write('\n' + str(test))
             outfile.write('\nSolution :\n')
             for j, laurent in enumerate(test.optimal_solution):
                 outfile.write(f'y{j} = ')
@@ -466,7 +466,7 @@ def hilln_benchmark_tests(repeat):
             outfile.write(str(len(test_3.all_substitutions))) 
             outfile.write('\ntime of execution : ')
             outfile.write(format_time(t1 - t0))
-            outfile.write(str(test_3))
+            outfile.write('\n' + str(test_3))
             outfile.write('\nSolution :\n')
             for j, laurent in enumerate(test_3.optimal_solution):
                 outfile.write(f'y{j} = ')
@@ -489,7 +489,7 @@ def hilln_benchmark_tests(repeat):
             outfile.write(str(len(test_4.all_substitutions))) 
             outfile.write('\ntime of execution : ')
             outfile.write(format_time(t1 - t0))
-            outfile.write(str(test_4))
+            outfile.write('\n' + str(test_4))
             outfile.write('\nSolution :\n')
             for j, laurent in enumerate(test_4.optimal_solution):
                 outfile.write(f'y{j} = ')
@@ -519,7 +519,7 @@ def selkov_benchmark_tests2(repeat):
             outfile.write(str(len(test.all_substitutions))) 
             outfile.write('\ntime of execution : ')
             outfile.write(format_time(t1 - t0))
-            outfile.write(str(test))
+            outfile.write('\n' + str(test))
             outfile.write('\nSolution :\n')
             for j, laurent in enumerate(test.optimal_solution):
                 outfile.write(f'y{j} = ')
@@ -564,7 +564,7 @@ def cubic_cycle_benchmark_tests(repeat):
             outfile.write(str(len(test.all_substitutions))) 
             outfile.write('\ntime of execution : ')
             outfile.write(format_time(t1 - t0))
-            outfile.write(str(test))
+            outfile.write('\n' + str(test))
             outfile.write('\nSolution :\n')
             for j, laurent in enumerate(test.optimal_solution):
                 outfile.write(f'y{j} = ')
@@ -612,7 +612,7 @@ def cubic_bicycle_benchmark_tests(repeat):
             outfile.write(str(len(test.all_substitutions))) 
             outfile.write('\ntime of execution : ')
             outfile.write(format_time(t1 - t0))
-            outfile.write(str(test))
+            outfile.write('\n' + str(test))
             outfile.write('\nSolution :\n')
             for j, laurent in enumerate(test.optimal_solution):
                 outfile.write(f'y{j} = ')
