@@ -270,6 +270,7 @@ class QuadratizationProblem():
                 set_of_original.add(o)
         self.original_substitutions = set_of_original.copy()
         self.min_length = len(self.original_substitutions)
+        self.variables_from_derivatives()
         self.optimal_solution = {y for y in self.original_substitutions}
         set_of_additional = set()
         for a in self.additional_substitutions:
@@ -338,7 +339,7 @@ class QuadratizationProblem():
     def find_must_have_substitutions(self):
         """ Find out which substitutions have to be present in the system 
         and compute the list of optional substitutions"""
-        """check = collections.deque()
+        check = collections.deque()
         for monom in self.product_results:
             if monom.origin is None:
                 check.append(monom)
@@ -350,7 +351,7 @@ class QuadratizationProblem():
                         if not m.is_always_present and m.origin is not None:
                             check.append(m)
                         m.is_currently_present = True
-                        m.is_always_present = True"""
+                        m.is_always_present = True
         for substitution in self.all_substitutions:
             if substitution.is_always_present:
                 self.current_length += 1
@@ -464,6 +465,12 @@ class QuadratizationProblem():
             if not result:
                 still_not_quadratized.add(monom_derivative)
         return still_not_quadratized
+    
+    def variables_from_derivatives(self):
+        for substitution in self.original_substitutions:
+            for monom_derivative in substitution.derivative.monomials:
+                for i in range(self.width):
+                    self.additional_substitutions.add(Substitution(monom_derivative, self.equations, i))
     
     def reduce(self, position, non_quadratized):
         """ Find out how many Laurent monomials can be neglected by using 
