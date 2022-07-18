@@ -1,0 +1,407 @@
+circular(2,3):
+width = 2
+original differential equations:
+x0 = 1*(0, 3)
+x1 = 1*(3, 0)
+
+Solution:
+(-1, 3)
+(3, -1)
+optimal number of substitutions:  2
+number of all substitutions:  2 
+
+circular(2,4):
+width = 2
+original differential equations:
+x0 = 1*(0, 4)
+x1 = 1*(4, 0)
+
+Solution:
+(-1, 4)
+(4, -1)
+optimal number of substitutions:  2
+number of all substitutions:  2 
+
+circular(2,5):
+width = 2
+original differential equations:
+x0 = 1*(0, 5)
+x1 = 1*(5, 0)
+
+Solution:
+(-1, 5)
+(5, -1)
+optimal number of substitutions:  2
+number of all substitutions:  2 
+
+circular(2,6):
+width = 2
+original differential equations:
+x0 = 1*(0, 6)
+x1 = 1*(6, 0)
+
+Solution:
+(-1, 6)
+(6, -1)
+optimal number of substitutions:  2
+number of all substitutions:  2 
+
+circular(2,8):
+width = 2
+original differential equations:
+x0 = 1*(0, 8)
+x1 = 1*(8, 0)
+
+Solution:
+(-1, 8)
+(8, -1)
+optimal number of substitutions:  2
+number of all substitutions:  2 
+
+hard3:
+width = 3
+original differential equations:
+x0 = 1*(0, 0, 3) + 1*(2, 2, 2)
+x1 = 1*(2, 0, 0)
+x2 = 1*(0, 2, 0)
+
+Solution:
+(-1, 0, 3)
+(1, 2, 2)
+(2, -1, 0)
+(0, 2, -1)
+optimal number of substitutions:  4
+number of all substitutions:  4 
+
+hard4:
+width = 3
+original differential equations:
+x0 = 1*(0, 0, 4) + 1*(2, 2, 3)
+x1 = 1*(2, 0, 0)
+x2 = 1*(0, 2, 0)
+
+Solution:
+(-1, 0, 4)
+(1, 2, 3)
+(2, -1, 0)
+(0, 2, -1)
+optimal number of substitutions:  4
+number of all substitutions:  4 
+
+hill3:
+width = 3
+original differential equations:
+x0 = 3*(0, 2, 2)
+x1 = -3*(0, 2, 2)
+x2 = 1*(0, 0, 0)
+
+Solution:
+(0, 1, 2)
+optimal number of substitutions:  1
+number of all substitutions:  3 
+
+hill3x:
+width = 4
+original differential equations:
+x0 = 3*(0, 2, 2, 1)
+x1 = -3*(0, 2, 2, 1)
+x2 = 1*(0, 0, 0, 1)
+x3 = -1*(0, 0, 0, 1)
+
+Solution:
+(0, 1, 2, 1)
+(0, 0, -1, 1)
+optimal number of substitutions:  2
+number of all substitutions:  4 
+
+hill5:
+width = 3
+original differential equations:
+x0 = 5*(0, 2, 4)
+x1 = -5*(0, 2, 4)
+x2 = 1*(0, 0, 0)
+
+Solution:
+(0, 1, 4)
+(0, 0, -1)
+optimal number of substitutions:  2
+number of all substitutions:  3 
+
+hill5x:
+width = 4
+original differential equations:
+x0 = 5*(0, 2, 4, 1)
+x1 = -5*(0, 2, 4, 1)
+x2 = 1*(0, 0, 0, 1)
+x3 = -1*(0, 0, 0, 1)
+
+Solution:
+(0, 1, 4, 1)
+(0, 0, -1, 1)
+optimal number of substitutions:  2
+number of all substitutions:  4 
+
+hill10:
+width = 3
+original differential equations:
+x0 = 10*(0, 2, 9)
+x1 = -10*(0, 2, 9)
+x2 = 1*(0, 0, 0)
+
+Solution:
+(0, 1, 9)
+(0, 0, -1)
+optimal number of substitutions:  2
+number of all substitutions:  3 
+
+hill10x:
+width = 4
+original differential equations:
+x0 = 10*(0, 2, 9, 1)
+x1 = -10*(0, 2, 9, 1)
+x2 = 1*(0, 0, 0, 1)
+x3 = -1*(0, 0, 0, 1)
+
+Solution:
+(0, 1, 9, 1)
+(0, 0, -1, 1)
+optimal number of substitutions:  2
+number of all substitutions:  4 
+
+hill15:
+width = 3
+original differential equations:
+x0 = 15*(0, 2, 14)
+x1 = -15*(0, 2, 14)
+x2 = 1*(0, 0, 0)
+
+Solution:
+(0, 1, 14)
+(0, 0, -1)
+optimal number of substitutions:  2
+number of all substitutions:  3 
+
+hill15x:
+width = 4
+original differential equations:
+x0 = 15*(0, 2, 14, 1)
+x1 = -15*(0, 2, 14, 1)
+x2 = 1*(0, 0, 0, 1)
+x3 = -1*(0, 0, 0, 1)
+
+Solution:
+(0, 1, 14, 1)
+(0, 0, -1, 1)
+optimal number of substitutions:  2
+number of all substitutions:  4 
+
+hill20:
+width = 3
+original differential equations:
+x0 = 20*(0, 2, 19)
+x1 = -20*(0, 2, 19)
+x2 = 1*(0, 0, 0)
+
+Solution:
+(0, 1, 19)
+(0, 0, -1)
+optimal number of substitutions:  2
+number of all substitutions:  3 
+
+hill20x:
+width = 4
+original differential equations:
+x0 = 20*(0, 2, 19, 1)
+x1 = -20*(0, 2, 19, 1)
+x2 = 1*(0, 0, 0, 1)
+x3 = -1*(0, 0, 0, 1)
+
+Solution:
+(0, 1, 19, 1)
+(0, 0, -1, 1)
+optimal number of substitutions:  2
+number of all substitutions:  4 
+
+monom2:
+width = 2
+original differential equations:
+x0 = 1*(0, 2) + 1*(2, 2)
+x1 = 1*(2, 0) + 1*(2, 2)
+
+Solution:
+(-1, 2)
+(1, 2)
+(2, -1)
+(2, 1)
+optimal number of substitutions:  4
+number of all substitutions:  4 
+
+monom3:
+width = 3
+original differential equations:
+x0 = 1*(0, 2, 0) + 1*(2, 2, 2)
+x1 = 1*(0, 0, 2) + 1*(2, 2, 2)
+x2 = 1*(2, 0, 0) + 1*(2, 2, 2)
+
+Solution:
+(-1, 2, 0)
+(1, 2, 2)
+(0, -1, 2)
+(2, 1, 2)
+(2, 0, -1)
+(2, 2, 1)
+optimal number of substitutions:  6
+number of all substitutions:  6 
+
+monom4:
+width = 4
+original differential equations:
+x0 = 1*(0, 2, 0, 0) + 1*(2, 2, 2, 2)
+x1 = 1*(0, 0, 2, 0) + 1*(2, 2, 2, 2)
+x2 = 1*(0, 0, 0, 2) + 1*(2, 2, 2, 2)
+x3 = 1*(2, 0, 0, 0) + 1*(2, 2, 2, 2)
+
+Solution:
+(-1, 2, 0, 0)
+(1, 2, 2, 2)
+(0, -1, 2, 0)
+(2, 1, 2, 2)
+(0, 0, -1, 2)
+(2, 2, 1, 2)
+(2, 0, 0, -1)
+(2, 2, 2, 1)
+optimal number of substitutions:  8
+number of all substitutions:  8 
+
+selkov:
+width = 2
+original differential equations:
+x0 = -1*(1, 0) + 1*(0, 1) + 1*(2, 1)
+x1 = -1*(0, 1) + 1*(0, 0) + -1*(2, 1)
+
+Solution:
+(1, 1)
+(2, 0)
+optimal number of substitutions:  2
+number of all substitutions:  6 
+
+cubic cycle(6):
+width = 6
+original differential equations:
+x0 = 1*(0, 3, 0, 0, 0, 0)
+x1 = 1*(0, 0, 3, 0, 0, 0)
+x2 = 1*(0, 0, 0, 3, 0, 0)
+x3 = 1*(0, 0, 0, 0, 3, 0)
+x4 = 1*(0, 0, 0, 0, 0, 3)
+x5 = 1*(3, 0, 0, 0, 0, 0)
+
+Solution:
+(-1, 3, 0, 0, 0, 0)
+(0, -1, 3, 0, 0, 0)
+(0, 0, -1, 3, 0, 0)
+(0, 0, 0, -1, 3, 0)
+(0, 0, 0, 0, -1, 3)
+(3, 0, 0, 0, 0, -1)
+optimal number of substitutions:  6
+number of all substitutions:  6 
+
+cubic cycle(7):
+width = 7
+original differential equations:
+x0 = 1*(0, 3, 0, 0, 0, 0, 0)
+x1 = 1*(0, 0, 3, 0, 0, 0, 0)
+x2 = 1*(0, 0, 0, 3, 0, 0, 0)
+x3 = 1*(0, 0, 0, 0, 3, 0, 0)
+x4 = 1*(0, 0, 0, 0, 0, 3, 0)
+x5 = 1*(0, 0, 0, 0, 0, 0, 3)
+x6 = 1*(3, 0, 0, 0, 0, 0, 0)
+
+Solution:
+(-1, 3, 0, 0, 0, 0, 0)
+(0, -1, 3, 0, 0, 0, 0)
+(0, 0, -1, 3, 0, 0, 0)
+(0, 0, 0, -1, 3, 0, 0)
+(0, 0, 0, 0, -1, 3, 0)
+(0, 0, 0, 0, 0, -1, 3)
+(3, 0, 0, 0, 0, 0, -1)
+optimal number of substitutions:  7
+number of all substitutions:  7 
+
+cubic_bicycle(7):
+width = 7
+original differential equations:
+x0 = 1*(0, 3, 0, 0, 0, 0, 0) + 1*(0, 0, 0, 0, 0, 0, 3)
+x1 = 1*(3, 0, 0, 0, 0, 0, 0) + 1*(0, 0, 3, 0, 0, 0, 0)
+x2 = 1*(0, 0, 0, 3, 0, 0, 0) + 1*(0, 3, 0, 0, 0, 0, 0)
+x3 = 1*(0, 0, 3, 0, 0, 0, 0) + 1*(0, 0, 0, 0, 3, 0, 0)
+x4 = 1*(0, 0, 0, 3, 0, 0, 0) + 1*(0, 0, 0, 0, 0, 3, 0)
+x5 = 1*(0, 0, 0, 0, 0, 0, 3) + 1*(0, 0, 0, 0, 3, 0, 0)
+x6 = 1*(0, 0, 0, 0, 0, 3, 0) + 1*(3, 0, 0, 0, 0, 0, 0)
+
+Solution:
+(-1, 3, 0, 0, 0, 0, 0)
+(-1, 0, 0, 0, 0, 0, 3)
+(3, -1, 0, 0, 0, 0, 0)
+(0, -1, 3, 0, 0, 0, 0)
+(0, 0, -1, 3, 0, 0, 0)
+(0, 3, -1, 0, 0, 0, 0)
+(0, 0, 3, -1, 0, 0, 0)
+(0, 0, 0, -1, 3, 0, 0)
+(0, 0, 0, 3, -1, 0, 0)
+(0, 0, 0, 0, -1, 3, 0)
+(0, 0, 0, 0, 0, -1, 3)
+(0, 0, 0, 0, 3, -1, 0)
+(0, 0, 0, 0, 0, 3, -1)
+(3, 0, 0, 0, 0, 0, -1)
+optimal number of substitutions:  14
+number of all substitutions:  14
+
+cubic_bicycle(8):
+width = 8
+original differential equations:
+x0 = 1*(0, 0, 0, 0, 0, 0, 0, 3) + 1*(0, 3, 0, 0, 0, 0, 0, 0)
+x1 = 1*(3, 0, 0, 0, 0, 0, 0, 0) + 1*(0, 0, 3, 0, 0, 0, 0, 0)
+x2 = 1*(0, 3, 0, 0, 0, 0, 0, 0) + 1*(0, 0, 0, 3, 0, 0, 0, 0)
+x3 = 1*(0, 0, 3, 0, 0, 0, 0, 0) + 1*(0, 0, 0, 0, 3, 0, 0, 0)
+x4 = 1*(0, 0, 0, 3, 0, 0, 0, 0) + 1*(0, 0, 0, 0, 0, 3, 0, 0)
+x5 = 1*(0, 0, 0, 0, 3, 0, 0, 0) + 1*(0, 0, 0, 0, 0, 0, 3, 0)
+x6 = 1*(0, 0, 0, 0, 0, 3, 0, 0) + 1*(0, 0, 0, 0, 0, 0, 0, 3)
+x7 = 1*(3, 0, 0, 0, 0, 0, 0, 0) + 1*(0, 0, 0, 0, 0, 0, 3, 0)
+
+Solution:
+(-1, 0, 0, 0, 0, 0, 0, 3)
+(-1, 3, 0, 0, 0, 0, 0, 0)
+(3, -1, 0, 0, 0, 0, 0, 0)
+(0, -1, 3, 0, 0, 0, 0, 0)
+(0, 3, -1, 0, 0, 0, 0, 0)
+(0, 0, -1, 3, 0, 0, 0, 0)
+(0, 0, 3, -1, 0, 0, 0, 0)
+(0, 0, 0, -1, 3, 0, 0, 0)
+(0, 0, 0, 3, -1, 0, 0, 0)
+(0, 0, 0, 0, -1, 3, 0, 0)
+(0, 0, 0, 0, 3, -1, 0, 0)
+(0, 0, 0, 0, 0, -1, 3, 0)
+(0, 0, 0, 0, 0, 3, -1, 0)
+(0, 0, 0, 0, 0, 0, -1, 3)
+(3, 0, 0, 0, 0, 0, 0, -1)
+(0, 0, 0, 0, 0, 0, 3, -1)
+optimal number of substitutions:  16
+number of all substitutions:  16
+
+hiv:
+width = 5
+original differential equations:
+x0 = 1*(0, 0, 0, 0, 0) + -1*(1, 0, 0, 0, 0) + -1*(1, 0, 1, 0, 0)
+x1 = 1*(1, 0, 1, 0, 0) + -1*(0, 1, 0, 0, 0)
+x2 = 1*(0, 1, 0, 0, 0) + -1*(0, 0, 1, 0, 0)
+x3 = 1*(1, 1, 0, 1, 0) + -1*(0, 1, 0, 1, 0) + -1*(0, 0, 0, 1, 0)
+x4 = 1*(0, 1, 0, 1, 0) + -1*(0, 0, 0, 0, 1)
+
+Solution:
+(-1, 0, 0, 0, 0)
+(1, -1, 1, 0, 0)
+(1, 1, 0, 0, 0)
+optimal number of substitutions:  3
+number of all substitutions:  12 
+
+
