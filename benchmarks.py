@@ -50,7 +50,7 @@ def generate_hardk_test(add_subs = False):
     eqB = quadratization.Equation(1, width, 1, monomials_of_B)
     monomials_of_C = [quadratization.Monomial(width, 1, (0, 2, 0))]
     eqC = quadratization.Equation(2, width, 1, monomials_of_C)
-    added_substitutions = []
+    added_substitutions = set()
     if add_subs:
         added_substitutions = variables(width, [eqA, eqB, eqC], degree)
     return quadratization.QuadratizationProblem(width, [eqA, eqB, eqC], added_substitutions), degree
@@ -174,7 +174,7 @@ def generate_selkov_test(add_subs = False):
     monomials_Y = [quadratization.Monomial(width, b, (0, 0)), quadratization.Monomial(width, - a, (0, 1)), quadratization.Monomial(width, -1, (2, 1))]
     eqX = quadratization.Equation(0, width, 3, monomials_X)
     eqY = quadratization.Equation(1, width, 3, monomials_Y)
-    added_substitutions = []
+    added_substitutions = set()
     if add_subs:
         added_substitutions = variables(width, [eqX, eqY], 2)
     return quadratization.QuadratizationProblem(width, [eqX, eqY], added_substitutions), a, b
@@ -302,7 +302,7 @@ def generate_circular_test(width, add_subs = False):
         monom = quadratization.Monomial(width, 1, tuple(l))
         equations.append(quadratization.Equation(i, width, 1, [monom]))
         l[(i + 1) % width] = 0
-    added_substitutions = []
+    added_substitutions = set()
     if add_subs:
         added_substitutions = variables(width, equations, degree)
     return quadratization.QuadratizationProblem(width, equations, added_substitutions), degree
@@ -310,7 +310,7 @@ def generate_circular_test(width, add_subs = False):
 def circular_benchmark_tests(repeat):
     """Perform a series of tests on circular systems of ODEs, for a given
     number of repetitions"""
-    with open('circular_count_musthave.txt', 'w') as outfile:
+    with open('circular_benchmark_tests_sub_from_derivatives_and_deg3.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1} :\n')
             t0 = time.time()
@@ -342,11 +342,11 @@ def circular_benchmark_tests(repeat):
 def hardk_benchmark_tests(repeat):
     """Perform a series of tests on hardk systems of ODEs, for a given
     number of repetitions"""
-    with open('hardk_deg.txt', 'w') as outfile:
+    with open('hardk_benchmark_tests_sub_from_derivatives.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1} :\n')
             t0 = time.time()
-            test, degree = generate_hardk_test(True)
+            test, degree = generate_hardk_test(False)
             test.run()
             t1 = time.time()
             outfile.write('degree k = ')
@@ -382,7 +382,7 @@ def generate_monomn_test(width, add_subs = False):
         monom = quadratization.Monomial(width, 1, tuple(l))
         l[(i + 1) % width] = 0
         equations.append(quadratization.Equation(i, width, 2, [common_monomial, monom]))
-    added_substitutions = []
+    added_substitutions = set()
     if add_subs:
         added_substitutions = variables(width, equations, 2)
     return quadratization.QuadratizationProblem(width, equations, added_substitutions)
@@ -390,11 +390,11 @@ def generate_monomn_test(width, add_subs = False):
 def monomn_benchmark_tests(repeat):
     """Perform a series of tests on monomn systems of ODEs, for a given
     number of repetitions"""
-    with open('monomn_improvement_with additional_variables.txt', 'w') as outfile:
+    with open('monomn_benchmark_tests_sub_from_derivatives.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1} :\n')
             t0 = time.time()
-            test = generate_monomn_test(i + 1, True)
+            test = generate_monomn_test(i + 1, False)
             test.run()
             t1 = time.time()
             outfile.write('number of variables n = ' + str(test.width))
@@ -428,7 +428,7 @@ def generate_hilln_test(order, width, all_subs = False):
         equation_H_3 = quadratization.Equation(0, width, 1, [monom_H_3])
         equation_I_3 = quadratization.Equation(1, width, 1, [monom_I_3])
         equation_T_3 = quadratization.Equation(2, width, 1, [monom_T_3])
-        added_substitutions = []
+        added_substitutions = set()
         if all_subs:
             added_substitutions = variables(width, [equation_H_3, equation_I_3, equation_T_3], order)
         return quadratization.QuadratizationProblem(width, [equation_H_3, equation_I_3, equation_T_3], added_substitutions)
@@ -441,7 +441,7 @@ def generate_hilln_test(order, width, all_subs = False):
     equation_I_4 = quadratization.Equation(1, width, 1, [monom_I_4])
     equation_T_4 = quadratization.Equation(2, width, 1, [monom_T_4])
     equation_X_4 = quadratization.Equation(3, width, 1, [monom_X_4])
-    added_substitutions = []
+    added_substitutions = set()
     if all_subs:
         added_substitutions = variables(width, [equation_H_4, equation_I_4, equation_T_4, equation_X_4], order)
     return quadratization.QuadratizationProblem(width, [equation_H_4, equation_I_4, equation_T_4, equation_X_4], added_substitutions)
@@ -449,7 +449,7 @@ def generate_hilln_test(order, width, all_subs = False):
 def hilln_benchmark_tests(repeat):
     """Perform a series of tests on hilln systems of ODEs (with both 3 and 4
     variables), for a given number of repetitions"""
-    with open('hilln_ordered.txt', 'w') as outfile:
+    with open('hilln_benchmark_tests_sub_from_derivatives.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1}:\n')
             #order = random.randint(1, 10)
@@ -505,11 +505,11 @@ def hilln_benchmark_tests(repeat):
 def selkov_benchmark_tests2(repeat):
     """Perform a series of tests on selkov systems of ODEs, for a given number
     of repetitions"""
-    with open('selkov_add_deg.txt', 'w') as outfile:
+    with open('selkov_benchmark_tests_sub_from_derivatives.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1}:\n')
             t0 = time.time()
-            test, a, b = generate_selkov_test(True)
+            test, a, b = generate_selkov_test()
             test.run()
             t1 = time.time()
             outfile.write(f'parameters: a = {a}, b = {b}\n')
@@ -542,7 +542,7 @@ def generate_cubic_cycle_test(width, add_subs = False):
         monom = quadratization.Monomial(width, 1, tuple(l))
         l[(i + 1) % width] = 0
         equations.append(quadratization.Equation(i, width, 1, [monom]))
-    added_substitutions = []
+    added_substitutions = set()
     if add_subs:
         added_substitutions = variables(width, equations, 3)
     return quadratization.QuadratizationProblem(width, equations, added_substitutions)
@@ -550,11 +550,11 @@ def generate_cubic_cycle_test(width, add_subs = False):
 def cubic_cycle_benchmark_tests(repeat):
     """Perform a series of tests on cubic cycle systems of ODEs, for a given 
     number of repetitions"""
-    with open('cubic_cycle_sub3.txt', 'w') as outfile:
+    with open('cubic_cycle_benchmark_tests_sub_from_derivatives.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1}:\n')
             t0 = time.time()
-            test = generate_cubic_cycle_test(i, True)
+            test = generate_cubic_cycle_test(i)
             test.run()
             t1 = time.time()
             outfile.write('number of variables n = ' + str(test.width))
@@ -590,7 +590,7 @@ def generate_cubic_bicycle_test(width, add_subs = False):
         monom_right = quadratization.Monomial(width, 1, tuple(l))
         l[(i + 1) % width] = 0
         equations.append(quadratization.Equation(i, width, 2, [monom_left, monom_right]))
-    added_substitutions = []
+    added_substitutions = set()
     if add_subs:
         added_substitutions = variables(width, equations, 3)
     return quadratization.QuadratizationProblem(width, equations, added_substitutions)
@@ -598,11 +598,11 @@ def generate_cubic_bicycle_test(width, add_subs = False):
 def cubic_bicycle_benchmark_tests(repeat):
     """Perform a series of tests on cubic bicycle systems of ODEs, for a given 
     number of repetitions"""
-    with open('cubic_bicycle_sub3.txt', 'w') as outfile:
+    with open('cubic_bicycle_benchmark_tests_sub_from_derivatives.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1}:\n')
             t0 = time.time()
-            test = generate_cubic_bicycle_test(i, True)
+            test = generate_cubic_bicycle_test(i)
             test.run()
             t1 = time.time()
             outfile.write('number of variables n = ' + str(test.width))
@@ -628,10 +628,11 @@ def cubic_bicycle_benchmark_tests(repeat):
 def variables(n, equations, degree):
     """ Function for creating additional substitution variables"""
     substitutions = set()
-    l = [j for j in itertools.combinations_with_replacement([i for i in range(4)], n)]
+    l = [j for j in itertools.combinations_with_replacement([i for i in range(-3, 4)], n)]
     for comb in l: 
         for s in itertools.permutations(comb):
             substitutions.add(quadratization.Substitution(s, equations))
     return substitutions
+
 
 
