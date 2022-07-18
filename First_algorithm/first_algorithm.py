@@ -94,7 +94,7 @@ class Laurent(Monomial):
     
     def __str__(self):
         s = super().__str__()
-        s += '\nderivative: ' + str(self.derivative) + '\nindex: ' + str(self.index)
+        # s += '\nderivative: ' + str(self.derivative) + '\nindex: ' + str(self.index)
         return s
 
 class Polynomial:
@@ -309,12 +309,12 @@ class Test():
         
     def __str__(self):
         s = 'width = ' + str(self.width) + '\n'
-        s += 'original differential equations:\n'
-        for e in self.equations:
-            s += str(e) + '\n'
-        #s += 'substitutions:\n'
-        #for a in self.all_substitutions:
-        #    s += str(a) + '\n'
+        # s += 'original differential equations:\n'
+        # for e in self.equations:
+        #     s += str(e) + '\n'
+        s += 'substitutions:\n'
+        for a in self.all_substitutions:
+            s += str(a) + '\n'
         return s
         
 def main_random():
@@ -323,6 +323,5 @@ def main_random():
         t = Test()
         t.random_test()
         t.run()
-        
     
 
