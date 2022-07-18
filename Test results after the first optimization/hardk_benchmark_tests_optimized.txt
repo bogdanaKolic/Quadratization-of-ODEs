@@ -1,0 +1,1399 @@
+Test 1 :
+degree k = 96
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0005002021789550781 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^96)
+y3 = (x0^1 * x1^2 * x2^95)
+
+Disregarded substitutions :
+
+Test 2 :
+degree k = 94
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^(-1) * x2^94)
+y3 = (x0^1 * x1^2 * x2^93)
+
+Disregarded substitutions :
+
+Test 3 :
+degree k = 75
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^1 * x1^2 * x2^74)
+y3 = (x0^(-1) * x2^75)
+
+Disregarded substitutions :
+
+Test 4 :
+degree k = 51
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^51)
+y3 = (x0^1 * x1^2 * x2^50)
+
+Disregarded substitutions :
+
+Test 5 :
+degree k = 39
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0010042190551757812 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^39)
+y3 = (x0^1 * x1^2 * x2^38)
+
+Disregarded substitutions :
+
+Test 6 :
+degree k = 38
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^(-1) * x2^38)
+y3 = (x0^1 * x1^2 * x2^37)
+
+Disregarded substitutions :
+
+Test 7 :
+degree k = 3
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0009989738464355469 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^2)
+y3 = (x0^(-1) * x2^3)
+
+Disregarded substitutions :
+
+Test 8 :
+degree k = 22
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^22)
+y3 = (x0^1 * x1^2 * x2^21)
+
+Disregarded substitutions :
+
+Test 9 :
+degree k = 73
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^73)
+y3 = (x0^1 * x1^2 * x2^72)
+
+Disregarded substitutions :
+
+Test 10 :
+degree k = 61
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^61)
+y3 = (x0^1 * x1^2 * x2^60)
+
+Disregarded substitutions :
+
+Test 11 :
+degree k = 73
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0010006427764892578 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^73)
+y3 = (x0^1 * x1^2 * x2^72)
+
+Disregarded substitutions :
+
+Test 12 :
+degree k = 24
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^1 * x1^2 * x2^23)
+y3 = (x0^(-1) * x2^24)
+
+Disregarded substitutions :
+
+Test 13 :
+degree k = 18
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0010013580322265625 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^18)
+y3 = (x0^1 * x1^2 * x2^17)
+
+Disregarded substitutions :
+
+Test 14 :
+degree k = 13
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0006835460662841797 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^1 * x1^2 * x2^12)
+y3 = (x0^(-1) * x2^13)
+
+Disregarded substitutions :
+
+Test 15 :
+degree k = 54
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0003955364227294922 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^53)
+y3 = (x0^(-1) * x2^54)
+
+Disregarded substitutions :
+
+Test 16 :
+degree k = 87
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.000499725341796875 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^86)
+y3 = (x0^(-1) * x2^87)
+
+Disregarded substitutions :
+
+Test 17 :
+degree k = 87
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^86)
+y3 = (x0^(-1) * x2^87)
+
+Disregarded substitutions :
+
+Test 18 :
+degree k = 11
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0020072460174560547 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^11)
+y3 = (x0^1 * x1^2 * x2^10)
+
+Disregarded substitutions :
+
+Test 19 :
+degree k = 49
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^(-1) * x2^49)
+y3 = (x0^1 * x1^2 * x2^48)
+
+Disregarded substitutions :
+
+Test 20 :
+degree k = 82
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0009160041809082031 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^81)
+y3 = (x0^(-1) * x2^82)
+
+Disregarded substitutions :
+
+Test 21 :
+degree k = 82
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^81)
+y3 = (x0^(-1) * x2^82)
+
+Disregarded substitutions :
+
+Test 22 :
+degree k = 83
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^(-1) * x2^83)
+y3 = (x0^1 * x1^2 * x2^82)
+
+Disregarded substitutions :
+
+Test 23 :
+degree k = 42
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0012333393096923828 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^41)
+y3 = (x0^(-1) * x2^42)
+
+Disregarded substitutions :
+
+Test 24 :
+degree k = 44
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0009984970092773438 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^44)
+y3 = (x0^1 * x1^2 * x2^43)
+
+Disregarded substitutions :
+
+Test 25 :
+degree k = 11
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^11)
+y3 = (x0^1 * x1^2 * x2^10)
+
+Disregarded substitutions :
+
+Test 26 :
+degree k = 5
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0009996891021728516 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^5)
+y3 = (x0^1 * x1^2 * x2^4)
+
+Disregarded substitutions :
+
+Test 27 :
+degree k = 7
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^1 * x1^2 * x2^6)
+y3 = (x0^(-1) * x2^7)
+
+Disregarded substitutions :
+
+Test 28 :
+degree k = 11
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0010023117065429688 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^11)
+y3 = (x0^1 * x1^2 * x2^10)
+
+Disregarded substitutions :
+
+Test 29 :
+degree k = 16
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^16)
+y3 = (x0^1 * x1^2 * x2^15)
+
+Disregarded substitutions :
+
+Test 30 :
+degree k = 63
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.00099945068359375 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^63)
+y3 = (x0^1 * x1^2 * x2^62)
+
+Disregarded substitutions :
+
+Test 31 :
+degree k = 9
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^8)
+y3 = (x0^(-1) * x2^9)
+
+Disregarded substitutions :
+
+Test 32 :
+degree k = 10
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0010211467742919922 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^10)
+y3 = (x0^1 * x1^2 * x2^9)
+
+Disregarded substitutions :
+
+Test 33 :
+degree k = 84
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0002911090850830078 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^84)
+y3 = (x0^1 * x1^2 * x2^83)
+
+Disregarded substitutions :
+
+Test 34 :
+degree k = 28
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^28)
+y3 = (x0^1 * x1^2 * x2^27)
+
+Disregarded substitutions :
+
+Test 35 :
+degree k = 35
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.00118255615234375 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^35)
+y3 = (x0^1 * x1^2 * x2^34)
+
+Disregarded substitutions :
+
+Test 36 :
+degree k = 65
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0014808177947998047 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^64)
+y3 = (x0^(-1) * x2^65)
+
+Disregarded substitutions :
+
+Test 37 :
+degree k = 86
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^1 * x1^2 * x2^85)
+y3 = (x0^(-1) * x2^86)
+
+Disregarded substitutions :
+
+Test 38 :
+degree k = 54
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^53)
+y3 = (x0^(-1) * x2^54)
+
+Disregarded substitutions :
+
+Test 39 :
+degree k = 49
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0014777183532714844 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^(-1) * x2^49)
+y3 = (x0^1 * x1^2 * x2^48)
+
+Disregarded substitutions :
+
+Test 40 :
+degree k = 86
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^1 * x1^2 * x2^85)
+y3 = (x0^(-1) * x2^86)
+
+Disregarded substitutions :
+
+Test 41 :
+degree k = 36
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0005850791931152344 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^35)
+y3 = (x0^(-1) * x2^36)
+
+Disregarded substitutions :
+
+Test 42 :
+degree k = 56
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^56)
+y3 = (x0^1 * x1^2 * x2^55)
+
+Disregarded substitutions :
+
+Test 43 :
+degree k = 63
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^63)
+y3 = (x0^1 * x1^2 * x2^62)
+
+Disregarded substitutions :
+
+Test 44 :
+degree k = 44
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0010752677917480469 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^44)
+y3 = (x0^1 * x1^2 * x2^43)
+
+Disregarded substitutions :
+
+Test 45 :
+degree k = 87
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^86)
+y3 = (x0^(-1) * x2^87)
+
+Disregarded substitutions :
+
+Test 46 :
+degree k = 64
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^63)
+y3 = (x0^(-1) * x2^64)
+
+Disregarded substitutions :
+
+Test 47 :
+degree k = 88
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^87)
+y3 = (x0^(-1) * x2^88)
+
+Disregarded substitutions :
+
+Test 48 :
+degree k = 71
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0009942054748535156 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^70)
+y3 = (x0^(-1) * x2^71)
+
+Disregarded substitutions :
+
+Test 49 :
+degree k = 51
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^51)
+y3 = (x0^1 * x1^2 * x2^50)
+
+Disregarded substitutions :
+
+Test 50 :
+degree k = 13
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0009999275207519531 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^1 * x1^2 * x2^12)
+y3 = (x0^(-1) * x2^13)
+
+Disregarded substitutions :
+
+Test 51 :
+degree k = 73
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^73)
+y3 = (x0^1 * x1^2 * x2^72)
+
+Disregarded substitutions :
+
+Test 52 :
+degree k = 1
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x0^(-1) * x2^1)
+y2 = (x1^2 * x2^(-1))
+y3 = (x0^1 * x1^2)
+
+Disregarded substitutions :
+
+Test 53 :
+degree k = 19
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0009996891021728516 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^18)
+y3 = (x0^(-1) * x2^19)
+
+Disregarded substitutions :
+
+Test 54 :
+degree k = 95
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^95)
+y3 = (x0^1 * x1^2 * x2^94)
+
+Disregarded substitutions :
+
+Test 55 :
+degree k = 1
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x0^(-1) * x2^1)
+y2 = (x1^2 * x2^(-1))
+y3 = (x0^1 * x1^2)
+
+Disregarded substitutions :
+
+Test 56 :
+degree k = 9
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^8)
+y3 = (x0^(-1) * x2^9)
+
+Disregarded substitutions :
+
+Test 57 :
+degree k = 28
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^28)
+y3 = (x0^1 * x1^2 * x2^27)
+
+Disregarded substitutions :
+
+Test 58 :
+degree k = 70
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^69)
+y3 = (x0^(-1) * x2^70)
+
+Disregarded substitutions :
+
+Test 59 :
+degree k = 86
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0009996891021728516 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^1 * x1^2 * x2^85)
+y3 = (x0^(-1) * x2^86)
+
+Disregarded substitutions :
+
+Test 60 :
+degree k = 34
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^34)
+y3 = (x0^1 * x1^2 * x2^33)
+
+Disregarded substitutions :
+
+Test 61 :
+degree k = 79
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^79)
+y3 = (x0^1 * x1^2 * x2^78)
+
+Disregarded substitutions :
+
+Test 62 :
+degree k = 32
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0009999275207519531 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^(-1) * x2^32)
+y3 = (x0^1 * x1^2 * x2^31)
+
+Disregarded substitutions :
+
+Test 63 :
+degree k = 27
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^27)
+y3 = (x0^1 * x1^2 * x2^26)
+
+Disregarded substitutions :
+
+Test 64 :
+degree k = 65
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^64)
+y3 = (x0^(-1) * x2^65)
+
+Disregarded substitutions :
+
+Test 65 :
+degree k = 27
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0009999275207519531 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^27)
+y3 = (x0^1 * x1^2 * x2^26)
+
+Disregarded substitutions :
+
+Test 66 :
+degree k = 63
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^63)
+y3 = (x0^1 * x1^2 * x2^62)
+
+Disregarded substitutions :
+
+Test 67 :
+degree k = 46
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^46)
+y3 = (x0^1 * x1^2 * x2^45)
+
+Disregarded substitutions :
+
+Test 68 :
+degree k = 53
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0009999275207519531 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^52)
+y3 = (x0^(-1) * x2^53)
+
+Disregarded substitutions :
+
+Test 69 :
+degree k = 19
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^18)
+y3 = (x0^(-1) * x2^19)
+
+Disregarded substitutions :
+
+Test 70 :
+degree k = 50
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^50)
+y3 = (x0^1 * x1^2 * x2^49)
+
+Disregarded substitutions :
+
+Test 71 :
+degree k = 56
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0009999275207519531 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^56)
+y3 = (x0^1 * x1^2 * x2^55)
+
+Disregarded substitutions :
+
+Test 72 :
+degree k = 85
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^85)
+y3 = (x0^1 * x1^2 * x2^84)
+
+Disregarded substitutions :
+
+Test 73 :
+degree k = 96
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^96)
+y3 = (x0^1 * x1^2 * x2^95)
+
+Disregarded substitutions :
+
+Test 74 :
+degree k = 48
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0010004043579101562 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^47)
+y3 = (x0^(-1) * x2^48)
+
+Disregarded substitutions :
+
+Test 75 :
+degree k = 82
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^81)
+y3 = (x0^(-1) * x2^82)
+
+Disregarded substitutions :
+
+Test 76 :
+degree k = 58
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^1 * x1^2 * x2^57)
+y3 = (x0^(-1) * x2^58)
+
+Disregarded substitutions :
+
+Test 77 :
+degree k = 68
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^68)
+y3 = (x0^1 * x1^2 * x2^67)
+
+Disregarded substitutions :
+
+Test 78 :
+degree k = 2
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.00099945068359375 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^(-1) * x2^2)
+y2 = (x0^2 * x1^(-1))
+y3 = (x0^1 * x1^2 * x2^1)
+
+Disregarded substitutions :
+
+Test 79 :
+degree k = 53
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^52)
+y3 = (x0^(-1) * x2^53)
+
+Disregarded substitutions :
+
+Test 80 :
+degree k = 2
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^(-1) * x2^2)
+y2 = (x0^2 * x1^(-1))
+y3 = (x0^1 * x1^2 * x2^1)
+
+Disregarded substitutions :
+
+Test 81 :
+degree k = 99
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^98)
+y3 = (x0^(-1) * x2^99)
+
+Disregarded substitutions :
+
+Test 82 :
+degree k = 9
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^8)
+y3 = (x0^(-1) * x2^9)
+
+Disregarded substitutions :
+
+Test 83 :
+degree k = 36
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^35)
+y3 = (x0^(-1) * x2^36)
+
+Disregarded substitutions :
+
+Test 84 :
+degree k = 32
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^(-1) * x2^32)
+y3 = (x0^1 * x1^2 * x2^31)
+
+Disregarded substitutions :
+
+Test 85 :
+degree k = 39
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^39)
+y3 = (x0^1 * x1^2 * x2^38)
+
+Disregarded substitutions :
+
+Test 86 :
+degree k = 81
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.001001596450805664 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^80)
+y3 = (x0^(-1) * x2^81)
+
+Disregarded substitutions :
+
+Test 87 :
+degree k = 55
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^55)
+y3 = (x0^1 * x1^2 * x2^54)
+
+Disregarded substitutions :
+
+Test 88 :
+degree k = 75
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^1 * x1^2 * x2^74)
+y3 = (x0^(-1) * x2^75)
+
+Disregarded substitutions :
+
+Test 89 :
+degree k = 18
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^18)
+y3 = (x0^1 * x1^2 * x2^17)
+
+Disregarded substitutions :
+
+Test 90 :
+degree k = 96
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0009989738464355469 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^96)
+y3 = (x0^1 * x1^2 * x2^95)
+
+Disregarded substitutions :
+
+Test 91 :
+degree k = 74
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^74)
+y3 = (x0^1 * x1^2 * x2^73)
+
+Disregarded substitutions :
+
+Test 92 :
+degree k = 41
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^1 * x1^2 * x2^40)
+y3 = (x0^(-1) * x2^41)
+
+Disregarded substitutions :
+
+Test 93 :
+degree k = 53
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0010004043579101562 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^52)
+y3 = (x0^(-1) * x2^53)
+
+Disregarded substitutions :
+
+Test 94 :
+degree k = 75
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^1 * x1^2 * x2^74)
+y3 = (x0^(-1) * x2^75)
+
+Disregarded substitutions :
+
+Test 95 :
+degree k = 43
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^1 * x1^2 * x2^42)
+y3 = (x0^(-1) * x2^43)
+
+Disregarded substitutions :
+
+Test 96 :
+degree k = 67
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0009999275207519531 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^67)
+y3 = (x0^1 * x1^2 * x2^66)
+
+Disregarded substitutions :
+
+Test 97 :
+degree k = 56
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^56)
+y3 = (x0^1 * x1^2 * x2^55)
+
+Disregarded substitutions :
+
+Test 98 :
+degree k = 15
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x1^2 * x2^(-1))
+y1 = (x0^2 * x1^(-1))
+y2 = (x0^(-1) * x2^15)
+y3 = (x0^1 * x1^2 * x2^14)
+
+Disregarded substitutions :
+
+Test 99 :
+degree k = 61
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0009999275207519531 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^61)
+y3 = (x0^1 * x1^2 * x2^60)
+
+Disregarded substitutions :
+
+Test 100 :
+degree k = 16
+number of variables n = 3
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x1^2 * x2^(-1))
+y2 = (x0^(-1) * x2^16)
+y3 = (x0^1 * x1^2 * x2^15)
+
+Disregarded substitutions :
