@@ -1,0 +1,344 @@
+Test 1 :
+number of variables n = 0
+optimal number of substitutions : 0
+number of all substitutions : 0
+time of execution : 0.0009310245513916016 seconds 
+Soultion :
+
+Disregarded substitutions :
+
+Test 2 :
+number of variables n = 1
+optimal number of substitutions : 0
+number of all substitutions : 2
+time of execution : 0.0 seconds 
+Soultion :
+
+Disregarded substitutions :
+y0 = (x0^1)
+y1 = (x0^1)
+
+Test 3 :
+number of variables n = 2
+optimal number of substitutions : 4
+number of all substitutions : 4
+time of execution : 0.00099945068359375 seconds 
+Soultion :
+y0 = (x0^2 * x1^(-1))
+y1 = (x0^1 * x1^2)
+y2 = (x0^2 * x1^1)
+y3 = (x0^(-1) * x1^2)
+
+Disregarded substitutions :
+
+Test 4 :
+number of variables n = 3
+optimal number of substitutions : 6
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^2 * x2^(-1))
+y1 = (x0^1 * x1^2 * x2^2)
+y2 = (x0^2 * x1^1 * x2^2)
+y3 = (x0^2 * x1^2 * x2^1)
+y4 = (x0^(-1) * x1^2)
+y5 = (x1^(-1) * x2^2)
+
+Disregarded substitutions :
+
+Test 5 :
+number of variables n = 4
+optimal number of substitutions : 8
+number of all substitutions : 8
+time of execution : 0.004999876022338867 seconds 
+Soultion :
+y0 = (x0^2 * x3^(-1))
+y1 = (x0^2 * x1^1 * x2^2 * x3^2)
+y2 = (x0^(-1) * x1^2)
+y3 = (x2^(-1) * x3^2)
+y4 = (x0^1 * x1^2 * x2^2 * x3^2)
+y5 = (x0^2 * x1^2 * x2^2 * x3^1)
+y6 = (x1^(-1) * x2^2)
+y7 = (x0^2 * x1^2 * x2^1 * x3^2)
+
+Disregarded substitutions :
+
+Test 6 :
+number of variables n = 5
+optimal number of substitutions : 10
+number of all substitutions : 10
+time of execution : 0.013999223709106445 seconds 
+Soultion :
+y0 = (x0^(-1) * x1^2)
+y1 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^1)
+y2 = (x3^(-1) * x4^2)
+y3 = (x0^1 * x1^2 * x2^2 * x3^2 * x4^2)
+y4 = (x2^(-1) * x3^2)
+y5 = (x0^2 * x1^2 * x2^1 * x3^2 * x4^2)
+y6 = (x0^2 * x1^2 * x2^2 * x3^1 * x4^2)
+y7 = (x0^2 * x4^(-1))
+y8 = (x0^2 * x1^1 * x2^2 * x3^2 * x4^2)
+y9 = (x1^(-1) * x2^2)
+
+Disregarded substitutions :
+
+Test 7 :
+number of variables n = 6
+optimal number of substitutions : 12
+number of all substitutions : 12
+time of execution : 0.08107280731201172 seconds 
+Soultion :
+y0 = (x1^(-1) * x2^2)
+y1 = (x0^2 * x5^(-1))
+y2 = (x3^(-1) * x4^2)
+y3 = (x0^2 * x1^2 * x2^2 * x3^1 * x4^2 * x5^2)
+y4 = (x0^1 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2)
+y5 = (x2^(-1) * x3^2)
+y6 = (x0^2 * x1^1 * x2^2 * x3^2 * x4^2 * x5^2)
+y7 = (x4^(-1) * x5^2)
+y8 = (x0^2 * x1^2 * x2^1 * x3^2 * x4^2 * x5^2)
+y9 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^1 * x5^2)
+y10 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^1)
+y11 = (x0^(-1) * x1^2)
+
+Disregarded substitutions :
+
+Test 8 :
+number of variables n = 7
+optimal number of substitutions : 14
+number of all substitutions : 14
+time of execution : 0.36652708053588867 seconds 
+Soultion :
+y0 = (x5^(-1) * x6^2)
+y1 = (x0^1 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2)
+y2 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^1 * x6^2)
+y3 = (x0^2 * x1^1 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2)
+y4 = (x0^(-1) * x1^2)
+y5 = (x0^2 * x1^2 * x2^1 * x3^2 * x4^2 * x5^2 * x6^2)
+y6 = (x3^(-1) * x4^2)
+y7 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^1 * x5^2 * x6^2)
+y8 = (x0^2 * x6^(-1))
+y9 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^1)
+y10 = (x1^(-1) * x2^2)
+y11 = (x0^2 * x1^2 * x2^2 * x3^1 * x4^2 * x5^2 * x6^2)
+y12 = (x2^(-1) * x3^2)
+y13 = (x4^(-1) * x5^2)
+
+Disregarded substitutions :
+
+Test 9 :
+number of variables n = 8
+optimal number of substitutions : 16
+number of all substitutions : 16
+time of execution : 1.8981223106384277 seconds 
+Soultion :
+y0 = (x5^(-1) * x6^2)
+y1 = (x0^(-1) * x1^2)
+y2 = (x6^(-1) * x7^2)
+y3 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^1 * x5^2 * x6^2 * x7^2)
+y4 = (x0^2 * x1^2 * x2^1 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2)
+y5 = (x0^2 * x1^2 * x2^2 * x3^1 * x4^2 * x5^2 * x6^2 * x7^2)
+y6 = (x3^(-1) * x4^2)
+y7 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^1)
+y8 = (x2^(-1) * x3^2)
+y9 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^1 * x7^2)
+y10 = (x0^2 * x7^(-1))
+y11 = (x4^(-1) * x5^2)
+y12 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^1 * x6^2 * x7^2)
+y13 = (x0^2 * x1^1 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2)
+y14 = (x0^1 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2)
+y15 = (x1^(-1) * x2^2)
+
+Disregarded substitutions :
+
+Test 10 :
+number of variables n = 9
+optimal number of substitutions : 18
+number of all substitutions : 18
+time of execution : 9.398055791854858 seconds 
+Soultion :
+y0 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^1)
+y1 = (x4^(-1) * x5^2)
+y2 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^1 * x5^2 * x6^2 * x7^2 * x8^2)
+y3 = (x2^(-1) * x3^2)
+y4 = (x0^2 * x1^2 * x2^1 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2)
+y5 = (x1^(-1) * x2^2)
+y6 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^1 * x6^2 * x7^2 * x8^2)
+y7 = (x0^2 * x1^1 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2)
+y8 = (x5^(-1) * x6^2)
+y9 = (x0^2 * x8^(-1))
+y10 = (x0^1 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2)
+y11 = (x3^(-1) * x4^2)
+y12 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^1 * x8^2)
+y13 = (x6^(-1) * x7^2)
+y14 = (x7^(-1) * x8^2)
+y15 = (x0^(-1) * x1^2)
+y16 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^1 * x7^2 * x8^2)
+y17 = (x0^2 * x1^2 * x2^2 * x3^1 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2)
+
+Disregarded substitutions :
+
+Test 11 :
+number of variables n = 10
+optimal number of substitutions : 20
+number of all substitutions : 20
+time of execution : 47.863755226135254 seconds 
+Soultion :
+y0 = (x7^(-1) * x8^2)
+y1 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^1 * x9^2)
+y2 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^1)
+y3 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^1 * x6^2 * x7^2 * x8^2 * x9^2)
+y4 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^1 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2)
+y5 = (x3^(-1) * x4^2)
+y6 = (x8^(-1) * x9^2)
+y7 = (x0^2 * x1^2 * x2^2 * x3^1 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2)
+y8 = (x2^(-1) * x3^2)
+y9 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^1 * x7^2 * x8^2 * x9^2)
+y10 = (x0^2 * x1^1 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2)
+y11 = (x6^(-1) * x7^2)
+y12 = (x1^(-1) * x2^2)
+y13 = (x0^(-1) * x1^2)
+y14 = (x0^2 * x9^(-1))
+y15 = (x5^(-1) * x6^2)
+y16 = (x4^(-1) * x5^2)
+y17 = (x0^2 * x1^2 * x2^1 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2)
+y18 = (x0^1 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2)
+y19 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^1 * x8^2 * x9^2)
+
+Disregarded substitutions :
+
+Test 12 :
+number of variables n = 11
+optimal number of substitutions : 22
+number of all substitutions : 22
+time of execution : 3.0 minutes 38.177119970321655 seconds 
+Soultion :
+y0 = (x9^(-1) * x10^2)
+y1 = (x1^(-1) * x2^2)
+y2 = (x0^2 * x1^1 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2)
+y3 = (x3^(-1) * x4^2)
+y4 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^1 * x8^2 * x9^2 * x10^2)
+y5 = (x4^(-1) * x5^2)
+y6 = (x2^(-1) * x3^2)
+y7 = (x0^(-1) * x1^2)
+y8 = (x5^(-1) * x6^2)
+y9 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^1 * x9^2 * x10^2)
+y10 = (x8^(-1) * x9^2)
+y11 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^1)
+y12 = (x0^2 * x10^(-1))
+y13 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^1 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2)
+y14 = (x7^(-1) * x8^2)
+y15 = (x0^2 * x1^2 * x2^2 * x3^1 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2)
+y16 = (x0^2 * x1^2 * x2^1 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2)
+y17 = (x6^(-1) * x7^2)
+y18 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^1 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2)
+y19 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^1 * x7^2 * x8^2 * x9^2 * x10^2)
+y20 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^1 * x10^2)
+y21 = (x0^1 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2)
+
+Disregarded substitutions :
+
+Test 13 :
+number of variables n = 12
+optimal number of substitutions : 24
+number of all substitutions : 24
+time of execution : 16.0 minutes 48.28568410873413 seconds 
+Soultion :
+y0 = (x0^1 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2)
+y1 = (x4^(-1) * x5^2)
+y2 = (x0^2 * x11^(-1))
+y3 = (x0^2 * x1^1 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2)
+y4 = (x3^(-1) * x4^2)
+y5 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^1 * x9^2 * x10^2 * x11^2)
+y6 = (x9^(-1) * x10^2)
+y7 = (x1^(-1) * x2^2)
+y8 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^1 * x8^2 * x9^2 * x10^2 * x11^2)
+y9 = (x6^(-1) * x7^2)
+y10 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^1)
+y11 = (x10^(-1) * x11^2)
+y12 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^1 * x11^2)
+y13 = (x2^(-1) * x3^2)
+y14 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^1 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2)
+y15 = (x5^(-1) * x6^2)
+y16 = (x8^(-1) * x9^2)
+y17 = (x0^(-1) * x1^2)
+y18 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^1 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2)
+y19 = (x0^2 * x1^2 * x2^1 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2)
+y20 = (x0^2 * x1^2 * x2^2 * x3^1 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2)
+y21 = (x7^(-1) * x8^2)
+y22 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^1 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2)
+y23 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^1 * x10^2 * x11^2)
+
+Disregarded substitutions :
+
+Test 14 :
+number of variables n = 13
+optimal number of substitutions : 26
+number of all substitutions : 26
+time of execution : 1.0 hour 17.0 minutes 5.6288957595825195 seconds 
+Soultion :
+y0 = (x2^(-1) * x3^2)
+y1 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^1 * x8^2 * x9^2 * x10^2 * x11^2 * x12^2)
+y2 = (x0^2 * x12^(-1))
+y3 = (x10^(-1) * x11^2)
+y4 = (x0^2 * x1^1 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2 * x12^2)
+y5 = (x0^2 * x1^2 * x2^2 * x3^1 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2 * x12^2)
+y6 = (x5^(-1) * x6^2)
+y7 = (x4^(-1) * x5^2)
+y8 = (x8^(-1) * x9^2)
+y9 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^1 * x9^2 * x10^2 * x11^2 * x12^2)
+y10 = (x6^(-1) * x7^2)
+y11 = (x0^(-1) * x1^2)
+y12 = (x1^(-1) * x2^2)
+y13 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^1 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2 * x12^2)
+y14 = (x0^2 * x1^2 * x2^1 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2 * x12^2)
+y15 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^1 * x11^2 * x12^2)
+y16 = (x11^(-1) * x12^2)
+y17 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2 * x12^1)
+y18 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^1 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2 * x12^2)
+y19 = (x7^(-1) * x8^2)
+y20 = (x0^1 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2 * x12^2)
+y21 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^1 * x12^2)
+y22 = (x3^(-1) * x4^2)
+y23 = (x9^(-1) * x10^2)
+y24 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^1 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2 * x12^2)
+y25 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^1 * x10^2 * x11^2 * x12^2)
+
+Disregarded substitutions :
+
+Test 15 :
+number of variables n = 14
+optimal number of substitutions : 28
+number of all substitutions : 28
+time of execution : 5.0 hours 41.0 minute 44.436026096343994 seconds 
+Soultion :
+y0 = (x8^(-1) * x9^2)
+y1 = (x0^2 * x13^(-1))
+y2 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^1 * x11^2 * x12^2 * x13^2)
+y3 = (x0^2 * x1^2 * x2^2 * x3^1 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2 * x12^2 * x13^2)
+y4 = (x0^2 * x1^1 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2 * x12^2 * x13^2)
+y5 = (x9^(-1) * x10^2)
+y6 = (x3^(-1) * x4^2)
+y7 = (x2^(-1) * x3^2)
+y8 = (x7^(-1) * x8^2)
+y9 = (x6^(-1) * x7^2)
+y10 = (x0^2 * x1^2 * x2^1 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2 * x12^2 * x13^2)
+y11 = (x10^(-1) * x11^2)
+y12 = (x4^(-1) * x5^2)
+y13 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^1 * x8^2 * x9^2 * x10^2 * x11^2 * x12^2 * x13^2)
+y14 = (x1^(-1) * x2^2)
+y15 = (x0^1 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2 * x12^2 * x13^2)
+y16 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^1 * x12^2 * x13^2)
+y17 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^1 * x10^2 * x11^2 * x12^2 * x13^2)
+y18 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^1 * x9^2 * x10^2 * x11^2 * x12^2 * x13^2)
+y19 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2 * x12^2 * x13^1)
+y20 = (x12^(-1) * x13^2)
+y21 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^1 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2 * x12^2 * x13^2)
+y22 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^1 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2 * x12^2 * x13^2)
+y23 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^1 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2 * x12^2 * x13^2)
+y24 = (x5^(-1) * x6^2)
+y25 = (x0^(-1) * x1^2)
+y26 = (x0^2 * x1^2 * x2^2 * x3^2 * x4^2 * x5^2 * x6^2 * x7^2 * x8^2 * x9^2 * x10^2 * x11^2 * x12^1 * x13^2)
+y27 = (x11^(-1) * x12^2)
+
+Disregarded substitutions :
