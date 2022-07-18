@@ -188,13 +188,15 @@ class Test():
     """ Class for performing single test - either on a benchmark set or 
     generates a random set of equations and tries to minimize the number of 
     Laurent monomials used in quadratization """
-    def __init__(self):
-        self.width = 0
-        self.equations = []
+    def __init__(self, width = 0, equations = []):
+        self.width = width
+        self.equations = equations.copy()
         self.all_substitutions = []
+        for e in self.equations:
+            self.all_substitutions += e.calculate_substitutions(self.equations)
         self.current_substitutions = [] # list of substitutions currently cosidered as a quadratization
-        self.optimal_solution = []
-        self.min_length = 0
+        self.optimal_solution = [y for y in self.all_substitutions]
+        self.min_length = len(self.optimal_solution)
     
     
     def random_test(self):
@@ -310,9 +312,9 @@ class Test():
         s += 'original differential equations:\n'
         for e in self.equations:
             s += str(e) + '\n'
-        # s += 'substitutions:\n'
-        # for a in self.all_substitutions:
-        #     s += str(a) + '\n'
+        #s += 'substitutions:\n'
+        #for a in self.all_substitutions:
+        #    s += str(a) + '\n'
         return s
         
 def main_random():
@@ -321,12 +323,6 @@ def main_random():
         t = Test()
         t.random_test()
         t.run()
-    
-def main_from_file(filename):
-    t = Test()
-    t.load_from_file(filename)
-    #print(t)
-    t.run()
         
     
 
