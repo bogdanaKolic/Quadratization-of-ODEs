@@ -1,0 +1,85 @@
+Test 1:
+Degree k: 21
+width = 3
+substitutions:
+1*(-1, 0, 21)
+1*(1, 2, 20)
+1*(2, -1, 0)
+1*(0, 2, -1)
+
+Solution:
+(-1, 0, 21)
+(1, 2, 20)
+(2, -1, 0)
+(0, 2, -1)
+optimal number of substitutions: 4
+number of all substitutions: 4
+
+Test 2:
+Degree k: 38
+width = 3
+substitutions:
+1*(-1, 0, 38)
+1*(1, 2, 37)
+1*(2, -1, 0)
+1*(0, 2, -1)
+
+Solution:
+(-1, 0, 38)
+(1, 2, 37)
+(2, -1, 0)
+(0, 2, -1)
+optimal number of substitutions: 4
+number of all substitutions: 4
+
+Test 3:
+Degree k: 3
+width = 3
+substitutions:
+1*(-1, 0, 3)
+1*(1, 2, 2)
+1*(2, -1, 0)
+1*(0, 2, -1)
+
+Solution:
+(-1, 0, 3)
+(1, 2, 2)
+(2, -1, 0)
+(0, 2, -1)
+optimal number of substitutions: 4
+number of all substitutions: 4
+
+Test 4:
+Degree k: 48
+width = 3
+substitutions:
+1*(-1, 0, 48)
+1*(1, 2, 47)
+1*(2, -1, 0)
+1*(0, 2, -1)
+
+Solution:
+(-1, 0, 48)
+(1, 2, 47)
+(2, -1, 0)
+(0, 2, -1)
+optimal number of substitutions: 4
+number of all substitutions: 4
+
+Test 5:
+Degree k: 26
+width = 3
+substitutions:
+1*(-1, 0, 26)
+1*(1, 2, 25)
+1*(2, -1, 0)
+1*(0, 2, -1)
+
+Solution:
+(-1, 0, 26)
+(1, 2, 25)
+(2, -1, 0)
+(0, 2, -1)
+optimal number of substitutions: 4
+number of all substitutions: 4
+

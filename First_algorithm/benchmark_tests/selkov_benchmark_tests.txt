@@ -1,0 +1,85 @@
+Test 1:
+parameters: a = 68, b = -15
+width = 2
+substitutions:
+-1*(0, 0)
+68*(-1, 1)
+1*(1, 1)
+-15*(0, -1)
+-68*(0, 0)
+-1*(2, 0)
+
+Solution:
+(1, 1)
+(2, 0)
+optimal number of substitutions: 2
+number of all substitutions: 6
+
+Test 2:
+parameters: a = -30, b = 51
+width = 2
+substitutions:
+-1*(0, 0)
+-30*(-1, 1)
+1*(1, 1)
+51*(0, -1)
+30*(0, 0)
+-1*(2, 0)
+
+Solution:
+(1, 1)
+(2, 0)
+optimal number of substitutions: 2
+number of all substitutions: 6
+
+Test 3:
+parameters: a = 7, b = 2
+width = 2
+substitutions:
+-1*(0, 0)
+7*(-1, 1)
+1*(1, 1)
+2*(0, -1)
+-7*(0, 0)
+-1*(2, 0)
+
+Solution:
+(1, 1)
+(2, 0)
+optimal number of substitutions: 2
+number of all substitutions: 6
+
+Test 4:
+parameters: a = -21, b = 97
+width = 2
+substitutions:
+-1*(0, 0)
+-21*(-1, 1)
+1*(1, 1)
+97*(0, -1)
+21*(0, 0)
+-1*(2, 0)
+
+Solution:
+(1, 1)
+(2, 0)
+optimal number of substitutions: 2
+number of all substitutions: 6
+
+Test 5:
+parameters: a = -15, b = -8
+width = 2
+substitutions:
+-1*(0, 0)
+-15*(-1, 1)
+1*(1, 1)
+-8*(0, -1)
+15*(0, 0)
+-1*(2, 0)
+
+Solution:
+(1, 1)
+(2, 0)
+optimal number of substitutions: 2
+number of all substitutions: 6
+

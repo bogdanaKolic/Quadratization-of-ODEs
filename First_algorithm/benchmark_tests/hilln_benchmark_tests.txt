@@ -1,0 +1,150 @@
+Test 1:
+Order n: 22
+
+With 3 variables:
+width = 3
+substitutions:
+22*(-1, 2, 21)
+-22*(0, 1, 21)
+1*(0, 0, -1)
+
+Solution:
+(0, 1, 21)
+(0, 0, -1)
+optimal number of substitutions: 2
+number of all substitutions: 3
+
+With 4 variables:
+width = 4
+substitutions:
+22*(-1, 2, 21, 1)
+-22*(0, 1, 21, 1)
+1*(0, 0, -1, 1)
+-1*(0, 0, 0, 0)
+
+Solution:
+(0, 1, 21, 1)
+(0, 0, -1, 1)
+optimal number of substitutions: 2
+number of all substitutions: 4
+
+Test 2:
+Order n: 26
+
+With 3 variables:
+width = 3
+substitutions:
+26*(-1, 2, 25)
+-26*(0, 1, 25)
+1*(0, 0, -1)
+
+Solution:
+(0, 1, 25)
+(0, 0, -1)
+optimal number of substitutions: 2
+number of all substitutions: 3
+
+With 4 variables:
+width = 4
+substitutions:
+26*(-1, 2, 25, 1)
+-26*(0, 1, 25, 1)
+1*(0, 0, -1, 1)
+-1*(0, 0, 0, 0)
+
+Solution:
+(0, 1, 25, 1)
+(0, 0, -1, 1)
+optimal number of substitutions: 2
+number of all substitutions: 4
+
+Test 3:
+Order n: 12
+
+With 3 variables:
+width = 3
+substitutions:
+12*(-1, 2, 11)
+-12*(0, 1, 11)
+1*(0, 0, -1)
+
+Solution:
+(0, 1, 11)
+(0, 0, -1)
+optimal number of substitutions: 2
+number of all substitutions: 3
+
+With 4 variables:
+width = 4
+substitutions:
+12*(-1, 2, 11, 1)
+-12*(0, 1, 11, 1)
+1*(0, 0, -1, 1)
+-1*(0, 0, 0, 0)
+
+Solution:
+(0, 1, 11, 1)
+(0, 0, -1, 1)
+optimal number of substitutions: 2
+number of all substitutions: 4
+
+Test 4:
+Order n: 6
+
+With 3 variables:
+width = 3
+substitutions:
+6*(-1, 2, 5)
+-6*(0, 1, 5)
+1*(0, 0, -1)
+
+Solution:
+(0, 1, 5)
+(0, 0, -1)
+optimal number of substitutions: 2
+number of all substitutions: 3
+
+With 4 variables:
+width = 4
+substitutions:
+6*(-1, 2, 5, 1)
+-6*(0, 1, 5, 1)
+1*(0, 0, -1, 1)
+-1*(0, 0, 0, 0)
+
+Solution:
+(0, 1, 5, 1)
+(0, 0, -1, 1)
+optimal number of substitutions: 2
+number of all substitutions: 4
+
+Test 5:
+Order n: 25
+
+With 3 variables:
+width = 3
+substitutions:
+25*(-1, 2, 24)
+-25*(0, 1, 24)
+1*(0, 0, -1)
+
+Solution:
+(0, 1, 24)
+(0, 0, -1)
+optimal number of substitutions: 2
+number of all substitutions: 3
+
+With 4 variables:
+width = 4
+substitutions:
+25*(-1, 2, 24, 1)
+-25*(0, 1, 24, 1)
+1*(0, 0, -1, 1)
+-1*(0, 0, 0, 0)
+
+Solution:
+(0, 1, 24, 1)
+(0, 0, -1, 1)
+optimal number of substitutions: 2
+number of all substitutions: 4
+
