@@ -1,0 +1,1599 @@
+Test 1:
+parameters: a = -5, b = 35
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0007255077362060547 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 2:
+parameters: a = -20, b = 33
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 3:
+parameters: a = -64, b = 29
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 4:
+parameters: a = 0, b = -42
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 5:
+parameters: a = -8, b = -55
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 6:
+parameters: a = 54, b = -71
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 7:
+parameters: a = 65, b = 26
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 8:
+parameters: a = -74, b = 50
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 9:
+parameters: a = 78, b = -49
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 10:
+parameters: a = 50, b = 20
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009186267852783203 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 11:
+parameters: a = -77, b = -79
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 12:
+parameters: a = -59, b = 66
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0010521411895751953 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 13:
+parameters: a = 73, b = 90
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 14:
+parameters: a = 56, b = 28
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 15:
+parameters: a = 65, b = 9
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009479522705078125 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 16:
+parameters: a = -77, b = 5
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 17:
+parameters: a = -80, b = 14
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0010409355163574219 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 18:
+parameters: a = -22, b = 54
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 19:
+parameters: a = -21, b = 96
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 20:
+parameters: a = 31, b = 37
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0010192394256591797 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 21:
+parameters: a = -18, b = -77
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 22:
+parameters: a = 63, b = -48
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009818077087402344 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 23:
+parameters: a = 47, b = -64
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 24:
+parameters: a = -47, b = -97
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 25:
+parameters: a = 1, b = 99
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.001013040542602539 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 26:
+parameters: a = -96, b = -56
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 27:
+parameters: a = -9, b = 77
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009450912475585938 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 28:
+parameters: a = -57, b = -8
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 29:
+parameters: a = 71, b = -77
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 30:
+parameters: a = -51, b = 51
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009140968322753906 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 31:
+parameters: a = 93, b = -31
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 32:
+parameters: a = -4, b = -61
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 33:
+parameters: a = 96, b = -14
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009989738464355469 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 34:
+parameters: a = 93, b = 35
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 35:
+parameters: a = 78, b = -33
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 36:
+parameters: a = 69, b = -20
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 37:
+parameters: a = 54, b = 45
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009031295776367188 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 38:
+parameters: a = 57, b = -94
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 39:
+parameters: a = -71, b = -17
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009987354278564453 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 40:
+parameters: a = 61, b = -34
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 41:
+parameters: a = -58, b = -40
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009996891021728516 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 42:
+parameters: a = -62, b = -99
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 43:
+parameters: a = 44, b = -72
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 44:
+parameters: a = 99, b = 92
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009999275207519531 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 45:
+parameters: a = 0, b = 91
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 46:
+parameters: a = 40, b = -10
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009999275207519531 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 47:
+parameters: a = 80, b = 100
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 48:
+parameters: a = 49, b = 42
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 49:
+parameters: a = -38, b = -18
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009999275207519531 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 50:
+parameters: a = 67, b = -62
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 51:
+parameters: a = 1, b = 58
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.002000570297241211 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 52:
+parameters: a = -16, b = -20
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 53:
+parameters: a = 0, b = 53
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 54:
+parameters: a = -92, b = 38
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009996891021728516 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 55:
+parameters: a = 88, b = 10
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 56:
+parameters: a = 38, b = 84
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009996891021728516 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 57:
+parameters: a = -13, b = 100
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 58:
+parameters: a = 12, b = -100
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 59:
+parameters: a = -72, b = 88
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 60:
+parameters: a = -13, b = -55
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009999275207519531 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 61:
+parameters: a = -12, b = -64
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 62:
+parameters: a = 90, b = -65
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0010001659393310547 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 63:
+parameters: a = -10, b = -30
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 64:
+parameters: a = -44, b = 16
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009999275207519531 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 65:
+parameters: a = -92, b = 14
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 66:
+parameters: a = -66, b = -63
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 67:
+parameters: a = 6, b = 54
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 68:
+parameters: a = -96, b = 15
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 69:
+parameters: a = 47, b = -1
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009999275207519531 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 70:
+parameters: a = 35, b = 66
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 71:
+parameters: a = 61, b = 26
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0010008811950683594 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 72:
+parameters: a = -44, b = 45
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 73:
+parameters: a = -66, b = 96
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009992122650146484 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 74:
+parameters: a = -5, b = -29
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 75:
+parameters: a = -41, b = -19
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 76:
+parameters: a = 90, b = -60
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0010001659393310547 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 77:
+parameters: a = 93, b = 46
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 78:
+parameters: a = -94, b = 0
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009999275207519531 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 79:
+parameters: a = 6, b = 41
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009999275207519531 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 80:
+parameters: a = -95, b = 36
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 81:
+parameters: a = 96, b = -46
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009999275207519531 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 82:
+parameters: a = -30, b = -39
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 83:
+parameters: a = 77, b = 21
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0010004043579101562 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 84:
+parameters: a = -67, b = -29
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 85:
+parameters: a = 66, b = 44
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.00099945068359375 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 86:
+parameters: a = -23, b = 95
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 87:
+parameters: a = -68, b = -19
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0010004043579101562 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 88:
+parameters: a = -19, b = 22
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0009996891021728516 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 89:
+parameters: a = -47, b = -32
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 90:
+parameters: a = -30, b = 97
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 91:
+parameters: a = -37, b = 63
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 92:
+parameters: a = 87, b = -73
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 93:
+parameters: a = -98, b = 89
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 94:
+parameters: a = -54, b = -77
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 95:
+parameters: a = -96, b = 65
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0010001659393310547 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 96:
+parameters: a = 24, b = 13
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 97:
+parameters: a = 45, b = 23
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.002219676971435547 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 98:
+parameters: a = -81, b = -46
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0010421276092529297 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 99:
+parameters: a = 62, b = -12
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
+
+Test 100:
+parameters: a = -90, b = -98
+
+optimal number of substitutions : 2
+number of all substitutions : 6
+time of execution : 0.0 seconds 
+Soultion :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = 1
+y3 = 1
+y4 = (x0^(-1) * x1^1)
+y5 = (x1^(-1))
