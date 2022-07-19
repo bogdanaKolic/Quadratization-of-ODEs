@@ -310,11 +310,11 @@ def generate_circular_test(width, add_subs = False):
 def circular_benchmark_tests(repeat):
     """Perform a series of tests on circular systems of ODEs, for a given
     number of repetitions"""
-    with open('circular_benchmark_tests_sub_from_derivatives_and_deg3.txt', 'w') as outfile:
+    with open('circular_benchmark_tests_sub_from_derivatives_sorted.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1} :\n')
             t0 = time.time()
-            test, degree = generate_circular_test(i, True)
+            test, degree = generate_circular_test(i, False)
             test.run()
             t1 = time.time()
             outfile.write('degree k = ')
@@ -342,7 +342,7 @@ def circular_benchmark_tests(repeat):
 def hardk_benchmark_tests(repeat):
     """Perform a series of tests on hardk systems of ODEs, for a given
     number of repetitions"""
-    with open('hardk_benchmark_tests_sub_from_derivatives.txt', 'w') as outfile:
+    with open('hardk_benchmark_tests_sub_from_derivatives_sorted.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1} :\n')
             t0 = time.time()
@@ -390,7 +390,7 @@ def generate_monomn_test(width, add_subs = False):
 def monomn_benchmark_tests(repeat):
     """Perform a series of tests on monomn systems of ODEs, for a given
     number of repetitions"""
-    with open('monomn_benchmark_tests_sub_from_derivatives.txt', 'w') as outfile:
+    with open('monomn_benchmark_tests_sub_from_derivatives_sorted.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1} :\n')
             t0 = time.time()
@@ -449,7 +449,7 @@ def generate_hilln_test(order, width, all_subs = False):
 def hilln_benchmark_tests(repeat):
     """Perform a series of tests on hilln systems of ODEs (with both 3 and 4
     variables), for a given number of repetitions"""
-    with open('hilln_benchmark_tests_sub_from_derivatives.txt', 'w') as outfile:
+    with open('hilln_benchmark_tests_sub_from_derivatives_sorted.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1}:\n')
             #order = random.randint(1, 10)
@@ -505,7 +505,7 @@ def hilln_benchmark_tests(repeat):
 def selkov_benchmark_tests2(repeat):
     """Perform a series of tests on selkov systems of ODEs, for a given number
     of repetitions"""
-    with open('selkov_benchmark_tests_sub_from_derivatives.txt', 'w') as outfile:
+    with open('selkov_benchmark_tests_sub_from_derivatives_sorted.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1}:\n')
             t0 = time.time()
@@ -550,7 +550,7 @@ def generate_cubic_cycle_test(width, add_subs = False):
 def cubic_cycle_benchmark_tests(repeat):
     """Perform a series of tests on cubic cycle systems of ODEs, for a given 
     number of repetitions"""
-    with open('cubic_cycle_benchmark_tests_sub_from_derivatives.txt', 'w') as outfile:
+    with open('cubic_cycle_benchmark_tests_sub_from_derivatives_sorted.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1}:\n')
             t0 = time.time()
@@ -598,7 +598,7 @@ def generate_cubic_bicycle_test(width, add_subs = False):
 def cubic_bicycle_benchmark_tests(repeat):
     """Perform a series of tests on cubic bicycle systems of ODEs, for a given 
     number of repetitions"""
-    with open('cubic_bicycle_benchmark_tests_sub_from_derivatives.txt', 'w') as outfile:
+    with open('cubic_bicycle_benchmark_tests_sub_from_derivatives_sorted.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1}:\n')
             t0 = time.time()
@@ -624,14 +624,43 @@ def cubic_bicycle_benchmark_tests(repeat):
                 outfile.write(str(laurent))
                 outfile.write('\n')
             outfile.write('\n')
-            
+
+def hiv_benchmark_test():
+    """Perform a test on a hiv system of ODEs"""     
+    with open('hiv_improvement.txt', 'w') as outfile:
+        t0 = time.time()
+        test = quadratization.QuadratizationProblem()
+        test.load_from_file('input_files/hiv.txt', variables(5))
+        test.run()
+        t1 = time.time()
+        outfile.write('number of variables n = ' + str(test.width))
+        outfile.write('\noptimal number of substitutions : ')
+        outfile.write(str(test.min_length))
+        outfile.write('\nnumber of all substitutions : ')
+        outfile.write(str(len(test.all_substitutions))) 
+        outfile.write('\ntime of execution : ')
+        outfile.write(format_time(t1 - t0))
+        outfile.write('\n' + str(test))
+        outfile.write('\nSolution :\n')
+        for j, laurent in enumerate(test.optimal_solution):
+            outfile.write(f'y{j} = ')
+            outfile.write(str(laurent))
+            outfile.write('\n')
+        outfile.write('\nDisregarded substitutions :\n')
+        for j, laurent in enumerate([y for y in test.optional_substitutions if y not in test.optimal_solution]):
+            outfile.write(f'y{j + test.min_length} = ')
+            outfile.write(str(laurent))
+            outfile.write('\n')
+        outfile.write('\n')
+
 def variables(n, equations, degree):
     """ Function for creating additional substitution variables"""
     substitutions = set()
-    l = [j for j in itertools.combinations_with_replacement([i for i in range(-3, 4)], n)]
+    l = [j for j in itertools.combinations_with_replacement([i for i in range(-1, 4)], n)]
     for comb in l: 
         for s in itertools.permutations(comb):
             substitutions.add(quadratization.Substitution(s, equations))
+            #substitutions.add(s)
     return substitutions
 
 
