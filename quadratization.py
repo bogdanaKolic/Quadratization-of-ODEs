@@ -120,6 +120,8 @@ class Substitution(Monomial):
     """Substituion monomials in addition have a pre-calculated derivative and 
     they have allowed negative powers(Laurent monomials)"""
     def __init__(self, monomial, equations, index = -1):
+        self.number_of_quadratic_monomials = 0 # the number of different quadratic  
+                                               # monomials it is a factor of
         if index == -1:
             Monomial.__init__(self, len(monomial), 1, monomial)
         else:
@@ -134,6 +136,8 @@ class Substitution(Monomial):
             monom_derivative.origin = self
         #self.index = index
     
+    def get_number_of_quadratic_monomials(substitution):
+        return substitution.number_of_quadratic_monomials
     
     def multiply_x(self, i):
         """Multiplies Laurent monomial by xi"""
@@ -270,7 +274,7 @@ class QuadratizationProblem():
                 set_of_original.add(o)
         self.original_substitutions = set_of_original.copy()
         self.min_length = len(self.original_substitutions)
-        self.variables_from_derivatives()
+        # self.variables_from_derivatives()
         self.optimal_solution = {y for y in self.original_substitutions}
         set_of_additional = set()
         for a in self.additional_substitutions:
@@ -335,7 +339,7 @@ class QuadratizationProblem():
                             self.product_results[p] = {(first_monom, second_monom)}
                         else:
                             self.product_results[p].add((first_monom, second_monom))
-        
+            
     def find_must_have_substitutions(self):
         """ Find out which substitutions have to be present in the system 
         and compute the list of optional substitutions"""
@@ -357,6 +361,11 @@ class QuadratizationProblem():
                 self.current_length += 1
             else:
                 self.optional_substitutions.append(substitution)
+        for substitution in self.all_substitutions:
+            if substitution in self.at_most_quadratic_monomials:
+                self.at_most_quadratic_monomials[substitution] = {product for product in self.at_most_quadratic_monomials[substitution] if product.origin is None or product.origin in self.all_substitutions}
+                substitution.number_of_quadratic_monomials = len(self.at_most_quadratic_monomials[substitution])
+        self.optional_substitutions = sorted(self.optional_substitutions, key = Substitution.get_number_of_quadratic_monomials)
 
     def remove_impossible_substitutions(self):
         """ Find out which substitutions cannot be present in the system"""
@@ -391,7 +400,7 @@ class QuadratizationProblem():
         self.remove_impossible_substitutions()
         self.find_must_have_substitutions()
     
-    def load_from_file(self, filename):
+    def load_from_file(self, filename, additional_substitutions = set()):
         with open(filename) as infile:
             index  = 0
             self.width = int(infile.readline())
@@ -414,6 +423,8 @@ class QuadratizationProblem():
                     eq.append(Monomial(self.width, coef, variables))
                 self.equations.append(Equation(index, self.width, len(eq), eq))
                 index += 1
+        for s in additional_substitutions:
+            self.additional_substitutions.add(Substitution(s, self.equations))
         self.precompute()
         self.remove_impossible_substitutions()
         self.find_must_have_substitutions()
