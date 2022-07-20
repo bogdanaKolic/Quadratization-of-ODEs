@@ -1,0 +1,2 @@
+Representation of the difference(reduction) in the number of must be taken substitutions when additional substitution variables
+of a fixed degree are present in the system.
