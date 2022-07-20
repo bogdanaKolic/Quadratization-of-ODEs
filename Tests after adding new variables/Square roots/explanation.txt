@@ -1,0 +1,1 @@
+Additional variables are the square roots(or as close to the square roots as possible) of the monomials in the derivatives of the original substitutions.
