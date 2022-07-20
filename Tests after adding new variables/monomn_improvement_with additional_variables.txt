@@ -1,3 +1,5 @@
+# without sorting
+
 Test 1 :
 number of variables n = 1
 optimal number of substitutions : 0
