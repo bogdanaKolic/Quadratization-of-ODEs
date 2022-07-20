@@ -1,0 +1,330 @@
+Test 1 :
+degree k = 4
+number of variables n = 3
+optimal number of substitutions : 3
+number of all substitutions : 18
+time of execution : 0.008565664291381836 seconds 
+original substitutions:
+(x1^(-1) * x2^4)
+(x0^4 * x2^(-1))
+(x0^(-1) * x1^4)
+
+Solution :
+y0 = (x1^(-1) * x2^4)
+y1 = (x0^4 * x2^(-1))
+y2 = (x0^(-1) * x1^4)
+
+Disregarded substitutions :
+y3 = (x0^(-1) * x2^(-1))
+y4 = (x0^2 * x1^1)
+y5 = (x0^(-1) * x1^7)
+y6 = (x0^2)
+y7 = (x0^(-1) * x2^2)
+y8 = (x2^4)
+y9 = (x0^(-1) * x1^1)
+y10 = (x0^9 * x2^(-1))
+y11 = (x1^3 * x2^2)
+y12 = (x0^1 * x1^2 * x2^1)
+y13 = (x0^(-1) * x1^2 * x2^(-1))
+y14 = (x0^(-1) * x1^(-1) * x2^9)
+y15 = (x0^1 * x1^3 * x2^(-1))
+y16 = (x0^3 * x2^4)
+y17 = (x0^1 * x1^(-1) * x2^(-1))
+
+Test 2 :
+degree k = 4
+number of variables n = 3
+optimal number of substitutions : 3
+number of all substitutions : 17
+time of execution : 0.0019931793212890625 seconds 
+original substitutions:
+(x1^(-1) * x2^4)
+(x0^4 * x2^(-1))
+(x0^(-1) * x1^4)
+
+Solution :
+y0 = (x1^(-1) * x2^4)
+y1 = (x0^4 * x2^(-1))
+y2 = (x0^(-1) * x1^4)
+
+Disregarded substitutions :
+y3 = (x1^(-1))
+y4 = (x0^5 * x2^(-1))
+y5 = (x0^4 * x1^(-1))
+y6 = (x1^1 * x2^(-1))
+y7 = (x1^(-1) * x2^8)
+y8 = (x0^4 * x1^2)
+y9 = (x0^3 * x2^(-1))
+y10 = (x0^3 * x2^4)
+y11 = (x0^(-1) * x1^2 * x2^(-1))
+y12 = (x0^1 * x1^1 * x2^1)
+y13 = (x0^(-1) * x1^2 * x2^5)
+y14 = (x0^1 * x1^(-1) * x2^(-1))
+y15 = (x0^(-1) * x1^3 * x2^(-1))
+y16 = (x0^(-1) * x1^5 * x2^1)
+
+Test 3 :
+degree k = 4
+number of variables n = 3
+optimal number of substitutions : 3
+number of all substitutions : 21
+time of execution : 0.014077186584472656 seconds 
+original substitutions:
+(x1^(-1) * x2^4)
+(x0^4 * x2^(-1))
+(x0^(-1) * x1^4)
+
+Solution :
+y0 = (x1^(-1) * x2^4)
+y1 = (x0^4 * x2^(-1))
+y2 = (x0^(-1) * x1^4)
+
+Disregarded substitutions :
+y3 = (x0^2 * x2^(-1))
+y4 = (x0^2 * x2^1)
+y5 = (x0^(-1) * x1^2)
+y6 = (x0^(-1) * x1^6)
+y7 = (x0^1 * x1^2 * x2^1)
+y8 = (x1^(-1) * x2^1)
+y9 = (x0^1 * x1^3)
+y10 = (x0^4 * x2^2)
+y11 = (x1^2 * x2^(-1))
+y12 = (x1^(-1) * x2^2)
+y13 = (x0^(-1) * x1^(-1) * x2^(-1))
+y14 = (x1^(-1) * x2^6)
+y15 = (x0^9 * x1^1 * x2^(-1))
+y16 = (x1^(-1) * x2^(-1))
+y17 = (x0^(-1) * x1^2 * x2^(-1))
+y18 = (x0^(-1) * x1^1 * x2^5)
+y19 = (x1^1 * x2^5)
+y20 = (x0^2 * x1^1 * x2^(-1))
+
+Test 4 :
+degree k = 4
+number of variables n = 3
+optimal number of substitutions : 3
+number of all substitutions : 18
+time of execution : 0.010963201522827148 seconds 
+original substitutions:
+(x1^(-1) * x2^4)
+(x0^4 * x2^(-1))
+(x0^(-1) * x1^4)
+
+Solution :
+y0 = (x1^(-1) * x2^4)
+y1 = (x0^4 * x2^(-1))
+y2 = (x0^(-1) * x1^4)
+
+Disregarded substitutions :
+y3 = (x1^(-1))
+y4 = (x1^2)
+y5 = (x0^4 * x1^5)
+y6 = (x1^(-1) * x2^8)
+y7 = (x1^3 * x2^(-1))
+y8 = (x1^1 * x2^1)
+y9 = (x0^1 * x2^1)
+y10 = (x0^3)
+y11 = (x0^(-1) * x1^(-1) * x2^(-1))
+y12 = (x0^(-1) * x1^7 * x2^1)
+y13 = (x0^(-1) * x2^3)
+y14 = (x0^9 * x1^(-1) * x2^(-1))
+y15 = (x0^1 * x1^(-1) * x2^3)
+y16 = (x0^(-1) * x1^1 * x2^(-1))
+y17 = (x0^(-1) * x1^1 * x2^4)
+
+Test 5 :
+degree k = 4
+number of variables n = 3
+optimal number of substitutions : 3
+number of all substitutions : 13
+time of execution : 0.000995635986328125 seconds 
+original substitutions:
+(x1^(-1) * x2^4)
+(x0^4 * x2^(-1))
+(x0^(-1) * x1^4)
+
+Solution :
+y0 = (x1^(-1) * x2^4)
+y1 = (x0^4 * x2^(-1))
+y2 = (x0^(-1) * x1^4)
+
+Disregarded substitutions :
+y3 = (x1^(-1) * x2^2)
+y4 = (x1^1 * x2^1)
+y5 = (x0^1 * x2^1)
+y6 = (x1^(-1) * x2^6)
+y7 = (x0^(-1) * x1^2)
+y8 = (x0^(-1) * x1^6)
+y9 = (x0^(-1) * x1^3 * x2^(-1))
+y10 = (x1^3 * x2^(-1))
+y11 = (x0^4 * x1^1)
+y12 = (x0^3 * x2^(-1))
+
+Test 6 :
+degree k = 4
+number of variables n = 3
+optimal number of substitutions : 3
+number of all substitutions : 19
+time of execution : 0.011077404022216797 seconds 
+original substitutions:
+(x1^(-1) * x2^4)
+(x0^4 * x2^(-1))
+(x0^(-1) * x1^4)
+
+Solution :
+y0 = (x1^(-1) * x2^4)
+y1 = (x0^4 * x2^(-1))
+y2 = (x0^(-1) * x1^4)
+
+Disregarded substitutions :
+y3 = (x0^3)
+y4 = (x0^4)
+y5 = (x0^(-1) * x1^6)
+y6 = (x0^1 * x1^(-1) * x2^(-1))
+y7 = (x0^2 * x1^2)
+y8 = (x1^(-1) * x2^2)
+y9 = (x0^7 * x1^1 * x2^(-1))
+y10 = (x0^(-1) * x1^2)
+y11 = (x0^1 * x1^2 * x2^(-1))
+y12 = (x1^2)
+y13 = (x0^1 * x1^1 * x2^2)
+y14 = (x0^(-1) * x1^4 * x2^2)
+y15 = (x0^(-1) * x1^(-1) * x2^2)
+y16 = (x0^1 * x1^(-1) * x2^4)
+y17 = (x0^(-1) * x1^(-1) * x2^4)
+y18 = (x0^1 * x1^(-1) * x2^3)
+
+Test 7 :
+degree k = 4
+number of variables n = 3
+optimal number of substitutions : 3
+number of all substitutions : 20
+time of execution : 0.012313365936279297 seconds 
+original substitutions:
+(x1^(-1) * x2^4)
+(x0^4 * x2^(-1))
+(x0^(-1) * x1^4)
+
+Solution :
+y0 = (x1^(-1) * x2^4)
+y1 = (x0^4 * x2^(-1))
+y2 = (x0^(-1) * x1^4)
+
+Disregarded substitutions :
+y3 = (x1^(-1) * x2^1)
+y4 = (x0^1 * x1^1)
+y5 = (x0^1 * x2^(-1))
+y6 = (x0^4 * x1^(-1) * x2^2)
+y7 = (x0^(-1) * x2^(-1))
+y8 = (x0^(-1) * x1^1 * x2^1)
+y9 = (x0^4 * x1^4)
+y10 = (x0^(-1) * x1^4 * x2^3)
+y11 = (x0^(-1) * x1^7 * x2^(-1))
+y12 = (x1^3 * x2^1)
+y13 = (x0^(-1) * x1^(-1) * x2^(-1))
+y14 = (x0^(-1) * x1^(-1) * x2^4)
+y15 = (x0^1 * x1^(-1) * x2^9)
+y16 = (x0^5 * x1^1 * x2^(-1))
+y17 = (x0^3 * x1^(-1) * x2^(-1))
+y18 = (x0^3 * x2^1)
+y19 = (x1^1 * x2^(-1))
+
+Test 8 :
+degree k = 4
+number of variables n = 3
+optimal number of substitutions : 3
+number of all substitutions : 18
+time of execution : 0.009433269500732422 seconds 
+original substitutions:
+(x1^(-1) * x2^4)
+(x0^4 * x2^(-1))
+(x0^(-1) * x1^4)
+
+Solution :
+y0 = (x1^(-1) * x2^4)
+y1 = (x0^4 * x2^(-1))
+y2 = (x0^(-1) * x1^4)
+
+Disregarded substitutions :
+y3 = (x0^3)
+y4 = (x1^5 * x2^1)
+y5 = (x1^3 * x2^2)
+y6 = (x1^(-1) * x2^(-1))
+y7 = (x0^(-1) * x1^(-1) * x2^8)
+y8 = (x0^4 * x1^(-1) * x2^3)
+y9 = (x0^(-1) * x2^2)
+y10 = (x0^(-1) * x2^3)
+y11 = (x0^8 * x1^1 * x2^(-1))
+y12 = (x0^1 * x1^(-1))
+y13 = (x0^(-1) * x1^3 * x2^(-1))
+y14 = (x0^1 * x2^1)
+y15 = (x0^(-1) * x1^5 * x2^1)
+y16 = (x0^4)
+y17 = (x0^(-1) * x1^4 * x2^(-1))
+
+Test 9 :
+degree k = 4
+number of variables n = 3
+optimal number of substitutions : 3
+number of all substitutions : 20
+time of execution : 0.01306605339050293 seconds 
+original substitutions:
+(x1^(-1) * x2^4)
+(x0^4 * x2^(-1))
+(x0^(-1) * x1^4)
+
+Solution :
+y0 = (x1^(-1) * x2^4)
+y1 = (x0^4 * x2^(-1))
+y2 = (x0^(-1) * x1^4)
+
+Disregarded substitutions :
+y3 = (x2^2)
+y4 = (x2^(-1))
+y5 = (x0^2 * x1^(-1))
+y6 = (x0^2 * x1^1)
+y7 = (x0^5 * x2^(-1))
+y8 = (x0^1 * x2^(-1))
+y9 = (x0^7 * x1^1 * x2^(-1))
+y10 = (x0^(-1) * x1^1)
+y11 = (x0^1 * x1^(-1) * x2^(-1))
+y12 = (x0^1 * x1^3)
+y13 = (x0^1 * x1^(-1) * x2^5)
+y14 = (x0^2 * x1^4)
+y15 = (x0^(-1) * x1^(-1) * x2^3)
+y16 = (x0^(-1) * x1^4 * x2^1)
+y17 = (x0^(-1) * x1^3 * x2^5)
+y18 = (x0^(-1) * x1^4 * x2^(-1))
+y19 = (x0^(-1) * x1^(-1) * x2^4)
+
+Test 10 :
+degree k = 4
+number of variables n = 3
+optimal number of substitutions : 3
+number of all substitutions : 16
+time of execution : 0.0019948482513427734 seconds 
+original substitutions:
+(x1^(-1) * x2^4)
+(x0^4 * x2^(-1))
+(x0^(-1) * x1^4)
+
+Solution :
+y0 = (x1^(-1) * x2^4)
+y1 = (x0^4 * x2^(-1))
+y2 = (x0^(-1) * x1^4)
+
+Disregarded substitutions :
+y3 = (x0^(-1))
+y4 = (x0^(-1) * x2^(-1))
+y5 = (x1^4)
+y6 = (x0^(-1) * x1^8)
+y7 = (x1^(-1) * x2^2)
+y8 = (x1^(-1) * x2^6)
+y9 = (x2^2)
+y10 = (x0^3 * x2^(-1))
+y11 = (x0^1 * x2^5)
+y12 = (x0^4 * x1^(-1) * x2^2)
+y13 = (x0^2 * x1^(-1) * x2^(-1))
+y14 = (x0^(-1) * x1^3 * x2^2)
+y15 = (x0^6 * x1^1 * x2^(-1))
+
