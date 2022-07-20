@@ -39,11 +39,11 @@ def random_circular_benchmark_tests(repeat):
             outfile.write(str(len(test.all_substitutions))) 
             outfile.write('\n\n')
             
-def generate_hardk_test(add_subs = False):
+def generate_hardk_test(degree, add_subs = False):
     """Create an instance of class Test that represents a hardk system 
     of ODEs, return it and the degree k of the system"""
     width = 3 # variables A(index 0), B(index 1) and C(index 2)
-    degree = random.randint(1, 5) # k
+    # degree = random.randint(1, 5) # k
     monomials_of_A = [quadratization.Monomial(width, 1, (0, 0, degree)), quadratization.Monomial(width, 1, (2, 2, degree - 1))]
     eqA = quadratization.Equation(0, width, 2, monomials_of_A)
     monomials_of_B = [quadratization.Monomial(width, 1, (2, 0, 0))]
@@ -53,7 +53,7 @@ def generate_hardk_test(add_subs = False):
     added_substitutions = set()
     if add_subs:
         added_substitutions = variables(width, [eqA, eqB, eqC], degree)
-    return quadratization.QuadratizationProblem(width, [eqA, eqB, eqC], added_substitutions), degree
+    return quadratization.QuadratizationProblem(width, [eqA, eqB, eqC], added_substitutions)
 
 def random_hardk_benchmark_tests(repeat):
     """Perform a series of tests on hardk systems of ODEs, for a given
@@ -291,12 +291,12 @@ def format_time(sec):
         s += f'{sec} seconds '
     return s
 
-def generate_circular_test(width, add_subs = False):
+def generate_circular_test(width, degree, add_subs = False):
     """Create an instance of class Test that represents a circular system 
     of ODEs"""
-    degree = random.randint(1, 10) # k
+    # degree = random.randint(1, 10) # k
     equations = []
-    l = [0]*width
+    l = [0] * width
     for i in range(width):
         l[(i + 1) % width] = degree
         monom = quadratization.Monomial(width, 1, tuple(l))
@@ -305,16 +305,16 @@ def generate_circular_test(width, add_subs = False):
     added_substitutions = set()
     if add_subs:
         added_substitutions = variables(width, equations, degree)
-    return quadratization.QuadratizationProblem(width, equations, added_substitutions), degree
+    return quadratization.QuadratizationProblem(width, equations, added_substitutions)
 
-def circular_benchmark_tests(repeat):
+def circular_benchmark_tests(repeat, width, degree):
     """Perform a series of tests on circular systems of ODEs, for a given
     number of repetitions"""
-    with open('circular_benchmark_tests_sub_from_derivatives_sorted.txt', 'w') as outfile:
+    with open(f'circular_benchmark_tests_random_({width}, {degree}).txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1} :\n')
             t0 = time.time()
-            test, degree = generate_circular_test(i, False)
+            test = generate_circular_test(width, degree)
             test.run()
             t1 = time.time()
             outfile.write('degree k = ')
@@ -339,14 +339,14 @@ def circular_benchmark_tests(repeat):
                 outfile.write('\n')
             outfile.write('\n')
 
-def hardk_benchmark_tests(repeat):
+def hardk_benchmark_tests(repeat, degree):
     """Perform a series of tests on hardk systems of ODEs, for a given
     number of repetitions"""
-    with open('hardk_benchmark_tests_sub_from_derivatives_sorted.txt', 'w') as outfile:
+    with open(f'hardk_benchmark_tests_{degree}.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1} :\n')
             t0 = time.time()
-            test, degree = generate_hardk_test(False)
+            test = generate_hardk_test(degree, False)
             test.run()
             t1 = time.time()
             outfile.write('degree k = ')
@@ -387,14 +387,14 @@ def generate_monomn_test(width, add_subs = False):
         added_substitutions = variables(width, equations, 2)
     return quadratization.QuadratizationProblem(width, equations, added_substitutions)
 
-def monomn_benchmark_tests(repeat):
+def monomn_benchmark_tests(width, repeat):
     """Perform a series of tests on monomn systems of ODEs, for a given
     number of repetitions"""
-    with open('monomn_benchmark_tests_sub_from_derivatives_sorted.txt', 'w') as outfile:
+    with open(f'monomn_benchmark_tests_random{width}.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1} :\n')
             t0 = time.time()
-            test = generate_monomn_test(i + 1, False)
+            test = generate_monomn_test(width, False)
             test.run()
             t1 = time.time()
             outfile.write('number of variables n = ' + str(test.width))
@@ -446,14 +446,14 @@ def generate_hilln_test(order, width, all_subs = False):
         added_substitutions = variables(width, [equation_H_4, equation_I_4, equation_T_4, equation_X_4], order)
     return quadratization.QuadratizationProblem(width, [equation_H_4, equation_I_4, equation_T_4, equation_X_4], added_substitutions)
 
-def hilln_benchmark_tests(repeat):
+def hilln_benchmark_tests(order, repeat):
     """Perform a series of tests on hilln systems of ODEs (with both 3 and 4
     variables), for a given number of repetitions"""
-    with open('hilln_benchmark_tests_sub_from_derivatives_sorted.txt', 'w') as outfile:
+    with open(f'hilln_benchmark_tests_random{order}.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1}:\n')
-            #order = random.randint(1, 10)
-            order = i + 1
+            # order = random.randint(1, 10)
+            # order = i + 1
             outfile.write(f'Order n: {order}\n')
             outfile.write('\nWith 3 variables:\n')
             t0 = time.time()
@@ -505,7 +505,7 @@ def hilln_benchmark_tests(repeat):
 def selkov_benchmark_tests2(repeat):
     """Perform a series of tests on selkov systems of ODEs, for a given number
     of repetitions"""
-    with open('selkov_benchmark_tests_sub_from_derivatives_sorted.txt', 'w') as outfile:
+    with open('selkov_benchmark_tests_roots.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1}:\n')
             t0 = time.time()
@@ -550,7 +550,7 @@ def generate_cubic_cycle_test(width, add_subs = False):
 def cubic_cycle_benchmark_tests(repeat):
     """Perform a series of tests on cubic cycle systems of ODEs, for a given 
     number of repetitions"""
-    with open('cubic_cycle_benchmark_tests_sub_from_derivatives_sorted.txt', 'w') as outfile:
+    with open(f'cubic_cycle_benchmark_tests_roots.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1}:\n')
             t0 = time.time()
@@ -595,14 +595,14 @@ def generate_cubic_bicycle_test(width, add_subs = False):
         added_substitutions = variables(width, equations, 3)
     return quadratization.QuadratizationProblem(width, equations, added_substitutions)
 
-def cubic_bicycle_benchmark_tests(repeat):
+def cubic_bicycle_benchmark_tests(width, repeat):
     """Perform a series of tests on cubic bicycle systems of ODEs, for a given 
     number of repetitions"""
-    with open('cubic_bicycle_benchmark_tests_sub_from_derivatives_sorted.txt', 'w') as outfile:
+    with open(f'cubic_bicycle_benchmark_tests_random{width}.txt', 'w') as outfile:
         for i in range(repeat):
             outfile.write(f'Test {i + 1}:\n')
             t0 = time.time()
-            test = generate_cubic_bicycle_test(i)
+            test = generate_cubic_bicycle_test(width)
             test.run()
             t1 = time.time()
             outfile.write('number of variables n = ' + str(test.width))
@@ -625,33 +625,35 @@ def cubic_bicycle_benchmark_tests(repeat):
                 outfile.write('\n')
             outfile.write('\n')
 
-def hiv_benchmark_test():
+def hiv_benchmark_test(repeat = 1):
     """Perform a test on a hiv system of ODEs"""     
-    with open('hiv_improvement.txt', 'w') as outfile:
-        t0 = time.time()
-        test = quadratization.QuadratizationProblem()
-        test.load_from_file('input_files/hiv.txt', variables(5))
-        test.run()
-        t1 = time.time()
-        outfile.write('number of variables n = ' + str(test.width))
-        outfile.write('\noptimal number of substitutions : ')
-        outfile.write(str(test.min_length))
-        outfile.write('\nnumber of all substitutions : ')
-        outfile.write(str(len(test.all_substitutions))) 
-        outfile.write('\ntime of execution : ')
-        outfile.write(format_time(t1 - t0))
-        outfile.write('\n' + str(test))
-        outfile.write('\nSolution :\n')
-        for j, laurent in enumerate(test.optimal_solution):
-            outfile.write(f'y{j} = ')
-            outfile.write(str(laurent))
+    with open('hiv_before_addition.txt', 'w') as outfile:
+        for i in range(repeat):
+            outfile.write(f'Test {i + 1}:\n')
+            t0 = time.time()
+            test = quadratization.QuadratizationProblem()
+            test.load_from_file('input_files/hiv.txt')
+            test.run()
+            t1 = time.time()
+            outfile.write('number of variables n = ' + str(test.width))
+            outfile.write('\noptimal number of substitutions : ')
+            outfile.write(str(test.min_length))
+            outfile.write('\nnumber of all substitutions : ')
+            outfile.write(str(len(test.all_substitutions))) 
+            outfile.write('\ntime of execution : ')
+            outfile.write(format_time(t1 - t0))
+            outfile.write('\n' + str(test))
+            outfile.write('\nSolution :\n')
+            for j, laurent in enumerate(test.optimal_solution):
+                outfile.write(f'y{j} = ')
+                outfile.write(str(laurent))
+                outfile.write('\n')
+            outfile.write('\nDisregarded substitutions :\n')
+            for j, laurent in enumerate([y for y in test.optional_substitutions if y not in test.optimal_solution]):
+                outfile.write(f'y{j + test.min_length} = ')
+                outfile.write(str(laurent))
+                outfile.write('\n')
             outfile.write('\n')
-        outfile.write('\nDisregarded substitutions :\n')
-        for j, laurent in enumerate([y for y in test.optional_substitutions if y not in test.optimal_solution]):
-            outfile.write(f'y{j + test.min_length} = ')
-            outfile.write(str(laurent))
-            outfile.write('\n')
-        outfile.write('\n')
 
 def variables(n, equations, degree):
     """ Function for creating additional substitution variables"""
@@ -662,6 +664,5 @@ def variables(n, equations, degree):
             substitutions.add(quadratization.Substitution(s, equations))
             #substitutions.add(s)
     return substitutions
-
 
 
