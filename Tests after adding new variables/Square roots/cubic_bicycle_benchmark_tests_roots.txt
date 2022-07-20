@@ -1,0 +1,79 @@
+Test 1:
+number of variables n = 0
+optimal number of substitutions : 0
+number of all substitutions : 0
+time of execution : 0.0007522106170654297 seconds 
+original substitutions:
+
+Solution :
+
+Disregarded substitutions :
+
+Test 2:
+number of variables n = 1
+optimal number of substitutions : 1
+number of all substitutions : 1
+time of execution : 0.00049591064453125 seconds 
+original substitutions:
+(x0^2)
+
+Solution :
+y0 = (x0^2)
+
+Disregarded substitutions :
+
+Test 3:
+number of variables n = 2
+optimal number of substitutions : 2
+number of all substitutions : 3
+time of execution : 0.0010747909545898438 seconds 
+original substitutions:
+(x0^(-1) * x1^3)
+(x0^3 * x1^(-1))
+
+Solution :
+y0 = (x0^(-1) * x1^3)
+y1 = (x0^3 * x1^(-1))
+
+Disregarded substitutions :
+y2 = (x0^1 * x1^1)
+
+Test 4:
+number of variables n = 3
+optimal number of substitutions : 6
+number of all substitutions : 21
+time of execution : 1.9122745990753174 seconds 
+original substitutions:
+(x1^3 * x2^(-1))
+(x1^(-1) * x2^3)
+(x0^3 * x1^(-1))
+(x0^(-1) * x1^3)
+(x0^3 * x2^(-1))
+(x0^(-1) * x2^3)
+
+Solution :
+y0 = (x1^3 * x2^(-1))
+y1 = (x0^3 * x1^(-1))
+y2 = (x0^(-1) * x2^3)
+y3 = (x1^(-1) * x2^3)
+y4 = (x0^(-1) * x1^3)
+y5 = (x0^3 * x2^(-1))
+
+Disregarded substitutions :
+y6 = (x0^2 * x1^1)
+y7 = (x1^2 * x2^1)
+y8 = (x0^1 * x1^2)
+y9 = (x0^2 * x2^1)
+y10 = (x1^1 * x2^2)
+y11 = (x0^1 * x2^2)
+y12 = (x0^(-1) * x1^2 * x2^2)
+y13 = (x0^2 * x1^(-1) * x2^2)
+y14 = (x0^2 * x1^2 * x2^(-1))
+y15 = (x0^(-1) * x1^1 * x2^1)
+y16 = (x0^1 * x1^(-1) * x2^1)
+y17 = (x0^1 * x1^1 * x2^(-1))
+y18 = (x1^1 * x2^1)
+y19 = (x0^1 * x1^1)
+y20 = (x0^1 * x2^1)
+
+Test 5:

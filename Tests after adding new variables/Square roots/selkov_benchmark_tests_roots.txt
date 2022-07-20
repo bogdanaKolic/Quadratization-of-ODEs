@@ -1,0 +1,230 @@
+Test 1:
+parameters: a = -9, b = 36
+
+optimal number of substitutions : 2
+number of all substitutions : 7
+time of execution : 0.002279043197631836 seconds 
+original substitutions:
+(x0^(-1) * x1^1)
+(x0^1 * x1^1)
+(x0^2)
+(x1^(-1))
+
+Solution :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = (x0^2 * x1^1)
+y3 = (x0^1 * x1^(-1))
+y4 = (x0^(-1))
+y5 = (x0^(-1) * x1^1)
+y6 = (x1^(-1))
+
+Test 2:
+parameters: a = -37, b = 53
+
+optimal number of substitutions : 2
+number of all substitutions : 7
+time of execution : 0.0015954971313476562 seconds 
+original substitutions:
+(x0^(-1) * x1^1)
+(x0^1 * x1^1)
+(x0^2)
+(x1^(-1))
+
+Solution :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = (x0^2 * x1^1)
+y3 = (x0^1 * x1^(-1))
+y4 = (x0^(-1))
+y5 = (x0^(-1) * x1^1)
+y6 = (x1^(-1))
+
+Test 3:
+parameters: a = -38, b = -100
+
+optimal number of substitutions : 2
+number of all substitutions : 7
+time of execution : 0.0019469261169433594 seconds 
+original substitutions:
+(x0^(-1) * x1^1)
+(x0^1 * x1^1)
+(x0^2)
+(x1^(-1))
+
+Solution :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = (x0^2 * x1^1)
+y3 = (x0^1 * x1^(-1))
+y4 = (x0^(-1))
+y5 = (x0^(-1) * x1^1)
+y6 = (x1^(-1))
+
+Test 4:
+parameters: a = -20, b = -97
+
+optimal number of substitutions : 2
+number of all substitutions : 7
+time of execution : 0.0009970664978027344 seconds 
+original substitutions:
+(x0^(-1) * x1^1)
+(x0^1 * x1^1)
+(x0^2)
+(x1^(-1))
+
+Solution :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = (x0^2 * x1^1)
+y3 = (x0^1 * x1^(-1))
+y4 = (x0^(-1))
+y5 = (x0^(-1) * x1^1)
+y6 = (x1^(-1))
+
+Test 5:
+parameters: a = 88, b = 11
+
+optimal number of substitutions : 2
+number of all substitutions : 7
+time of execution : 0.0019931793212890625 seconds 
+original substitutions:
+(x0^(-1) * x1^1)
+(x0^1 * x1^1)
+(x0^2)
+(x1^(-1))
+
+Solution :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = (x0^2 * x1^1)
+y3 = (x0^1 * x1^(-1))
+y4 = (x0^(-1))
+y5 = (x0^(-1) * x1^1)
+y6 = (x1^(-1))
+
+Test 6:
+parameters: a = -32, b = -84
+
+optimal number of substitutions : 2
+number of all substitutions : 7
+time of execution : 0.001992464065551758 seconds 
+original substitutions:
+(x0^(-1) * x1^1)
+(x0^1 * x1^1)
+(x0^2)
+(x1^(-1))
+
+Solution :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = (x0^2 * x1^1)
+y3 = (x0^1 * x1^(-1))
+y4 = (x0^(-1))
+y5 = (x0^(-1) * x1^1)
+y6 = (x1^(-1))
+
+Test 7:
+parameters: a = -91, b = 95
+
+optimal number of substitutions : 2
+number of all substitutions : 7
+time of execution : 0.0019936561584472656 seconds 
+original substitutions:
+(x0^(-1) * x1^1)
+(x0^1 * x1^1)
+(x0^2)
+(x1^(-1))
+
+Solution :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = (x0^2 * x1^1)
+y3 = (x0^1 * x1^(-1))
+y4 = (x0^(-1))
+y5 = (x0^(-1) * x1^1)
+y6 = (x1^(-1))
+
+Test 8:
+parameters: a = -55, b = -11
+
+optimal number of substitutions : 2
+number of all substitutions : 7
+time of execution : 0.0003933906555175781 seconds 
+original substitutions:
+(x0^(-1) * x1^1)
+(x0^1 * x1^1)
+(x0^2)
+(x1^(-1))
+
+Solution :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = (x0^2 * x1^1)
+y3 = (x0^1 * x1^(-1))
+y4 = (x0^(-1))
+y5 = (x0^(-1) * x1^1)
+y6 = (x1^(-1))
+
+Test 9:
+parameters: a = 14, b = -83
+
+optimal number of substitutions : 2
+number of all substitutions : 7
+time of execution : 0.002458333969116211 seconds 
+original substitutions:
+(x0^(-1) * x1^1)
+(x0^1 * x1^1)
+(x0^2)
+(x1^(-1))
+
+Solution :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = (x0^2 * x1^1)
+y3 = (x0^1 * x1^(-1))
+y4 = (x0^(-1))
+y5 = (x0^(-1) * x1^1)
+y6 = (x1^(-1))
+
+Test 10:
+parameters: a = -2, b = 86
+
+optimal number of substitutions : 2
+number of all substitutions : 7
+time of execution : 0.0019931793212890625 seconds 
+original substitutions:
+(x0^(-1) * x1^1)
+(x0^1 * x1^1)
+(x0^2)
+(x1^(-1))
+
+Solution :
+y0 = (x0^1 * x1^1)
+y1 = (x0^2)
+
+Disregarded substitutions :
+y2 = (x0^2 * x1^1)
+y3 = (x0^1 * x1^(-1))
+y4 = (x0^(-1))
+y5 = (x0^(-1) * x1^1)
+y6 = (x1^(-1))
+

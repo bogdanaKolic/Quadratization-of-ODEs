@@ -1,0 +1,285 @@
+Test 1:
+number of variables n = 0
+optimal number of substitutions : 0
+number of all substitutions : 0
+time of execution : 0.0008673667907714844 seconds 
+original substitutions:
+
+Solution :
+
+Disregarded substitutions :
+
+Test 2:
+number of variables n = 1
+optimal number of substitutions : 1
+number of all substitutions : 1
+time of execution : 0.0 seconds 
+original substitutions:
+(x0^2)
+
+Solution :
+y0 = (x0^2)
+
+Disregarded substitutions :
+
+Test 3:
+number of variables n = 2
+optimal number of substitutions : 2
+number of all substitutions : 3
+time of execution : 0.0004966259002685547 seconds 
+original substitutions:
+(x0^(-1) * x1^3)
+(x0^3 * x1^(-1))
+
+Solution :
+y0 = (x0^(-1) * x1^3)
+y1 = (x0^3 * x1^(-1))
+
+Disregarded substitutions :
+y2 = (x0^1 * x1^1)
+
+Test 4:
+number of variables n = 3
+optimal number of substitutions : 3
+number of all substitutions : 9
+time of execution : 0.0010538101196289062 seconds 
+original substitutions:
+(x1^(-1) * x2^3)
+(x0^(-1) * x1^3)
+(x0^3 * x2^(-1))
+
+Solution :
+y0 = (x1^(-1) * x2^3)
+y1 = (x0^(-1) * x1^3)
+y2 = (x0^3 * x2^(-1))
+
+Disregarded substitutions :
+y3 = (x0^1 * x1^2)
+y4 = (x0^2 * x2^1)
+y5 = (x1^1 * x2^2)
+y6 = (x0^(-1) * x1^1 * x2^1)
+y7 = (x0^1 * x1^(-1) * x2^1)
+y8 = (x0^1 * x1^1 * x2^(-1))
+
+Test 5:
+number of variables n = 4
+optimal number of substitutions : 4
+number of all substitutions : 12
+time of execution : 0.0009860992431640625 seconds 
+original substitutions:
+(x0^3 * x3^(-1))
+(x0^(-1) * x1^3)
+(x2^(-1) * x3^3)
+(x1^(-1) * x2^3)
+
+Solution :
+y0 = (x0^3 * x3^(-1))
+y1 = (x0^(-1) * x1^3)
+y2 = (x2^(-1) * x3^3)
+y3 = (x1^(-1) * x2^3)
+
+Disregarded substitutions :
+y4 = (x1^1 * x2^2)
+y5 = (x0^2 * x3^1)
+y6 = (x2^1 * x3^2)
+y7 = (x0^1 * x1^2)
+y8 = (x1^(-1) * x2^1 * x3^1)
+y9 = (x0^(-1) * x1^1 * x2^1)
+y10 = (x0^1 * x2^(-1) * x3^1)
+y11 = (x0^1 * x1^1 * x3^(-1))
+
+Test 6:
+number of variables n = 5
+optimal number of substitutions : 5
+number of all substitutions : 15
+time of execution : 0.0010390281677246094 seconds 
+original substitutions:
+(x2^(-1) * x3^3)
+(x3^(-1) * x4^3)
+(x1^(-1) * x2^3)
+(x0^(-1) * x1^3)
+(x0^3 * x4^(-1))
+
+Solution :
+y0 = (x3^(-1) * x4^3)
+y1 = (x1^(-1) * x2^3)
+y2 = (x0^(-1) * x1^3)
+y3 = (x0^3 * x4^(-1))
+y4 = (x2^(-1) * x3^3)
+
+Disregarded substitutions :
+y5 = (x3^1 * x4^2)
+y6 = (x1^1 * x2^2)
+y7 = (x0^1 * x1^2)
+y8 = (x0^2 * x4^1)
+y9 = (x2^1 * x3^2)
+y10 = (x1^(-1) * x2^1 * x3^1)
+y11 = (x0^1 * x3^(-1) * x4^1)
+y12 = (x2^(-1) * x3^1 * x4^1)
+y13 = (x0^(-1) * x1^1 * x2^1)
+y14 = (x0^1 * x1^1 * x4^(-1))
+
+Test 7:
+number of variables n = 6
+optimal number of substitutions : 6
+number of all substitutions : 18
+time of execution : 0.0021202564239501953 seconds 
+original substitutions:
+(x1^(-1) * x2^3)
+(x2^(-1) * x3^3)
+(x0^3 * x5^(-1))
+(x4^(-1) * x5^3)
+(x3^(-1) * x4^3)
+(x0^(-1) * x1^3)
+
+Solution :
+y0 = (x0^3 * x5^(-1))
+y1 = (x4^(-1) * x5^3)
+y2 = (x0^(-1) * x1^3)
+y3 = (x2^(-1) * x3^3)
+y4 = (x1^(-1) * x2^3)
+y5 = (x3^(-1) * x4^3)
+
+Disregarded substitutions :
+y6 = (x0^2 * x5^1)
+y7 = (x4^1 * x5^2)
+y8 = (x2^1 * x3^2)
+y9 = (x3^1 * x4^2)
+y10 = (x0^1 * x1^2)
+y11 = (x1^1 * x2^2)
+y12 = (x1^(-1) * x2^1 * x3^1)
+y13 = (x0^1 * x4^(-1) * x5^1)
+y14 = (x2^(-1) * x3^1 * x4^1)
+y15 = (x3^(-1) * x4^1 * x5^1)
+y16 = (x0^(-1) * x1^1 * x2^1)
+y17 = (x0^1 * x1^1 * x5^(-1))
+
+Test 8:
+number of variables n = 7
+optimal number of substitutions : 7
+number of all substitutions : 21
+time of execution : 0.0008025169372558594 seconds 
+original substitutions:
+(x4^(-1) * x5^3)
+(x3^(-1) * x4^3)
+(x1^(-1) * x2^3)
+(x5^(-1) * x6^3)
+(x2^(-1) * x3^3)
+(x0^(-1) * x1^3)
+(x0^3 * x6^(-1))
+
+Solution :
+y0 = (x4^(-1) * x5^3)
+y1 = (x1^(-1) * x2^3)
+y2 = (x2^(-1) * x3^3)
+y3 = (x0^3 * x6^(-1))
+y4 = (x5^(-1) * x6^3)
+y5 = (x0^(-1) * x1^3)
+y6 = (x3^(-1) * x4^3)
+
+Disregarded substitutions :
+y7 = (x1^1 * x2^2)
+y8 = (x0^1 * x1^2)
+y9 = (x5^1 * x6^2)
+y10 = (x3^1 * x4^2)
+y11 = (x2^1 * x3^2)
+y12 = (x0^2 * x6^1)
+y13 = (x4^1 * x5^2)
+y14 = (x0^1 * x1^1 * x6^(-1))
+y15 = (x2^(-1) * x3^1 * x4^1)
+y16 = (x0^1 * x5^(-1) * x6^1)
+y17 = (x0^(-1) * x1^1 * x2^1)
+y18 = (x3^(-1) * x4^1 * x5^1)
+y19 = (x4^(-1) * x5^1 * x6^1)
+y20 = (x1^(-1) * x2^1 * x3^1)
+
+Test 9:
+number of variables n = 8
+optimal number of substitutions : 8
+number of all substitutions : 24
+time of execution : 0.001996278762817383 seconds 
+original substitutions:
+(x3^(-1) * x4^3)
+(x5^(-1) * x6^3)
+(x4^(-1) * x5^3)
+(x0^(-1) * x1^3)
+(x0^3 * x7^(-1))
+(x2^(-1) * x3^3)
+(x1^(-1) * x2^3)
+(x6^(-1) * x7^3)
+
+Solution :
+y0 = (x3^(-1) * x4^3)
+y1 = (x5^(-1) * x6^3)
+y2 = (x4^(-1) * x5^3)
+y3 = (x0^(-1) * x1^3)
+y4 = (x0^3 * x7^(-1))
+y5 = (x2^(-1) * x3^3)
+y6 = (x1^(-1) * x2^3)
+y7 = (x6^(-1) * x7^3)
+
+Disregarded substitutions :
+y8 = (x6^1 * x7^2)
+y9 = (x2^1 * x3^2)
+y10 = (x3^1 * x4^2)
+y11 = (x5^1 * x6^2)
+y12 = (x0^1 * x1^2)
+y13 = (x1^1 * x2^2)
+y14 = (x4^1 * x5^2)
+y15 = (x0^2 * x7^1)
+y16 = (x0^1 * x1^1 * x7^(-1))
+y17 = (x2^(-1) * x3^1 * x4^1)
+y18 = (x5^(-1) * x6^1 * x7^1)
+y19 = (x0^1 * x6^(-1) * x7^1)
+y20 = (x4^(-1) * x5^1 * x6^1)
+y21 = (x1^(-1) * x2^1 * x3^1)
+y22 = (x0^(-1) * x1^1 * x2^1)
+y23 = (x3^(-1) * x4^1 * x5^1)
+
+Test 10:
+number of variables n = 9
+optimal number of substitutions : 9
+number of all substitutions : 27
+time of execution : 0.001986980438232422 seconds 
+original substitutions:
+(x6^(-1) * x7^3)
+(x0^(-1) * x1^3)
+(x5^(-1) * x6^3)
+(x0^3 * x8^(-1))
+(x7^(-1) * x8^3)
+(x1^(-1) * x2^3)
+(x4^(-1) * x5^3)
+(x3^(-1) * x4^3)
+(x2^(-1) * x3^3)
+
+Solution :
+y0 = (x0^(-1) * x1^3)
+y1 = (x0^3 * x8^(-1))
+y2 = (x7^(-1) * x8^3)
+y3 = (x3^(-1) * x4^3)
+y4 = (x1^(-1) * x2^3)
+y5 = (x4^(-1) * x5^3)
+y6 = (x5^(-1) * x6^3)
+y7 = (x6^(-1) * x7^3)
+y8 = (x2^(-1) * x3^3)
+
+Disregarded substitutions :
+y9 = (x5^1 * x6^2)
+y10 = (x2^1 * x3^2)
+y11 = (x0^1 * x1^2)
+y12 = (x3^1 * x4^2)
+y13 = (x1^1 * x2^2)
+y14 = (x0^2 * x8^1)
+y15 = (x7^1 * x8^2)
+y16 = (x6^1 * x7^2)
+y17 = (x4^1 * x5^2)
+y18 = (x5^(-1) * x6^1 * x7^1)
+y19 = (x0^1 * x7^(-1) * x8^1)
+y20 = (x0^(-1) * x1^1 * x2^1)
+y21 = (x3^(-1) * x4^1 * x5^1)
+y22 = (x0^1 * x1^1 * x8^(-1))
+y23 = (x1^(-1) * x2^1 * x3^1)
+y24 = (x4^(-1) * x5^1 * x6^1)
+y25 = (x6^(-1) * x7^1 * x8^1)
+y26 = (x2^(-1) * x3^1 * x4^1)
+
