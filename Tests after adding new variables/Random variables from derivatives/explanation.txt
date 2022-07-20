@@ -1,0 +1,2 @@
+From each monomial coming from the derivatives in the system with all of the basic substitutions, two random substitutions are created, such that their product
+is the considered monomial.
