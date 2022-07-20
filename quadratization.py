@@ -274,8 +274,12 @@ class QuadratizationProblem():
                 set_of_original.add(o)
         self.original_substitutions = set_of_original.copy()
         self.min_length = len(self.original_substitutions)
+        # generate additional substitutions
         # self.variables_from_derivatives()
+        self.random_new_variables_from_derivatives() 
+        # add the known solution
         self.optimal_solution = {y for y in self.original_substitutions}
+        # remove unnecessary substitutions
         set_of_additional = set()
         for a in self.additional_substitutions:
             powers = sum([abs(x) for x in a.variables])
@@ -478,11 +482,28 @@ class QuadratizationProblem():
         return still_not_quadratized
     
     def variables_from_derivatives(self):
+         for substitution in self.original_substitutions:
+             for monom_derivative in substitution.derivative.monomials:
+                 # l = [x - y for (x, y) in zip(monom_derivative.variables, substitution.variables)]
+                 l = [x // 2 for x in monom_derivative.variables]
+                 self.additional_substitutions.add(Substitution(tuple(l), self.equations))
+                 l = [(x + 1) // 2 for x in monom_derivative.variables]
+                 self.additional_substitutions.add(Substitution(tuple(l), self.equations))   
+                                                  
+    def random_new_variables_from_derivatives(self):
         for substitution in self.original_substitutions:
-            for monom_derivative in substitution.derivative.monomials:
-                for i in range(self.width):
-                    self.additional_substitutions.add(Substitution(monom_derivative, self.equations, i))
-    
+             for monom_derivative in substitution.derivative.monomials:
+                 l = [random.randint(-1, x + 1) for x in monom_derivative.variables]
+                 p = [x - y for (x, y) in zip(monom_derivative.variables, l)]
+                 self.additional_substitutions.add(Substitution(tuple(l), self.equations))
+                 self.additional_substitutions.add(Substitution(tuple(p), self.equations))
+        for equation in self.equations:
+             for monom in equation.monomials:
+                 l = [random.randint(-1, x) for x in monom.variables]
+                 p = [x - y for (x, y) in zip(monom.variables, l)]
+                 self.additional_substitutions.add(Substitution(tuple(l), self.equations))
+                 self.additional_substitutions.add(Substitution(tuple(p), self.equations))
+        
     def reduce(self, position, non_quadratized):
         """ Find out how many Laurent monomials can be neglected by using 
         a recursion on a set of optional substitutions and considering how the 
