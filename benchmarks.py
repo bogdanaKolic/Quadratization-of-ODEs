@@ -655,14 +655,102 @@ def hiv_benchmark_test(repeat = 1):
                 outfile.write('\n')
             outfile.write('\n')
 
-def variables(n, equations, degree):
+def count_must_have_sub():
+    """Perform a series of tests to compare the number of must-have 
+    substitutions with and without additional variables in the system"""
+    with open(f'count_must-be-taken-substitutions_degree_5.txt', 'w') as outfile:
+        outfile.write('Circular\n')
+        for i in range(10):
+            outfile.write(f'Test {i + 1} :\n')
+            degree = random.randint(1, 10)
+            outfile.write(f'number of variables: {i}\n')
+            outfile.write(f'degree: {degree}\n\n')
+            t_without = generate_circular_test(i, degree, False)
+            t_with = generate_circular_test(i, degree, True)
+            outfile.write(f'number of must-have substitutions without addition: {len(t_without.all_substitutions) - len(t_without.optional_substitutions)}\n')
+            outfile.write(f'number of must-have substitutions with addition: {len(t_with.all_substitutions) - len(t_with.optional_substitutions)}\n\n')
+        outfile.write('Hardk\n')
+        for i in range(10):
+            outfile.write(f'Test {i + 1} :\n')
+            outfile.write(f'number of variables: {3}\n')
+            outfile.write(f'degree: {i + 1}\n\n')
+            t_without = generate_hardk_test(i + 1, False)
+            t_with = generate_hardk_test(i + 1, True)
+            outfile.write(f'number of must-have substitutions without addition: {len(t_without.all_substitutions) - len(t_without.optional_substitutions)}\n')
+            outfile.write(f'number of must-have substitutions with addition: {len(t_with.all_substitutions) - len(t_with.optional_substitutions)}\n\n')
+        outfile.write('Monomn\n')
+        for i in range(10):
+            outfile.write(f'Test {i + 1} :\n')
+            outfile.write(f'number of variables: {i + 2}\n\n')
+            t_without = generate_monomn_test(i + 1, False)
+            t_with = generate_monomn_test(i + 1, True)
+            outfile.write(f'number of must-have substitutions without addition: {len(t_without.all_substitutions) - len(t_without.optional_substitutions)}\n')
+            outfile.write(f'number of must-have substitutions with addition: {len(t_with.all_substitutions) - len(t_with.optional_substitutions)}\n\n')
+        outfile.write('Selkov\n')
+        for i in range(5):
+            outfile.write(f'Test {i + 1}:\n')
+            outfile.write(f'number of variables: 2\n\n')
+            test_without, _, _ = generate_selkov_test(False)
+            test_with = generate_selkov_test(True)
+            outfile.write(f'number of must-have substitutions without addition: {len(t_without.all_substitutions) - len(t_without.optional_substitutions)}\n')
+            outfile.write(f'number of must-have substitutions with addition: {len(t_with.all_substitutions) - len(t_with.optional_substitutions)}\n\n')
+        outfile.write('Cubic cycle\n')
+        for i in range(10):
+            outfile.write(f'Test {i + 1} :\n')
+            outfile.write(f'number of variables: {i}\n\n')
+            t_without = generate_cubic_cycle_test(i, False)
+            t_with = generate_cubic_cycle_test(i, True)
+            outfile.write(f'number of must-have substitutions without addition: {len(t_without.all_substitutions) - len(t_without.optional_substitutions)}\n')
+            outfile.write(f'number of must-have substitutions with addition: {len(t_with.all_substitutions) - len(t_with.optional_substitutions)}\n\n')
+        outfile.write('Cubic bicycle\n')
+        for i in range(10):
+            outfile.write(f'Test {i + 1} :\n')
+            outfile.write(f'number of variables: {i}\n\n')
+            t_without = generate_cubic_bicycle_test(i, False)
+            t_with = generate_cubic_bicycle_test(i, True)
+            outfile.write(f'number of must-have substitutions without addition: {len(t_without.all_substitutions) - len(t_without.optional_substitutions)}\n')
+            outfile.write(f'number of must-have substitutions with addition: {len(t_with.all_substitutions) - len(t_with.optional_substitutions)}\n\n')
+        outfile.write('Hiv\n')
+        outfile.write('number of variables: 5\n\n')
+        t_without = quadratization.QuadratizationProblem()
+        t_without.load_from_file('input_files/hiv.txt')
+        t_with = quadratization.QuadratizationProblem()
+        t_with.load_from_file('input_files/hiv.txt', variables(5, None, 0, True))
+        outfile.write(f'number of must-have substitutions without addition: {len(t_without.all_substitutions) - len(t_without.optional_substitutions)}\n')
+        outfile.write(f'number of must-have substitutions with addition: {len(t_with.all_substitutions) - len(t_with.optional_substitutions)}\n\n')
+        outfile.write('Hilln\n')
+        for i in range(10):
+            outfile.write(f'Test {i + 1} :\n')
+            outfile.write(f'number of variables: 3\n')
+            t_without = generate_hilln_test(i, 3, False)
+            t_with = generate_hilln_test(i, 3, True)
+            outfile.write(f'number of must-have substitutions without addition: {len(t_without.all_substitutions) - len(t_without.optional_substitutions)}\n')
+            outfile.write(f'number of must-have substitutions with addition: {len(t_with.all_substitutions) - len(t_with.optional_substitutions)}\n\n')
+            outfile.write(f'number of variables: 4\n')
+            t_without = generate_hilln_test(i, 4, False)
+            t_with = generate_hilln_test(i, 4, True)
+            outfile.write(f'number of must-have substitutions without addition: {len(t_without.all_substitutions) - len(t_without.optional_substitutions)}\n')
+            outfile.write(f'number of must-have substitutions with addition: {len(t_with.all_substitutions) - len(t_with.optional_substitutions)}\n\n')
+
+def variables(n, equations, degree, hiv = False):
     """ Function for creating additional substitution variables"""
+    if hiv:
+        substitutions = set()
+        l = [i for i in itertools.combinations_with_replacement(range(n), 5)]
+        for comb in l:
+            substitutions.add(tuple(comb))
+        return substitutions
+
     substitutions = set()
-    l = [j for j in itertools.combinations_with_replacement([i for i in range(-1, 4)], n)]
+    """l = [j for j in itertools.combinations_with_replacement([i for i in range(-1, 4)], n)]
     for comb in l: 
         for s in itertools.permutations(comb):
             substitutions.add(quadratization.Substitution(s, equations))
-            #substitutions.add(s)
+            #substitutions.add(s)"""
+    l = [i for i in itertools.combinations_with_replacement(range(n), 5)]
+    for comb in l:
+        x = [0] * n
+        for var in comb:
+            x[var] += 1
+        substitutions.add(quadratization.Substitution(tuple(x), equations))
     return substitutions
-
-
