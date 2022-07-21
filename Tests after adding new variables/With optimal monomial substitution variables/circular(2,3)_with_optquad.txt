@@ -1,0 +1,17 @@
+number of variables n = 2
+optimal number of substitutions : 2
+number of all substitutions : 5
+time of execution : 0.0050051212310791016 seconds 
+original substitutions:
+(x0^(-1) * x1^3)
+(x0^3 * x1^(-1))
+
+Solution :
+y0 = (x0^(-1) * x1^3)
+y1 = (x0^3 * x1^(-1))
+
+Disregarded substitutions :
+y2 = (x1^2)
+y3 = (x0^1 * x1^1)
+y4 = (x0^2)
+
