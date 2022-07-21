@@ -1,0 +1,1 @@
+Additional variables in these examples come from the optimal monomial quadratization.
