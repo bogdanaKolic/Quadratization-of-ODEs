@@ -800,7 +800,41 @@ def cubic_cycle_3_with_optquad():
         s = {(3, 0, 0), (0, 3, 0), (0, 0, 3), (2, 0, 0), (0, 2, 0), (0, 0, 2)}
         t0 = time.time()
         test = quadratization.QuadratizationProblem()
-        test.load_from_file('input_files/monom3.txt', s)
+        test.load_from_file('input_files/cubic_cycle(3).txt', s)
+        test.run()
+        t1 = time.time()
+        outfile.write('number of variables n = ' + str(test.width))
+        outfile.write('\noptimal number of substitutions : ')
+        outfile.write(str(test.min_length))
+        outfile.write('\nnumber of all substitutions : ')
+        outfile.write(str(len(test.all_substitutions))) 
+        outfile.write('\ntime of execution : ')
+        outfile.write(format_time(t1 - t0))
+        outfile.write('\n' + str(test))
+        outfile.write('\nSolution :\n')
+        for j, laurent in enumerate(test.optimal_solution):
+            outfile.write(f'y{j} = ')
+            outfile.write(str(laurent))
+            outfile.write('\n')
+        outfile.write('\nDisregarded substitutions :\n')
+        for j, laurent in enumerate([y for y in test.optional_substitutions if y not in test.optimal_solution]):
+            outfile.write(f'y{j + test.min_length} = ')
+            outfile.write(str(laurent))
+            outfile.write('\n')
+            outfile.write('\n')
+
+def cubic_cycle_7_with_optquad():
+    """Perform a test on cubic_cycle(7) benchmark with the additional substitutions
+    being the 14 variables introduced in the optimal monomial quadratiaztion"""
+    with open('cubic_cycle(7)_with_optquad.txt', 'w') as outfile:
+        s = {(3, 0, 0, 0, 0, 0, 0), (0, 3, 0, 0, 0, 0, 0), (0, 0, 3, 0, 0, 0 ,0),
+             (0, 0, 0, 3, 0, 0, 0), (0, 0, 0, 0, 3 ,0 ,0), (0, 0, 0, 0, 0, 3 ,0),
+             (0, 0, 0, 0, 0, 0, 3), (2, 0, 0, 0, 0 ,0 ,0), (0, 2, 0, 0, 0, 0 ,0), 
+             (0, 0, 2, 0, 0 ,0 ,0), (0, 0, 0, 2, 0, 0, 0), (0, 0, 0, 0, 2, 0, 0),
+             (0, 0, 0, 0, 0, 2 ,0), (0 ,0, 0, 0, 0, 0, 2)}
+        t0 = time.time()
+        test = quadratization.QuadratizationProblem()
+        test.load_from_file('input_files/cubic_cycle(7).txt', s)
         test.run()
         t1 = time.time()
         outfile.write('number of variables n = ' + str(test.width))
