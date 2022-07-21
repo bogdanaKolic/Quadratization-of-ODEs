@@ -690,8 +690,8 @@ def count_must_have_sub():
         for i in range(5):
             outfile.write(f'Test {i + 1}:\n')
             outfile.write(f'number of variables: 2\n\n')
-            test_without, _, _ = generate_selkov_test(False)
-            test_with = generate_selkov_test(True)
+            t_without, _, _ = generate_selkov_test(False)
+            t_with, _, _ = generate_selkov_test(True)
             outfile.write(f'number of must-have substitutions without addition: {len(t_without.all_substitutions) - len(t_without.optional_substitutions)}\n')
             outfile.write(f'number of must-have substitutions with addition: {len(t_with.all_substitutions) - len(t_with.optional_substitutions)}\n\n')
         outfile.write('Cubic cycle\n')
@@ -731,6 +731,37 @@ def count_must_have_sub():
             t_with = generate_hilln_test(i, 4, True)
             outfile.write(f'number of must-have substitutions without addition: {len(t_without.all_substitutions) - len(t_without.optional_substitutions)}\n')
             outfile.write(f'number of must-have substitutions with addition: {len(t_with.all_substitutions) - len(t_with.optional_substitutions)}\n\n')
+
+def monom3_with_optquad():
+    """Perform a test on monom3 benchmark with the additional substitutions
+    being the 10 variables introduced in the optimal monomial quadratiaztion"""
+    with open('monom3_with_optquad.txt', 'w') as outfile:
+        s = {(0, 2, 1), (1, 2, 0), (3, 0, 0), (0, 3, 0), (0, 0, 3), (1, 2, 2),
+             (2, 1, 2), (1, 0, 2), (1, 1, 1), (2, 2, 1)}
+        t0 = time.time()
+        test = quadratization.QuadratizationProblem()
+        test.load_from_file('input_files/monom3.txt', s)
+        test.run()
+        t1 = time.time()
+        outfile.write('number of variables n = ' + str(test.width))
+        outfile.write('\noptimal number of substitutions : ')
+        outfile.write(str(test.min_length))
+        outfile.write('\nnumber of all substitutions : ')
+        outfile.write(str(len(test.all_substitutions))) 
+        outfile.write('\ntime of execution : ')
+        outfile.write(format_time(t1 - t0))
+        outfile.write('\n' + str(test))
+        outfile.write('\nSolution :\n')
+        for j, laurent in enumerate(test.optimal_solution):
+            outfile.write(f'y{j} = ')
+            outfile.write(str(laurent))
+            outfile.write('\n')
+        outfile.write('\nDisregarded substitutions :\n')
+        for j, laurent in enumerate([y for y in test.optional_substitutions if y not in test.optimal_solution]):
+            outfile.write(f'y{j + test.min_length} = ')
+            outfile.write(str(laurent))
+            outfile.write('\n')
+        outfile.write('\n')
 
 def variables(n, equations, degree, hiv = False):
     """ Function for creating additional substitution variables"""
