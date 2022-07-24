@@ -1,0 +1,483 @@
+Circular
+Test 0 :
+degree k: 3
+number of variables: 1
+
+number of must-have substitutions without addition: 1
+number of must-have substitutions with addition: 0
+
+Test 1 :
+degree k: 1
+number of variables: 2
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 2 :
+degree k: 6
+number of variables: 3
+
+number of must-have substitutions without addition: 3
+number of must-have substitutions with addition: 0
+
+Test 3 :
+degree k: 5
+number of variables: 4
+
+number of must-have substitutions without addition: 4
+number of must-have substitutions with addition: 4
+
+Test 4 :
+degree k: 9
+number of variables: 5
+
+number of must-have substitutions without addition: 5
+number of must-have substitutions with addition: 5
+
+Test 5 :
+degree k: 5
+number of variables: 6
+
+number of must-have substitutions without addition: 6
+number of must-have substitutions with addition: 6
+
+Test 6 :
+degree k: 7
+number of variables: 7
+
+number of must-have substitutions without addition: 7
+number of must-have substitutions with addition: 7
+
+Test 7 :
+degree k: 8
+number of variables: 8
+
+number of must-have substitutions without addition: 8
+number of must-have substitutions with addition: 8
+
+Test 8 :
+degree k: 4
+number of variables: 9
+
+number of must-have substitutions without addition: 9
+number of must-have substitutions with addition: 0
+
+Test 9 :
+degree k: 8
+number of variables: 10
+
+number of must-have substitutions without addition: 10
+number of must-have substitutions with addition: 10
+
+Hardk
+Test 1 :
+degree k: 1
+number of variables: 3
+
+number of must-have substitutions without addition: 1
+number of must-have substitutions with addition: 0
+
+Test 2 :
+degree k: 2
+number of variables: 3
+
+number of must-have substitutions without addition: 1
+number of must-have substitutions with addition: 1
+
+Test 3 :
+degree k: 3
+number of variables: 3
+
+number of must-have substitutions without addition: 2
+number of must-have substitutions with addition: 0
+
+Test 4 :
+degree k: 4
+number of variables: 3
+
+number of must-have substitutions without addition: 2
+number of must-have substitutions with addition: 1
+
+Test 5 :
+degree k: 5
+number of variables: 3
+
+number of must-have substitutions without addition: 2
+number of must-have substitutions with addition: 2
+
+Test 6 :
+degree k: 6
+number of variables: 3
+
+number of must-have substitutions without addition: 2
+number of must-have substitutions with addition: 1
+
+Test 7 :
+degree k: 7
+number of variables: 3
+
+number of must-have substitutions without addition: 2
+number of must-have substitutions with addition: 2
+
+Test 8 :
+degree k: 8
+number of variables: 3
+
+number of must-have substitutions without addition: 2
+number of must-have substitutions with addition: 2
+
+Test 9 :
+degree k: 9
+number of variables: 3
+
+number of must-have substitutions without addition: 2
+number of must-have substitutions with addition: 2
+
+Test 10 :
+degree k: 10
+number of variables: 3
+
+number of must-have substitutions without addition: 2
+number of must-have substitutions with addition: 2
+
+Monomn
+Test 1 :
+number of variables: 1
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 2 :
+number of variables: 2
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 3 :
+number of variables: 3
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 4 :
+number of variables: 4
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 5 :
+number of variables: 5
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 6 :
+number of variables: 6
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 7 :
+number of variables: 7
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 8 :
+number of variables: 8
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 9 :
+number of variables: 9
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 10 :
+number of variables: 10
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Selkov
+Test 1:
+number of variables: 2
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 2:
+number of variables: 2
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 3:
+number of variables: 2
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 4:
+number of variables: 2
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 5:
+number of variables: 2
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Cubic cycle
+Test 1 :
+number of variables: 0
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 2 :
+number of variables: 1
+
+number of must-have substitutions without addition: 1
+number of must-have substitutions with addition: 0
+
+Test 3 :
+number of variables: 2
+
+number of must-have substitutions without addition: 2
+number of must-have substitutions with addition: 0
+
+Test 4 :
+number of variables: 3
+
+number of must-have substitutions without addition: 3
+number of must-have substitutions with addition: 0
+
+Test 5 :
+number of variables: 4
+
+number of must-have substitutions without addition: 4
+number of must-have substitutions with addition: 0
+
+Test 6 :
+number of variables: 5
+
+number of must-have substitutions without addition: 5
+number of must-have substitutions with addition: 0
+
+Test 7 :
+number of variables: 6
+
+number of must-have substitutions without addition: 6
+number of must-have substitutions with addition: 0
+
+Test 8 :
+number of variables: 7
+
+number of must-have substitutions without addition: 7
+number of must-have substitutions with addition: 0
+
+Test 9 :
+number of variables: 8
+
+number of must-have substitutions without addition: 8
+number of must-have substitutions with addition: 0
+
+Test 10 :
+number of variables: 9
+
+number of must-have substitutions without addition: 9
+number of must-have substitutions with addition: 0
+
+Cubic bicycle
+Test 1 :
+number of variables: 3
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 2 :
+number of variables: 14
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 3 :
+number of variables: 14
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 4 :
+number of variables: 3
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 5 :
+number of variables: 6
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 6 :
+number of variables: 7
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 7 :
+number of variables: 11
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 8 :
+number of variables: 10
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 9 :
+number of variables: 5
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 10 :
+number of variables: 7
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Hiv
+number of variables: 5
+
+number of must-have substitutions without addition: 1
+number of must-have substitutions with addition: 0
+
+Hilln
+Test 1 :
+order: 0
+number of variables: 3
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+number of variables: 4
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 2 :
+order: 1
+number of variables: 3
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+number of variables: 4
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 3 :
+order: 2
+number of variables: 3
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+number of variables: 4
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 4 :
+order: 3
+number of variables: 3
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+number of variables: 4
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 5 :
+order: 4
+number of variables: 3
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+number of variables: 4
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 6 :
+order: 5
+number of variables: 3
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+number of variables: 4
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 7 :
+order: 6
+number of variables: 3
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+number of variables: 4
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 8 :
+order: 7
+number of variables: 3
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+number of variables: 4
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 9 :
+order: 8
+number of variables: 3
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+number of variables: 4
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+Test 10 :
+order: 9
+number of variables: 3
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
+number of variables: 4
+
+number of must-have substitutions without addition: 0
+number of must-have substitutions with addition: 0
+
