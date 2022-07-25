@@ -623,11 +623,11 @@ def main_random():
         t.random_test()
         t.run()  
 
-def main_from_file(filename):
+def main_from_file(filename, strategy = 'no additional variables'):
     """ Perform a test on the system stored in a file"""
     t = QuadratizationProblem()
     t.load_from_file(filename)
-    t.run()
+    t.run(strategy)
     # print(t.min_length)
     for laurent in t.optimal_solution:
         print(laurent.variables)
