@@ -616,18 +616,18 @@ class QuadratizationProblem():
             s += str(a) + '\n'
         return s       
 
-def main_random():
+def main_random(strategy = 'no additional variables', degree_sub = 0, optquad = None):
     """ Simulate quadratizing a set of randomly generated equations """
     for _ in range(10):
         t = QuadratizationProblem()
         t.random_test()
-        t.run()  
+        t.run(strategy, degree_sub, optquad)  
 
-def main_from_file(filename, strategy = 'no additional variables'):
+def main_from_file(filename, strategy = 'no additional variables', degree_sub = 0, optquad = None):
     """ Perform a test on the system stored in a file"""
     t = QuadratizationProblem()
     t.load_from_file(filename)
-    t.run(strategy)
+    t.run(strategy, degree_sub, optquad)
     # print(t.min_length)
     for laurent in t.optimal_solution:
         print(laurent.variables)
