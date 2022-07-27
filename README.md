@@ -17,8 +17,7 @@ $x_1' = x_2^5$ ,  $x_2' = x_1^5$
   
 
 From the first equation we get variable $y_1 = \frac{x_2^5}{x_1},$ and from the second, $y_2 = \frac{x_1^5}{x_2}.$ We can easily check that this is a quadratization 
-of our system.
-\\ comparisson
+of our system. For the sake of comparison, the optimal monomial quadratization of this system contains 5 new variables: $y_1 = x_1x_2^5 $, $y_2 = x_1^5x_2$, $y_3 = x_2^6$, $y_4 = x_1^3x_2^3$ and $y_5 = x_1^6.$ 
 
 This program looks for the quadratization of the input system via Laurent monomials derived from the provided set of equations.
 
