@@ -1,0 +1,19 @@
+Test 1 :
+number of variables n = 5
+optimal number of substitutions : 1
+number of all substitutions : 4
+time of execution : 0.0 seconds 
+original substitutions:
+(x2^(-1))
+(x0^2)
+(x3^1 * x4^(-1))
+(x1^1 * x2^1 * x3^(-1))
+
+Solution :
+y0 = (x0^2)
+
+Disregarded substitutions :
+y1 = (x3^1 * x4^(-1))
+y2 = (x2^(-1))
+y3 = (x1^1 * x2^1 * x3^(-1))
+
