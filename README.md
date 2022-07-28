@@ -32,7 +32,7 @@ the search set):
 quadratization of one of the 4 known systems.
 
 ### Random tests
-The function main_random() from the quadratization.py module quadratizes 10 randomly generated systems and prints the results.
+The function `main_random()` from the quadratization.py module quadratizes 10 randomly generated systems and prints the results.
 
 ### Benchmark problems
 The dedicated functions from benchmarks.py module, such as circular_benchmark_tests(repeat, strategy) generate the related input systems and quadratize them using 
