@@ -1,1 +1,3 @@
+Additional variables are created by deviding the right-hand side of the original equations by all of the original variables 
+(instead of just dividing the right-hand side of xi' with xi).
 
