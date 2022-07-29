@@ -1,0 +1,111 @@
+Test 1 :
+number of variables n = 3
+optimal number of substitutions : 2
+number of all substitutions : 8
+time of execution : 0.0 seconds 
+original substitutions:
+(x2^(-1))
+(x1^1 * x2^19)
+(x0^(-1) * x1^2 * x2^19)
+
+Solution :
+y0 = (x2^(-1))
+y1 = (x1^1 * x2^19)
+
+Disregarded substitutions :
+y2 = (x0^(-1) * x1^1 * x2^19)
+y3 = (x1^2 * x2^19)
+y4 = (x2^9)
+y5 = (x0^(-1) * x1^1 * x2^9)
+y6 = (x1^1 * x2^9)
+y7 = (x0^(-1) * x1^2 * x2^19)
+
+Test 2 :
+number of variables n = 3
+optimal number of substitutions : 2
+number of all substitutions : 8
+time of execution : 0.0 seconds 
+original substitutions:
+(x2^(-1))
+(x1^1 * x2^19)
+(x0^(-1) * x1^2 * x2^19)
+
+Solution :
+y0 = (x2^(-1))
+y1 = (x1^1 * x2^19)
+
+Disregarded substitutions :
+y2 = (x0^(-1) * x1^1 * x2^19)
+y3 = (x1^2 * x2^19)
+y4 = (x2^9)
+y5 = (x0^(-1) * x1^1 * x2^9)
+y6 = (x1^1 * x2^9)
+y7 = (x0^(-1) * x1^2 * x2^19)
+
+Test 3 :
+number of variables n = 3
+optimal number of substitutions : 2
+number of all substitutions : 8
+time of execution : 0.0 seconds 
+original substitutions:
+(x2^(-1))
+(x1^1 * x2^19)
+(x0^(-1) * x1^2 * x2^19)
+
+Solution :
+y0 = (x2^(-1))
+y1 = (x1^1 * x2^19)
+
+Disregarded substitutions :
+y2 = (x0^(-1) * x1^1 * x2^19)
+y3 = (x1^2 * x2^19)
+y4 = (x2^9)
+y5 = (x0^(-1) * x1^1 * x2^9)
+y6 = (x1^1 * x2^9)
+y7 = (x0^(-1) * x1^2 * x2^19)
+
+Test 4 :
+number of variables n = 3
+optimal number of substitutions : 2
+number of all substitutions : 8
+time of execution : 0.0 seconds 
+original substitutions:
+(x2^(-1))
+(x1^1 * x2^19)
+(x0^(-1) * x1^2 * x2^19)
+
+Solution :
+y0 = (x2^(-1))
+y1 = (x1^1 * x2^19)
+
+Disregarded substitutions :
+y2 = (x0^(-1) * x1^1 * x2^19)
+y3 = (x1^2 * x2^19)
+y4 = (x2^9)
+y5 = (x0^(-1) * x1^1 * x2^9)
+y6 = (x1^1 * x2^9)
+y7 = (x0^(-1) * x1^2 * x2^19)
+
+Test 5 :
+number of variables n = 3
+optimal number of substitutions : 2
+number of all substitutions : 8
+time of execution : 0.0 seconds 
+original substitutions:
+(x2^(-1))
+(x1^1 * x2^19)
+(x0^(-1) * x1^2 * x2^19)
+
+Solution :
+y0 = (x2^(-1))
+y1 = (x1^1 * x2^19)
+
+Disregarded substitutions :
+y2 = (x0^(-1) * x1^1 * x2^19)
+y3 = (x1^2 * x2^19)
+y4 = (x2^9)
+y5 = (x0^(-1) * x1^1 * x2^9)
+y6 = (x1^1 * x2^9)
+y7 = (x0^(-1) * x1^2 * x2^19)
+
+average time: 0.0 seconds 
