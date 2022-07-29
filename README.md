@@ -27,7 +27,7 @@ Input systems can be either loaded from a file, generated randomly or (if they b
 an additional arguments can be passed to indicate a strategy used to obtain a quadratization (passing no arguments means that no auxiliary substituions will be added to the search set):
 1. *`strategy`* - a string from the set {'from derivatives', 'random from derivatives', 'constant degree', 'roots of monom derivatives', 'optimal quadratization'}
 2. *`degree_sub`* - an integer indicating the degree of the additional monomial substitutions if strategy applied is 'constant degree'
-3. *`optquad`* - a string from the set {'monom3', 'circular(2,3)', 'cubcic_cycle(3)', 'cubic_cycle(7)'}, saying that the additional substituions will be the optimal monomial 
+3. *`optquad`* - a string from the set {'monom3', 'circular(2,3)', 'cubic_cycle(3)', 'cubic_cycle(7)'}, saying that the additional substituions will be the optimal monomial 
 quadratization of one of the 4 known systems.
 
 ### Random tests
