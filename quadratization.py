@@ -15,7 +15,7 @@ optimal_quadratization = {
     'monom3' : {(0, 2, 1), (1, 2, 0), (3, 0, 0), (0, 3, 0), (0, 0, 3), (1, 2, 2),
              (2, 1, 2), (1, 0, 2), (1, 1, 1), (2, 2, 1)},
     'circular(2,3)' : {(1, 1), (2, 0), (0, 2)},
-    'cubcic_cycle(3)' : {(3, 0, 0), (0, 3, 0), (0, 0, 3), (2, 0, 0), (0, 2, 0), (0, 0, 2)},
+    'cubic_cycle(3)' : {(3, 0, 0), (0, 3, 0), (0, 0, 3), (2, 0, 0), (0, 2, 0), (0, 0, 2)},
     'cubic_cycle(7)' : {(3, 0, 0, 0, 0, 0, 0), (0, 3, 0, 0, 0, 0, 0), (0, 0, 3, 0, 0, 0 ,0),
              (0, 0, 0, 3, 0, 0, 0), (0, 0, 0, 0, 3 ,0 ,0), (0, 0, 0, 0, 0, 3 ,0),
              (0, 0, 0, 0, 0, 0, 3), (2, 0, 0, 0, 0 ,0 ,0), (0, 2, 0, 0, 0, 0 ,0), 
@@ -515,7 +515,7 @@ class QuadratizationProblem():
     
     def random_new_variables_from_derivatives(self):
         """ Randomly compute substitutions based on the derivatives of the 
-        original substitutions"""
+        original substitutions and original variables"""
         for substitution in self.original_substitutions:
              for monom_derivative in substitution.derivative.monomials:
                  l = [random.randint(-1, x + 1) for x in monom_derivative.variables]
@@ -607,10 +607,10 @@ class QuadratizationProblem():
         print('number of all substitutions: ', len(self.all_substitutions), '\n')
        
     def __str__(self):
-        # s = 'width = ' + str(self.width) + '\n'
-        # s += 'original differential equations:\n'
-        # for e in self.equations:
-        #     s += str(e) + '\n'
+        """s = 'width = ' + str(self.width) + '\n'
+        s += 'original differential equations:\n'
+        for e in self.equations:
+             s += str(e) + '\n'"""
         s = 'original substitutions:\n'
         for a in self.original_substitutions:
             s += str(a) + '\n'
