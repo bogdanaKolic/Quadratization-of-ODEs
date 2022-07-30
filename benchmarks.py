@@ -184,7 +184,8 @@ def generate_cubic_bicycle_test(width):
     """Create and return an instance of class QuadratizationProblem that 
     represents a cubic bicycle system of ODEs, with either given or randomly 
     chosen number of equations"""
-    width = random.randint(1, 15)
+    if width is None:
+        width = random.randint(1, 15)
     equations = []
     l = [0] * width
     for i in range(width):
