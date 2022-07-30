@@ -4,6 +4,29 @@ import quadratization
 import random
 import time
 
+input_filenames_first_benchmarks = [ 'circular(2,3)', 'circular(2,4)', 'circular(2,5)', 'circular(2,6)'
+                   , 'circular(2,8)', 'cubic_bicycle(7)', 'cubic_bicycle(8)', 
+                   'cubic_cycle(6)', 'cubic_cycle(7)', 'hard3', 'hard4', 'hill3', 
+                   'hill3x', 'hill5', 'hill5x', 'hill10', 'hill10x', 'hill15',
+                    'hill15x', 'hill20', 'hill20x', 'monom2', 'monom3', 'monom4'
+                 ,'hiv', 'selkov','hiv']
+
+input_filenames_biomodels = ['1-interaction_of_Th_and_macrophage',
+          'On_optimal_chemotherapy_with_a_strongly_targeted_agent_for_a_model_of_tumor_immune_system_interactions_with_generalized_logistic_growth',
+          'Application_of_ABSIS_method_in_the_bistable_Schlögl',
+          'basic_PD_model', 'cancer_growth_with_angiogenesis', 'cell_cycle_2_var',
+          'Dynamics_of_Avian_Influenza_with_Allee_Growth_Effect', 'HIV-CD4_T-cell_interaction',
+          'Minimal_model_describing_metabolic_oscillations_in_Bacillus_subtilis_biofilms', 
+          'NerveMembrane','Nine_species_reduced_model_of_blood_coagulation', 
+          'trastuzumab-induced_immune_response_in_murine_HER2+_breast_cancer_model',
+          '2-interaction_of_Th_and_macrophage_in_melanoma', 'RNA_triplex_formation',
+          'All-or-nothing_G1_S_transition','Fas-FasL_mediated_tumor_T-cell_interaction',
+          'macrophage_in_cancer','Network_of_a_toggle_switch',
+           'TGFbeta_signaling' , 'NFAT_Activation', 'TNF_ProAntiApoptosis']
+
+strategies = ['no additional substitutions', 'constant degree', 'roots of monom derivatives',
+              'random from derivatives', 'from derivatives']
+
 def format_time(sec):
     """Transform the number of seconds given into a string representation
     of time stating the number of hours, minutes and seconds"""
@@ -371,6 +394,48 @@ def count_must_have_sub(degree_sub):
             t_with, _= generate_hilln_test(4, i)
             compare_must_have_sub(outfile, t_without, t_with, degree_sub)
             
+def test_from_file(model, strategy = 'no additional variables', degree_sub = 0, optquad = None, iteration = 1):
+    """Perform a test on the data loaded from a file and return the execution time"""
+    outfilename = define_outfile_name(model, strategy, degree_sub = degree_sub)
+    with open(outfilename, 'a') as outfile:
+        t0 = time.time()
+        test = quadratization.QuadratizationProblem()
+        test.load_from_file('input_files/' + model + '.txt')
+        test.run(strategy, degree_sub, optquad)
+        t1 = time.time()
+        write_to_file(iteration, test, t1 - t0, outfile)
+    return t1 - t0
 
+def tests_on_biomodels_with_time(strategy = 'no additional substitutions'):
+    """Perform 5 tests on biomodels, measure the average time and the absolute 
+    error, given the strategy"""
+    for model in input_filenames_biomodels:
+        t = 0
+        times = []
+        for i in range(5):
+            dt = test_from_file(model, strategy, iteration = i + 1)
+            t += dt
+            times.append(dt)
+        outfilename = define_outfile_name(model, strategy)
+        with open(outfilename, 'a') as outfile:
+            outfile.write(f'average time: {format_time(t/5)}\n' )
+            differences = [abs(x - t/5) for x in times]
+            outfile.write(f'absolute error: {format_time(max(differences))}\n')
 
-
+def tests_on_benchmarks_with_time(strategy = 'no additional substitutions'):
+    """Perform 5 tests on the first set of benchmark problems, measure the 
+    average time and the absolute error, given the strategy"""
+    for system in input_filenames_first_benchmarks:
+        t = 0
+        times = []
+        for i in range(5):
+            dt = test_from_file(system, strategy, iteration = i + 1)
+            t += dt
+            times.append(dt)
+        outfilename = define_outfile_name(system, strategy)
+        with open(outfilename, 'a') as outfile:
+            outfile.write(f'average time: {format_time(t/5)}\n' )
+            differences = [abs(x - t/5) for x in times]
+            outfile.write(f'absolute error: {format_time(max(differences))}\n')
+    
+      
