@@ -1,0 +1,77 @@
+Test 1 :
+number of variables n = 2
+optimal number of substitutions : 1
+number of all substitutions : 2
+time of execution : 0.0025634765625 seconds 
+original substitutions:
+(x0^(-1))
+(x1^2)
+
+Solution :
+y0 = (x1^2)
+
+Disregarded substitutions :
+y1 = (x0^(-1))
+
+Test 2 :
+number of variables n = 2
+optimal number of substitutions : 1
+number of all substitutions : 2
+time of execution : 0.0 seconds 
+original substitutions:
+(x0^(-1))
+(x1^2)
+
+Solution :
+y0 = (x1^2)
+
+Disregarded substitutions :
+y1 = (x0^(-1))
+
+Test 3 :
+number of variables n = 2
+optimal number of substitutions : 1
+number of all substitutions : 2
+time of execution : 0.0 seconds 
+original substitutions:
+(x0^(-1))
+(x1^2)
+
+Solution :
+y0 = (x1^2)
+
+Disregarded substitutions :
+y1 = (x0^(-1))
+
+Test 4 :
+number of variables n = 2
+optimal number of substitutions : 1
+number of all substitutions : 2
+time of execution : 0.0 seconds 
+original substitutions:
+(x0^(-1))
+(x1^2)
+
+Solution :
+y0 = (x1^2)
+
+Disregarded substitutions :
+y1 = (x0^(-1))
+
+Test 5 :
+number of variables n = 2
+optimal number of substitutions : 1
+number of all substitutions : 2
+time of execution : 0.0 seconds 
+original substitutions:
+(x0^(-1))
+(x1^2)
+
+Solution :
+y0 = (x1^2)
+
+Disregarded substitutions :
+y1 = (x0^(-1))
+
+average time: 0.0005126953125 seconds 
+absolute error: 0.00205078125 seconds 
