@@ -1,0 +1,77 @@
+Test 1 :
+number of variables n = 2
+optimal number of substitutions : 2
+number of all substitutions : 2
+time of execution : 0.0 seconds 
+original substitutions:
+(x0^5 * x1^(-1))
+(x0^(-1) * x1^5)
+
+Solution :
+y0 = (x0^5 * x1^(-1))
+y1 = (x0^(-1) * x1^5)
+
+Disregarded substitutions :
+
+Test 2 :
+number of variables n = 2
+optimal number of substitutions : 2
+number of all substitutions : 2
+time of execution : 0.0 seconds 
+original substitutions:
+(x0^5 * x1^(-1))
+(x0^(-1) * x1^5)
+
+Solution :
+y0 = (x0^5 * x1^(-1))
+y1 = (x0^(-1) * x1^5)
+
+Disregarded substitutions :
+
+Test 3 :
+number of variables n = 2
+optimal number of substitutions : 2
+number of all substitutions : 2
+time of execution : 0.0 seconds 
+original substitutions:
+(x0^5 * x1^(-1))
+(x0^(-1) * x1^5)
+
+Solution :
+y0 = (x0^5 * x1^(-1))
+y1 = (x0^(-1) * x1^5)
+
+Disregarded substitutions :
+
+Test 4 :
+number of variables n = 2
+optimal number of substitutions : 2
+number of all substitutions : 2
+time of execution : 0.0 seconds 
+original substitutions:
+(x0^5 * x1^(-1))
+(x0^(-1) * x1^5)
+
+Solution :
+y0 = (x0^5 * x1^(-1))
+y1 = (x0^(-1) * x1^5)
+
+Disregarded substitutions :
+
+Test 5 :
+number of variables n = 2
+optimal number of substitutions : 2
+number of all substitutions : 2
+time of execution : 0.0 seconds 
+original substitutions:
+(x0^5 * x1^(-1))
+(x0^(-1) * x1^5)
+
+Solution :
+y0 = (x0^5 * x1^(-1))
+y1 = (x0^(-1) * x1^5)
+
+Disregarded substitutions :
+
+average time: 0.0 seconds 
+absolute error: 0.0 seconds 

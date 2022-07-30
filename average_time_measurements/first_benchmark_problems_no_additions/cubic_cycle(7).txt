@@ -1,0 +1,127 @@
+Test 1 :
+number of variables n = 7
+optimal number of substitutions : 7
+number of all substitutions : 7
+time of execution : 0.0008487701416015625 seconds 
+original substitutions:
+(x4^(-1) * x5^3)
+(x3^(-1) * x4^3)
+(x1^(-1) * x2^3)
+(x5^(-1) * x6^3)
+(x2^(-1) * x3^3)
+(x0^(-1) * x1^3)
+(x0^3 * x6^(-1))
+
+Solution :
+y0 = (x4^(-1) * x5^3)
+y1 = (x1^(-1) * x2^3)
+y2 = (x2^(-1) * x3^3)
+y3 = (x0^3 * x6^(-1))
+y4 = (x5^(-1) * x6^3)
+y5 = (x0^(-1) * x1^3)
+y6 = (x3^(-1) * x4^3)
+
+Disregarded substitutions :
+
+Test 2 :
+number of variables n = 7
+optimal number of substitutions : 7
+number of all substitutions : 7
+time of execution : 0.0009930133819580078 seconds 
+original substitutions:
+(x4^(-1) * x5^3)
+(x3^(-1) * x4^3)
+(x1^(-1) * x2^3)
+(x5^(-1) * x6^3)
+(x2^(-1) * x3^3)
+(x0^(-1) * x1^3)
+(x0^3 * x6^(-1))
+
+Solution :
+y0 = (x4^(-1) * x5^3)
+y1 = (x1^(-1) * x2^3)
+y2 = (x2^(-1) * x3^3)
+y3 = (x0^3 * x6^(-1))
+y4 = (x5^(-1) * x6^3)
+y5 = (x0^(-1) * x1^3)
+y6 = (x3^(-1) * x4^3)
+
+Disregarded substitutions :
+
+Test 3 :
+number of variables n = 7
+optimal number of substitutions : 7
+number of all substitutions : 7
+time of execution : 0.0 seconds 
+original substitutions:
+(x4^(-1) * x5^3)
+(x3^(-1) * x4^3)
+(x1^(-1) * x2^3)
+(x5^(-1) * x6^3)
+(x2^(-1) * x3^3)
+(x0^(-1) * x1^3)
+(x0^3 * x6^(-1))
+
+Solution :
+y0 = (x4^(-1) * x5^3)
+y1 = (x1^(-1) * x2^3)
+y2 = (x2^(-1) * x3^3)
+y3 = (x0^3 * x6^(-1))
+y4 = (x5^(-1) * x6^3)
+y5 = (x0^(-1) * x1^3)
+y6 = (x3^(-1) * x4^3)
+
+Disregarded substitutions :
+
+Test 4 :
+number of variables n = 7
+optimal number of substitutions : 7
+number of all substitutions : 7
+time of execution : 0.0 seconds 
+original substitutions:
+(x4^(-1) * x5^3)
+(x3^(-1) * x4^3)
+(x1^(-1) * x2^3)
+(x5^(-1) * x6^3)
+(x2^(-1) * x3^3)
+(x0^(-1) * x1^3)
+(x0^3 * x6^(-1))
+
+Solution :
+y0 = (x4^(-1) * x5^3)
+y1 = (x1^(-1) * x2^3)
+y2 = (x2^(-1) * x3^3)
+y3 = (x0^3 * x6^(-1))
+y4 = (x5^(-1) * x6^3)
+y5 = (x0^(-1) * x1^3)
+y6 = (x3^(-1) * x4^3)
+
+Disregarded substitutions :
+
+Test 5 :
+number of variables n = 7
+optimal number of substitutions : 7
+number of all substitutions : 7
+time of execution : 0.0 seconds 
+original substitutions:
+(x4^(-1) * x5^3)
+(x3^(-1) * x4^3)
+(x1^(-1) * x2^3)
+(x5^(-1) * x6^3)
+(x2^(-1) * x3^3)
+(x0^(-1) * x1^3)
+(x0^3 * x6^(-1))
+
+Solution :
+y0 = (x4^(-1) * x5^3)
+y1 = (x1^(-1) * x2^3)
+y2 = (x2^(-1) * x3^3)
+y3 = (x0^3 * x6^(-1))
+y4 = (x5^(-1) * x6^3)
+y5 = (x0^(-1) * x1^3)
+y6 = (x3^(-1) * x4^3)
+
+Disregarded substitutions :
+
+average time: 0.00036835670471191406 seconds 
+absolute error: 0.0006246566772460938 seconds 
