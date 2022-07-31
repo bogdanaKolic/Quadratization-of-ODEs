@@ -223,7 +223,7 @@ def benchmark_tests(benchmark, repeat, strategy = 'no additional substitutions,'
             t1 = time.time()
             write_to_file(i + 1, test, t1 - t0, outfile, degree)       
             
-def hilln_benchmark_tests(repeat, strategy, order = None, degree_sub = 0, optquad = None):
+def hilln_benchmark_tests(repeat, strategy = 'no additional substitutions,', order = None, degree_sub = 0, optquad = None):
     """Perform a series of tests on hilln systems of ODEs (with both 3 and 4
     variables), with given parameters"""
     filename = define_outfile_name('hill', strategy, degree = order, degree_sub = degree_sub)
@@ -242,7 +242,7 @@ def hilln_benchmark_tests(repeat, strategy, order = None, degree_sub = 0, optqua
             t1 = time.time()
             write_to_file(i + 1, test_4, t1 - t0, outfile, additional_string = 'With 4 variables:\n')
                 
-def selkov_benchmark_tests(repeat, strategy, degree_sub = 0, optquad = None):
+def selkov_benchmark_tests(repeat, strategy = 'no additional substitutions,', degree_sub = 0, optquad = None):
     """Perform a series of tests on selkov systems of ODEs, with given parameters"""
     filename = define_outfile_name('selkov', strategy, degree_sub = degree_sub)
     with open(filename, 'w') as outfile:
@@ -253,7 +253,7 @@ def selkov_benchmark_tests(repeat, strategy, degree_sub = 0, optquad = None):
             t1 = time.time()
             write_to_file(i + 1, test, t1 - t0, outfile, additional_string = f'parameters: a = {a}, b = {b}\n') 
 
-def hiv_benchmark_test(repeat, strategy, degree_sub = 0, optquad = None):
+def hiv_benchmark_test(repeat, strategy = 'no additional substitutions,', degree_sub = 0, optquad = None):
     """Perform a  series of tests on a hiv system of ODEs, with given parameters"""
     filename = define_outfile_name('hiv', strategy, degree_sub = degree_sub)
     with open(filename, 'w') as outfile:
@@ -367,4 +367,4 @@ def tests_with_average_time(foldername, strategy = 'no additional substitutions'
             outfile.write(f'average time: {format_time(t/NUM_RUNS_TIME_MEASUREMENT)}\n' )
             differences = [abs(x - t/NUM_RUNS_TIME_MEASUREMENT) for x in times]
             outfile.write(f'absolute error: {format_time(max(differences))}\n')
-      
+
